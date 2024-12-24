@@ -114,7 +114,7 @@ const Carousel = () => {
     },
   ];
 
-  const visibleItems = 4; // Number of items to show at once
+  const visibleItems = 3; // Number of items to show at once
   const totalItems = [...items,...items,...items];
 
   const nextSlide = () => {

@@ -54,7 +54,7 @@ const Footer = () => {
                 <span>
                   <CallIcon />
                 </span>
-                +91 63566 65365
+                +91 98989 65365
               </p>
             </div>
             <div>
@@ -63,7 +63,7 @@ const Footer = () => {
                 <span>
                   <EmailIcon />
                 </span>
-                info@example.com
+                info@anantasolution.com
               </p>
             </div>
           </div>
