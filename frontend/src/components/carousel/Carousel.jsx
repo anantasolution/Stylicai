@@ -48,8 +48,8 @@ const Carousel = () => {
     },
     {
       id: 3,
-      leftImage: boysShirtThumbnails[0],
-      rightImage: boysShirtImages[0][0],
+      leftImage: boysShirtThumbnails[1],
+      rightImage: boysShirtImages[1][0],
       title: "Comparison 3",
     },
     {
@@ -161,7 +161,7 @@ const Carousel = () => {
                 className="flex-none w-1/3 px-2"
               >
                 <div 
-                  className="relative h-[480px] rounded-lg shadow-md overflow-hidden cursor-pointer"
+                  className="relative h-[360px] rounded-lg shadow-md overflow-hidden cursor-pointer"
                   onMouseEnter={() => setHoveredCard(item.id)}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
@@ -185,9 +185,6 @@ const Carousel = () => {
                     }}
                   />
                 </div>
-                <h3 className="mt-2 text-center text-gray-800 font-medium">
-                  {item.title}
-                </h3>
               </div>
             ))}
           </div>

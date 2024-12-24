@@ -648,6 +648,8 @@ import Dress9_img1 from "./dresses/Dress 9/image (3)_enhanced.webp";
 import Dress9_img2 from "./dresses/Dress 9/image (4)_enhanced.webp";
 import Dress9_img3 from "./dresses/Dress 9/WhatsApp Image 2024-12-10 at 4,54,50 PM_enhanced.webp";
 
+import rating_star from "./rating_star.svg"
+
 const blazerThumbnails = [
   blazzer1Cat,
   blazzer2Cat,
@@ -685,7 +687,7 @@ const girlShirtThumbnails = [
   GirlShirt2Cat,
   GirlShirt3Cat,
   GirlShirt4Cat,
-  GirlShirt5Cat
+  GirlShirt5Cat,
 ];
 
 const girlShirtImages = [
@@ -984,6 +986,9 @@ const dressImages = [
   [Dress9_img1, Dress9_img2, Dress9_img3],
 ];
 
+import profile_img_1 from "./profile_img_1.png"
+import profile_img_2 from "./profile_img_2.png"
+
 export {
   blazerThumbnails,
   blazerImages,
@@ -1011,4 +1016,50 @@ export {
   tshirtImages,
   jacketThumbnails,
   jacketImages,
+  testimonialsData,
+  rating_star,
+  profile_img_1,
+  profile_img_2,
 };
+
+const testimonialsData = [
+  {
+    image: profile_img_1,
+    name: "Donald Jackman",
+    role: "Graphic Designer",
+    stars: 5,
+    text: `I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`,
+  },
+  {
+    image: profile_img_2,
+    name: "Richard Nelson",
+    role: "Content Creator",
+    stars: 5,
+    text: `I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`,
+  },
+  {
+    image: profile_img_1,
+    name: "Donald Jackman",
+    role: " Graphic Designer",
+    stars: 5,
+    text: `I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`,
+  },{
+    image: profile_img_1,
+    name: "Donald Jackman",
+    role: " Graphic Designer",
+    stars: 5,
+    text: `I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`,
+  },{
+    image: profile_img_1,
+    name: "Donald Jackman",
+    role: " Graphic Designer",
+    stars: 5,
+    text: `I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`,
+  },{
+    image: profile_img_1,
+    name: "Donald Jackman",
+    role: " Graphic Designer",
+    stars: 5,
+    text: `I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`,
+  },
+];
