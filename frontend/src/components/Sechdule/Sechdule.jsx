@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-const Schedule = () => {
+
+const Sechdule = () => {
     const navigate = useNavigate();
     const handleSchedule = () => {
       navigate('/'); // Replace '/demo' with your desired route
@@ -48,4 +49,5 @@ const Schedule = () => {
   );
 };
 
-export default Schedule;
+
+export default Sechdule;

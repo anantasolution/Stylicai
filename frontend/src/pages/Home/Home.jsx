@@ -5,9 +5,10 @@ import Hero from "../../components/Hero/Hero";
 import Gallery from "../../components/PhotoGallery/Gallery";
 import Footer from "../../components/Footer/Footer";
 import How from "../../components/How/How";
-import Aboutus from "../../pages/Aboutus/About";
+import About from "../../components/Aboutus/About"; // Kept 'About' from add/backendcontact
 import Faq from "../../components/FAQ/Faq";
-import Schedule from "../../components/Sechdule/Sechdule";
+import Schedule from "../../components/Sechdule/Sechdule"; // Kept 'Schedule' from main
+
 const Home = () => {
   return (
     <div>
@@ -17,8 +18,8 @@ const Home = () => {
       <Aboutus />
       {/* <Carousel /> */}
       <Gallery />
-      <Schedule />
-      <Faq />
+      <Faq/>
+      <Sechdule></Sechdule>
       <Footer />
     </div>
   );
