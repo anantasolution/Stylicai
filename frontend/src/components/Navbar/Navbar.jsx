@@ -1,0 +1,136 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [active,setActive] = useState("home")
+
+  const location = useLocation()
+
+  const isActive= (pathname)=>{
+       return location.pathname===pathname
+  }
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <div className="fixed w-full  bg-white shadow-md z-40">
+      {/* Navigation */}
+      <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="flex items-center space-x-2">
+          <Link to={"/"}>
+            <span className="text-2xl cursor-pointer font-bold text-gray-800">
+              STYLICAI
+            </span>
+          </Link>
+        </div>
+
+        {/* Large screen navbar links */}
+        <div className="hidden md:flex items-center space-x-8">
+          <div className="flex gap-8">
+            <Link to={"/"}>
+              <span className={`text-gray-800 rounded-full hover:text-white hover:bg-black hover:rounded-full px-2 py-1 transition duration-300`}>
+                Home
+              </span>
+            </Link>
+            <Link to={"/catalog"}>
+              <span className={`text-gray-800 rounded-full hover:text-white hover:bg-black hover:rounded-full px-2 py-1 transition duration-300`}>
+                Catalog
+              </span>
+            </Link>
+            <Link to={"/about"}>
+              <span className={`text-gray-800 rounded-full hover:text-white hover:bg-black hover:rounded-full px-2 py-1 transition duration-300`}>
+                About
+              </span>
+            </Link>
+            
+          </div>
+        </div>
+        <Link to={"/contact"}>
+          <button className="bg-golden text-white px-6 py-2 rounded-full hover:bg-navyblue  transition duration-300">
+            Get in touch
+          </button>
+        </Link>
+
+        {/* Hamburger Menu for Small Screens */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={toggleMenu}
+            className="text-gray-800 hover:text-black focus:outline-none relative z-50"
+          >
+            {!isMenuOpen ? (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="w-6 h-6 z-50"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            )}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Menu */}
+      
+        <div className={`md:hidden top-0 ${isMenuOpen?"right-0":"-right-full"} border w-1/2 absolute  h-screen bg-white z-45 pt-20 transition-all duration-300`}>
+          <div className="flex flex-col gap-3 items-center py-4 transition-all duration-300">
+            <Link
+              to={'/'}
+              className="text-gray-800 py-2 hover:bg-black hover:text-white w-full text-center"
+            >
+              Home
+            </Link>
+            <Link
+              to={'/catalog'}
+              className="text-gray-800 py-2 hover:bg-black hover:text-white w-full text-center"
+            >
+              Catalog
+            </Link>
+            <Link
+              to={'/about'}
+              className="text-gray-800 py-2 hover:bg-black hover:text-white w-full text-center"
+            >
+              About
+            </Link>
+            <Link
+              to={'/blog'}
+              className="text-gray-800 py-2 hover:bg-black hover:text-white w-full text-center"
+            >
+              Blog
+            </Link>
+
+            <Link to={'/contact'} className="bg-golden text-white hover:bg-navyblue px-6 py-2 rounded-full  transition duration-300">
+              Account
+            </Link>
+          </div>
+        </div>
+      
+    </div>
+  );
+};
+
+export default Navbar;

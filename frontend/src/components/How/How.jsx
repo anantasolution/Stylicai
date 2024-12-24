@@ -1,0 +1,73 @@
+import React from 'react';
+import { Download, MousePointerClick, Type } from 'lucide-react';
+// import Bird from '../../assets/Bird.webp'
+
+//importing icons
+import IMG from '../../assets/downloads.png'
+import IMG1 from '../../assets/ai.png'
+import IMG2 from '../../assets/upload.png'
+
+export default function How()  {
+  return (
+    <div className="w-full bg-gradient-to-b from-white to-purple-50 py-16 md:py-10">
+      <div className="container mx-auto px-4 md:px-6">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="text-golden font-medium mb-4">HOW IT WORKS</div>
+          <h2 className="text-2xl md:text-4xl font-bold text-navyblue">
+            How to Generate Photoshoot
+          </h2>
+        </div>
+
+        {/* Steps Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
+          {/* Step 1 */}
+          <div className="flex flex-col items-center text-center">
+            <div className="bg-white h-44 rounded-3xl shadow-lg p-6 mb-6 w-full">
+              <div className="bg-gray-50 rounded-xl p-4 mb-2 inline-block">
+                <img src={IMG2} className='w-8 h-8'></img>
+              </div>
+              <div className="space-y-2">
+                <p className="text-black font-medium">
+                  Upload Garment
+                </p>
+                <span className='text-sm text-gray-500'>Upload front and Back Garmet Photo</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 2 */}
+          <div className="flex flex-col items-center text-center">
+            <div className="bg-white h-44 rounded-3xl shadow-lg p-6 mb-6 w-full">
+              <div className="bg-gray-50 rounded-xl p-4 mb-2 inline-block">
+                <img src={IMG1} className='w-8 h-8'></img>
+              </div>
+              <div className="space-y-2">
+                <p className="text-black font-medium">
+                  Click On Generate
+                </p>
+                <span className='text-sm text-gray-500'>Generate photoshoot with magic</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 3 */}
+          <div className="flex flex-col items-center text-center">
+            <div className="bg-white h-44 rounded-3xl shadow-lg p-6 mb-6 w-full">
+              <div className="bg-gray-50 rounded-xl p-4 mb-2 inline-block">
+                <img src={IMG} className='w-8 h-8'></img>
+              </div>
+              <div className="space-y-2">
+                <p className="text-black font-medium">
+                  Download Photoshoot
+                </p>
+                <span className='text-sm text-gray-500'>Download photoshoot with different pose</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
