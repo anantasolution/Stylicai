@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Catalog from "./pages/Catalog/Catalog";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import About from "./components/Aboutus/About";
+import About from "./pages/Aboutus/About";
 
 const App = () => {
   return (
