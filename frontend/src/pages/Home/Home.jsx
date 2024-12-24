@@ -7,6 +7,8 @@ import Footer from '../../components/Footer/Footer'
 import How from '../../components/How/How'
 import About from '../../components/Aboutus/About'
 import Faq from '../../components/FAQ/Faq'
+import { TestTubesIcon } from 'lucide-react'
+import Testimonial from '../../components/Testimonial/Testimonial'
 const Home = () => {
   return (
     <div>
@@ -17,6 +19,7 @@ const Home = () => {
       {/* <Carousel /> */}
       <Gallery />
       <Faq/>
+      <Testimonial />
       <Footer />
     </div>
   )
