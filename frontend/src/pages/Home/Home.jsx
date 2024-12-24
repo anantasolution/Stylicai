@@ -7,6 +7,8 @@ import Footer from '../../components/Footer/Footer'
 import How from '../../components/How/How'
 import About from '../../components/Aboutus/About'
 import Faq from '../../components/FAQ/Faq'
+import Sechdule from '../../components/Sechdule/Sechdule'
+
 const Home = () => {
   return (
     <div>
@@ -17,6 +19,7 @@ const Home = () => {
       {/* <Carousel /> */}
       <Gallery />
       <Faq/>
+      <Sechdule></Sechdule>
       <Footer />
     </div>
   )
