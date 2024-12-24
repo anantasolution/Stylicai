@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+
 const Sechdule = () => {
     const navigate = useNavigate();
     const handleSchedule = () => {
@@ -47,5 +48,6 @@ const Sechdule = () => {
     </div>
   );
 };
+
 
 export default Sechdule;
