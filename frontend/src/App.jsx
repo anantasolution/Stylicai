@@ -5,6 +5,7 @@ import Catalog from "./pages/Catalog/Catalog";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import About from "./components/Aboutus/About";
+import Contactus from "./pages/Contact-us/Contactus";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
             </>
           }
         /><Route path="/about" element={<><Navbar /><About /><Footer /></>}/>
+        <Route path="/contact" element={<><Navbar /><Contactus /><Footer /></>}/>
       </Routes>
     </BrowserRouter>
   );
