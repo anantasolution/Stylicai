@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useCallback, useState, useEffect } from "react";
 import CheckroomIcon from "@mui/icons-material/Checkroom";
 import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
 import {
@@ -104,25 +104,33 @@ const Gallery = () => {
     categories["blazer"]?.images[0]
   );
 
-  // Handle Category Change
-  const handleCategoryChange = (category) => {
-    setActiveCategory(category);
-    setActiveTypes(categories[category]?.images[0] || []);
-    setSelectedImage(categories[category]?.images[0]?.[0] || "");
-    setActiveIndex(0);
-  };
+  const handleCategoryChange = useCallback(
+    (category) => {
+      setActiveCategory(category);
+      setActiveTypes(categories[category].images[0]);
+      setSelectedImage(categories[category].images[0][0]);
+      setActiveIndex(0);
+    },
+    [categories]
+  );
 
-  // Handle Image Click
-  const handleImageClick = (index) => {
-    setSelectedImage(activeTypes[index]);
-  };
+  // Memoize image click handler
+  const handleImageClick = useCallback(
+    (index) => {
+      setSelectedImage(activeTypes[index]);
+    },
+    [activeTypes]
+  );
 
-  // Handle Thumbnail Click
-  const handleThumbnailClick = (index) => {
-    setActiveIndex(index);
-    setActiveTypes(categories[activeCategory]?.images[index] || []);
-    setSelectedImage(categories[activeCategory]?.images[index]?.[0] || "");
-  };
+  // Memoize thumbnail click handler
+  const handleThumbnailClick = useCallback(
+    (index) => {
+      setActiveIndex(index);
+      setActiveTypes(categories[activeCategory].images[index]);
+      setSelectedImage(categories[activeCategory].images[index][0]);
+    },
+    [activeCategory, categories]
+  );
 
   useEffect(() => {
     if (prevRef.current && nextRef.current) {

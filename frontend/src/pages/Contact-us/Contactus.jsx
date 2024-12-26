@@ -33,6 +33,7 @@ const Contactus = () => {
       const emailRegax = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
       let newErrors = {}
       if(!formData.name) newErrors.name="Name is required."
+      if(formData.contactno.length!==10) newErrors.contact="Contact number is not valid."
       if(!formData.contactno) newErrors.contact='Contact number is required.'
       if(!emailRegax.test(formData.email)) newErrors.email ='Email address is not valid.'
       if(!formData.email) newErrors.email ='Email addres is required.'
