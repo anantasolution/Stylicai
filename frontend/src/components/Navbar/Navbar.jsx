@@ -23,7 +23,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-2">
           <Link to={"/"}>
             <span className="text-2xl cursor-pointer font-bold text-gray-800">
-              <img src={logo} alt="logo" className="w-28" srcset="" />
+              <img src={logo} alt="logo" className="w-32" srcset="" />
             </span>
           </Link>
         </div>
@@ -33,7 +33,7 @@ const Navbar = () => {
           <div className="flex gap-8">
             <Link to={"/"}>
               <span
-                className={` text-gray-800 rounded-full  px-2 py-1 transition duration-300 hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
+                className={` text-gray-800 rounded-full font-medium  px-2 py-1 transition duration-300 hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
                   isActive("/") &&
                   "underline decoration-golden underline-offset-4 decoration-2"
                 }`}
@@ -43,17 +43,17 @@ const Navbar = () => {
             </Link>
             <Link to={"/catalog"}>
               <span
-                className={`text-gray-800 rounded-full  px-2 py-1 transition duration-300 hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
+                className={`text-gray-800 rounded-full font-medium  px-2 py-1 transition duration-300 hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
                   isActive("/catalog") &&
                   "underline decoration-golden underline-offset-4 decoration-2"
                 }`}
               >
-                Catalog
+                Showcase
               </span>
             </Link>
             <Link to={"/about"}>
               <span
-                className={`text-gray-800 rounded-full  px-2 py-1 transition duration-300 hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
+                className={`text-gray-800 rounded-full font-medium  px-2 py-1 transition duration-300 hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
                   isActive("/about") &&
                   "underline decoration-golden underline-offset-4 decoration-2"
                 }`}
