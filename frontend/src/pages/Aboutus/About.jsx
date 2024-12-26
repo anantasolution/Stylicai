@@ -21,6 +21,7 @@ export default function About() {
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
 
+
   // Rotate carousel every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
@@ -78,24 +79,45 @@ export default function About() {
           </ul>
         </div>
       </div>
+      <div className="bg-white pt-10 pb-16">
+  <div className="flex flex-col items-center justify-center min-h-[300px] max-h-[350px] px-6 md:px-32 text-start relative">
+    {/* Left Navigation Arrow */}
+    <button
+      onClick={() =>
+        setCurrentIndex(
+          currentIndex === 0 ? carouselTexts.length - 1 : currentIndex - 1
+        )
+      }
+      className="absolute h-10 left-6 md:left-20 -bottom-20 md:top-1/2  bg-gray-200 p-2 rounded-full shadow-md hover:bg-gray-300 focus:outline-none"
+    >
+      &#8592; {/* Left Arrow */}
+    </button>
 
-      <div className="bg-white  pt-10 pb-16">
-        <div className="flex flex-col items-center justify-center min-h-[300px] max-h-[350px] px-6 md:px-32 text-start relative">
-          {/* Testimonial Text */}
-          <p className="text-3xl text-gray-800 font-medium italic max-w-3xl mb-6">
-            {carouselTexts[currentIndex].text}
-          </p>
-          {/* Client Details */}
-          <div className="w-4/5 px-6 mt-2">
-            <p className="text-gary-800  font-semibold text-xl">
-              {carouselTexts[currentIndex].name}
-            </p>
-            <p className="text-gray-800 text-sm justify-start justify-content-start">
-              {carouselTexts[currentIndex].title}
-            </p>
-          </div>
-        </div>
-      </div>
+    {/* Testimonial Text */}
+    <p className="text-3xl text-gray-800 font-medium italic max-w-3xl mb-6">
+      {carouselTexts[currentIndex].text}
+    </p>
+
+    {/* Client Details */}
+    <div className="w-4/5 px-6 mt-2">
+      <p className="text-gray-800 font-semibold text-xl">
+        {carouselTexts[currentIndex].name}
+      </p>
+      <p className="text-gray-800 text-sm">{carouselTexts[currentIndex].title}</p>
+    </div>
+
+    {/* Right Navigation Arrow */}
+    <button
+      onClick={() =>
+        setCurrentIndex((currentIndex + 1) % carouselTexts.length)
+      }
+      className="absolute h-10 right-6 md:right-20 -bottom-20 md:top-1/2  bg-gray-200 p-2 rounded-full shadow-md hover:bg-gray-300 focus:outline-none"
+    >
+      &#8594; {/* Right Arrow */}
+    </button>
+  </div>
+</div>
+
 
       {/* Additional Section */}
       <div className="container mx-auto px-6 md:px-12 pt-10 pb-16">
