@@ -8,6 +8,7 @@ import How from "../../components/How/How";
 import Faq from "../../components/FAQ/Faq";
 import Schedule from "../../components/Sechdule/Sechdule"; // Kept 'Schedule' from main
 import Aboutus from "../../components/Aboutus/Aboutus";
+import Testimonial from "../../components/Testimonial/Testimonial"
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
       <Gallery />
       <Faq/>
       <Schedule></Schedule>
+      <Testimonial />
       <Footer />
     </div>
   );
