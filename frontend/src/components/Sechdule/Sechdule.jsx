@@ -19,7 +19,7 @@ const Sechdule = () => {
       </div>
 
       {/* Achievement Cards */}
-      <div className="absolute right-8 -top-16 space-y-4 max-w-xs">
+      {window.innerWidth >= 550 &&  <div className="absolute right-8 -top-16 space-y-4 max-w-xs">
         {/* APJ Card */}
         <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
           <h3 className="text-[#1E335C] font-bold text-lg mb-2">
@@ -30,7 +30,7 @@ const Sechdule = () => {
           </p>
         </div>
 
-      </div>
+      </div>}
     </div>
   );
 };

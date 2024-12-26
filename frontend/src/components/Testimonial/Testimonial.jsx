@@ -9,13 +9,13 @@ import './style.css'
 const Testimonial = () => {
   return (
     <div className="flex flex-col items-center justify-center my-2 py-12">
-      <h1 className="text-3xl sm:text-4xl font-semibold mb-2 text-navyblue">
+      <h1 className="text-3xl sm:text-4xl p-10 font-semibold mb-2 text-navyblue">
         What our customers have to say!
       </h1>
 
       <div className="w-full h-50 py-4">
         <Swiper
-          slidesPerView={3}
+          slidesPerView={1}
           spaceBetween={5}
           pagination={{
             clickable: true,
