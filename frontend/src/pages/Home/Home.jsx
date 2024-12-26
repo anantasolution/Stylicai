@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
-import Carousel from "../../components/carousel/Carousel";
+import MyCarousle from "../../components/carousel/MyCarousle";
 import Hero from "../../components/Hero/Hero";
 import Gallery from "../../components/PhotoGallery/Gallery";
 import Footer from "../../components/Footer/Footer";
@@ -17,7 +17,7 @@ const Home = () => {
       <Hero />
       <How />
       <Aboutus />
-      {/* <Carousel /> */}
+      <MyCarousle></MyCarousle>
       <Gallery />
       <Faq/>
       <Schedule></Schedule>
