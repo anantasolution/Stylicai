@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import CheckroomIcon from "@mui/icons-material/Checkroom";
-import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
+import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
 import {
   blazerThumbnails,
   blazerImages,
@@ -27,14 +27,15 @@ import {
   tshirtThumbnails,
   tshirtImages,
   jacketThumbnails,
-  jacketImages
+  jacketImages,
 } from "../../assets/assets.js";
 
 // Importing Swiper
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+
 
 const Gallery = () => {
   const prevRef = useRef(null);
@@ -97,8 +98,12 @@ const Gallery = () => {
 
   const [activeCategory, setActiveCategory] = useState("blazer");
   const [activeIndex, setActiveIndex] = useState(0);
-  const [selectedImage, setSelectedImage] = useState(categories["blazer"].images[0][0]);
-  const [activeTypes, setActiveTypes] = useState(categories["blazer"].images[0]);
+  const [selectedImage, setSelectedImage] = useState(
+    categories["blazer"].images[0][0]
+  );
+  const [activeTypes, setActiveTypes] = useState(
+    categories["blazer"].images[0]
+  );
 
   // Handle Category Change
   const handleCategoryChange = (category) => {
@@ -120,13 +125,21 @@ const Gallery = () => {
     setSelectedImage(categories[activeCategory].images[index][0]); // Set the first image of the selected product
   };
 
+  useCallback(handleCategoryChange, [categories]);
+  useCallback(handleImageClick, [activeTypes]);
+  useCallback(handleThumbnailClick, [categories, activeCategory]);
+
   return (
     <div className="min-h-screen text-navyblue relative bg-white pb-10">
       {/* Header Section */}
       <div className="w-full text-center py-10 flex flex-col gap-y-5 bg-white">
-        <p className="text-4xl font-bold">Experience Stylic's AI Photoshoot Today</p>
+        <p className="text-4xl font-bold">
+          Experience Stylic's AI Photoshoot Today
+        </p>
         <p className="text-xl text-gray-600">
-          Experience the future of product photography with Stylic AI-driven photoshoots,<br></br> delivering high-quality, captivating images in no time.
+          Experience the future of product photography with Stylic AI-driven
+          photoshoots,<br></br> delivering high-quality, captivating images in
+          no time.
         </p>
       </div>
 
@@ -216,23 +229,25 @@ const Gallery = () => {
             </div>
 
             <div className="grid grid-cols-4 lg:grid-cols-4 gap-4 mb-8">
-              {categories[activeCategory].thumbnails.slice(0, 4).map((item, index) => (
-                <div
-                  key={index}
-                  onClick={() => handleThumbnailClick(index)}
-                  className={`w-full rounded-md shadow-lg cursor-pointer overflow-hidden ${
-                    activeIndex === index
-                      ? "border-4 border-[#1b345c]"
-                      : "border border-transparent"
-                  }`}
-                >
-                  <img
-                    src={item}
-                    alt={`Product ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
+              {categories[activeCategory].thumbnails
+                .slice(0, 4)
+                .map((item, index) => (
+                  <div
+                    key={index}
+                    onClick={() => handleThumbnailClick(index)}
+                    className={`w-full rounded-md shadow-lg cursor-pointer overflow-hidden ${
+                      activeIndex === index
+                        ? "border-4 border-[#1b345c]"
+                        : "border border-transparent"
+                    }`}
+                  >
+                    <img
+                      src={item}
+                      alt={`Product ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
             </div>
           </div>
 
