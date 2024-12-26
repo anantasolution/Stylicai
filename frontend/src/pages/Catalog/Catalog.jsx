@@ -344,7 +344,7 @@ const Catalog = () => {
                       <div
                         key={index}
                         onClick={() => handleThumbnailClick(index)}
-                        className={`w-full h-40 rounded-md shadow-lg cursor-pointer overflow-hidden ${
+                        className={`w-full h-48 rounded-md shadow-lg cursor-pointer overflow-hidden ${
                           activeIndex === index
                             ? "border-4 border-[#1b345c]"
                             : "border border-transparent"

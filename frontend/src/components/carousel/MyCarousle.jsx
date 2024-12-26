@@ -2,35 +2,43 @@ import React, { useState } from "react";
 import Carousel from "react-spring-3d-carousel";
 import { v4 as uuidv4 } from "uuid";
 import { config } from "react-spring";
+import LazyLoad from "react-lazyload";
 
-import {
-  blazerThumbnails,
-  blazerImages,
-  girlShirtThumbnails,
-  girlShirtImages,
-  boysShirtThumbnails,
-  boysShirtImages,
-  sweetShirtThumbnails,
-  sweetShirtImages,
-  boxerThumbnails,
-  boxerImages,
-  topThumbnails,
-  topImages,
-  camisoleImages,
-  camisoleThumbnails,
-  jeansThumbnails,
-  jeansImages,
-  dressThumbnails,
-  dressImages,
-  boysJeansThumbnails,
-  boysJeansImages,
-  braThumbnails,
-  braImages,
-  tshirtThumbnails,
-  tshirtImages,
-  jacketThumbnails,
-  jacketImages,
-} from "../../assets/assets.js";
+import front_blazer from "../../assets/model webp/blazer/1.webp";
+import back_blazer from "../../assets/model webp/blazer/2.webp";
+
+import front_boxer from "../../assets/model webp/boxer/1.webp";
+import back_boxer from "../../assets/model webp/boxer/2.webp";
+
+import front_bra from "../../assets/model webp/bra/1.webp";
+import back_bra from "../../assets/model webp/bra/2.webp";
+
+import front_camisole from "../../assets/model webp/camisole/1.webp";
+import back_camisole from "../../assets/model webp/camisole/2.webp";
+
+import front_girl_shirt from "../../assets/model webp/girl shirt/1.webp";
+import back_girl_shirt from "../../assets/model webp/girl shirt/2.webp";
+
+import front_inner from "../../assets/model webp/inner/1.webp";
+import back_inner from "../../assets/model webp/inner/2.webp";
+
+import front_jacket from "../../assets/model webp/jacket/1.webp";
+import back_jacket from "../../assets/model webp/jacket/2.webp";
+
+import front_jaeans from "../../assets/model webp/jeans/1.webp";
+import back_jaeans from "../../assets/model webp/jeans/2.webp";
+
+import front_shirt from "../../assets/model webp/shirt/1.webp";
+import back_shirt from "../../assets/model webp/shirt/2.webp";
+
+import front_sw_shirt from "../../assets/model webp/sw shirt/1.webp";
+import back_sw_shirt from "../../assets/model webp/sw shirt/2.webp";
+
+import front_top from "../../assets/model webp/top/1.webp";
+import back_top from "../../assets/model webp/top/2.webp";
+
+import front_tshirt from "../../assets/model webp/tshirt/1.webp";
+import back_tshirt from "../../assets/model webp/tshirt/2.webp";
 
 export default function MyCarousle() {
   const [goToSlide, setGoToSlide] = useState(0);
@@ -43,55 +51,47 @@ export default function MyCarousle() {
   const slides = [
     {
       key: uuidv4(),
-      content: <img className=" w-[500px]" src={blazerThumbnails[0]} alt="1" />
+      content: <img className=" w-[500px]" src={front_blazer} alt="1" />
     },
     {
       key: uuidv4(),
-      content: <img className=" w-[500px]" src={girlShirtThumbnails[0]} alt="2" />
+      content: <img className=" w-[500px]" src={front_girl_shirt} alt="2" />
     },
     {
       key: uuidv4(),
-      content: <img className=" w-[500px]" src={boysShirtThumbnails[1]} alt="3" />
+      content: <img className=" w-[500px]" src={front_shirt} alt="3" />
     },
     {
       key: uuidv4(),
-      content: <img className=" w-[500px]" src={sweetShirtThumbnails[0]} alt="4" />
+      content: <img className=" w-[500px]" src={front_sw_shirt} alt="4" />
     },
     {
       key: uuidv4(),
-      content: <img className=" w-[500px]" src={boxerThumbnails[0]} alt="5" />
+      content: <img className=" w-[500px]" src={front_boxer} alt="5" />
     },
     {
       key: uuidv4(),
-      content: <img className=" w-[500px]" src={topThumbnails[0]} alt="6" />
+      content: <img className=" w-[500px]" src={front_top} alt="6" />
     },
     {
       key: uuidv4(),
-      content: <img className=" w-[500px]" src={camisoleThumbnails[0]} alt="7" />
+      content: <img className=" w-[500px]" src={front_camisole} alt="7" />
     },
     {
       key: uuidv4(),
-      content: <img className=" w-[500px]" src={jeansThumbnails[0]} alt="8" />
+      content: <img className=" w-[500px]" src={front_jaeans} alt="8" />
     },
     {
       key: uuidv4(),
-      content: <img className=" w-[500px]" src={dressThumbnails[0]} alt="8" />
+      content: <img className=" w-[500px]" src={front_bra} alt="8" />
     },
     {
       key: uuidv4(),
-      content: <img className=" w-[500px]" src={boysJeansThumbnails[0]} alt="8" />
+      content: <img className=" w-[500px]" src={front_tshirt} alt="8" />
     },
     {
       key: uuidv4(),
-      content: <img className=" w-[500px]" src={braThumbnails[0]} alt="8" />
-    },
-    {
-      key: uuidv4(),
-      content: <img className=" w-[500px]" src={tshirtThumbnails[0]} alt="8" />
-    },
-    {
-      key: uuidv4(),
-      content: <img className=" w-[500px]" src={jacketThumbnails[0]} alt="8" />
+      content: <img className=" w-[500px]" src={front_jacket} alt="8" />
     }
   ].map((slide, index) => ({
     ...slide,
@@ -188,9 +188,9 @@ export default function MyCarousle() {
   };
 
   return (
-    <div className="py-20">
+    <div className="py-16">
      <div className="flex justify-center items-center">
-       <h1 className="text-3xl font-medium text-navyblue">Product Slider</h1>
+       <h1 className="text-3xl font-medium mb-8 text-navyblue">Product Slider</h1>
      </div>
      <div
        style={{ width: "80%", height: "500px", margin: "0 auto" }}
