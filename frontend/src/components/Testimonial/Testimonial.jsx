@@ -15,7 +15,7 @@ const Testimonial = () => {
 
       <div className="w-full h-50 py-4">
         <Swiper
-          slidesPerView={3}
+          slidesPerView={1}
           spaceBetween={5}
           pagination={{
             clickable: true,
