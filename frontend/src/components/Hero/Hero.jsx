@@ -12,16 +12,16 @@ const ImageCard = ({ src, alt }) => (
   </div>
 );
 
-export default function Hero() {
+export default function Hero() {  
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <div className="container  mx-auto px-6 pt-24 pb-20 md:py-24">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+      <div className="container  mx-auto px-20 pt-24 pb-20 md:py-24">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Text Section */}
           <div className="w-full flex flex-col gap-3 lg:w-1/2 text-center lg:text-left">
-            <h1 className="text-4xl text-navyblue leading-relaxed sm:text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-3xl text-navyblue leading-relaxed sm:text-5xl md:text-5xl font-bold mb-6">
               Fashion Photography<br></br>No Models,
               <span className="text-golden"> AI Magics. </span> 
             </h1>
@@ -37,7 +37,7 @@ export default function Hero() {
 
           {/* Image Grid */}
           <div className="w-full lg:w-2/5">
-            <div className="grid grid-cols-2 gap-y-4 md:gap-y-6">
+            <div className="grid grid-cols-2 gap-y-4 md:gap-y-4 md:gap-x-4">
               <div className="h-72">
                 <img
                   className="w-full h-full object-contain"

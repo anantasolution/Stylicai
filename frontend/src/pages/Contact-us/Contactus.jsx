@@ -67,14 +67,14 @@ const Contactus = () => {
   return (
     <div className="py-28 md:py-32 flex bg-white justify-center items-center">
 
-        <div className="flex flex-col md:flex-row gap-6 md:w-9/12 w-11/12 items-center">
+        <div className="flex flex-col md:flex-row gap-8 md:w-[89%] w-4/5 items-center">
            <div className="md:flex-1 p-4 flex flex-col gap-6">
               <h1 className="text-5xl leading-[3rem] mb-3">Get In Touch</h1>
               <div className="flex items-center gap-4">
                  <span className="text-golden"><PlaceIcon style={{fontSize:'1.8rem'}}></PlaceIcon></span>
                  <div className="flex flex-col gap-.5">
                     <span className="font-semibold">Our Address:</span>
-                    <span>402 Shangrila Arcade, Shyamal Cross Road, Ahmedabad - 380015.</span>
+                    <span>402, Shangrila Arcade, Shyamal Cross Road, Ahmedabad - 380015.</span>
                  </div>
               </div>
               <div className="flex items-center gap-4">
@@ -97,7 +97,7 @@ const Contactus = () => {
                  <span className="text-black hover:text-golden"><LinkedInIcon style={{fontSize:'1.3rem'}}></LinkedInIcon></span>
               </div>
            </div>
-           <div className="md:flex-1  w-full bg-navyblue p-4 flex flex-col gap-5">
+           <div className="md:flex-1 rounded-md   w-full bg-navyblue p-4 flex flex-col gap-5">
              <div className="flex flex-col gap-.5">
                 <input onChange={(e)=>handleChange(e)} name="name" value={formData.name} className="bg-transparent outline-none text-white placeholder-white border-b p-2.5" type="text" placeholder="Name *"></input>
                 {errors.name && <span className="text-sm text-red-500">{errors.name}</span>}

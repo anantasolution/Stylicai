@@ -102,7 +102,7 @@ export default function About() {
         <h3 className="text-4xl font-bold text-gray-800 mb-12 text-center">
           Why Choose Us?
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid px-12 grid-cols-1 md:grid-cols-3 gap-12">
           <div className="bg-white p-8 shadow-lg rounded-lg text-center">
             <h4 className="text-2xl font-bold text-gray-800 mb-4">
               Innovative Solutions
