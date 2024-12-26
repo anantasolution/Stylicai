@@ -5,9 +5,9 @@ import Hero from "../../components/Hero/Hero";
 import Gallery from "../../components/PhotoGallery/Gallery";
 import Footer from "../../components/Footer/Footer";
 import How from "../../components/How/How";
-import About from "../../components/Aboutus/About"; // Kept 'About' from add/backendcontact
 import Faq from "../../components/FAQ/Faq";
 import Schedule from "../../components/Sechdule/Sechdule"; // Kept 'Schedule' from main
+import Aboutus from "../../components/Aboutus/Aboutus";
 
 const Home = () => {
   return (
@@ -16,10 +16,10 @@ const Home = () => {
       <Hero />
       <How />
       <Aboutus />
-      {/* <Carousel /> */}
+      <Carousel />
       <Gallery />
       <Faq/>
-      <Sechdule></Sechdule>
+      <Schedule></Schedule>
       <Footer />
     </div>
   );
