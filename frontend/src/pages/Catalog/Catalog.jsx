@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import CheckroomIcon from "@mui/icons-material/Checkroom";
-import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
+import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
 import {
   blazerThumbnails,
   blazerImages,
@@ -40,6 +40,16 @@ import Navbar from "../../components/Navbar/Navbar.jsx";
 const Catalog = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const [isMobileSize, setIsMobileSize] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileSize(window.innerWidth <= 550);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.addEventListener("resize", handleResize);
+  }, []);
 
   const categories = {
     blazers: {
@@ -96,6 +106,10 @@ const Catalog = () => {
     },
   };
 
+  const firstRow = Object.keys(categories).slice(0, 5);
+  const secondRow = Object.keys(categories).slice(5, 9);
+  const thirdRow = Object.keys(categories).slice(9, 13);
+
   const [activeCategory, setActiveCategory] = useState("blazers");
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState(
@@ -125,6 +139,16 @@ const Catalog = () => {
     setSelectedImage(categories[activeCategory].images[index][0]); // Set the first image of the selected product
   };
 
+  useEffect(() => {
+    if (prevRef.current && nextRef.current) {
+      const swiper = document.querySelector(".swiper").swiper;
+      swiper.params.navigation.prevEl = prevRef.current;
+      swiper.params.navigation.nextEl = nextRef.current;
+      swiper.navigation.init();
+      swiper.navigation.update();
+    }
+  }, []);
+
   return (
     <>
       <div className="min-h-screen text-navyblue relative bg-white pb-10 pt-14">
@@ -141,62 +165,62 @@ const Catalog = () => {
         </div>
 
         {/* category section with swiper js */}
-        <div className="relative w-full mb-6 p-4">
-          {/* Swiper Component */}
-          <Swiper
-            modules={[Navigation]}
-            lazyPreloadPrevNext={true}
-            spaceBetween={20}
-            slidesPerView={8}
-            loop={true}
-            navigation={{
-              prevEl: prevRef.current,
-              nextEl: nextRef.current,
-            }}
-            onSwiper={(swiper) => {
-              // Delay execution for the refs to be defined
-              setTimeout(() => {
-                swiper.params.navigation.prevEl = prevRef.current;
-                swiper.params.navigation.nextEl = nextRef.current;
-                swiper.navigation.destroy();
-                swiper.navigation.init();
-                swiper.navigation.update();
-              });
-            }}
-            className="rounded-lg overflow-hidden"
-            breakpoints={{
-              // When the screen width is >= 1200px
-              1200: {
-                slidesPerView: 8,
-                spaceBetween: 20,
-              },
-              // When the screen width is >= 992px
-              992: {
-                slidesPerView: 6,
-                spaceBetween: 20,
-              },
-              // When the screen width is >= 768px
-              768: {
-                slidesPerView: 4,
-                spaceBetween: 10,
-              },
-              // When the screen width is >= 576px
-              576: {
-                slidesPerView: 3,
-                spaceBetween: 10,
-              },
-              // When the screen width is < 576px
-              0: {
-                slidesPerView: 2,
-                spaceBetween: 5,
-              },
-            }}
-          >
-            {Object.keys(categories).map((category) => (
-              <SwiperSlide>
+        {isMobileSize && (
+          <div className="relative w-full mb-6 p-4">
+            <div
+              ref={prevRef}
+              className="swiper-button-prev-custom w-7 h-7 ml-8 lg:ml-44 flex justify-center items-center absolute left-0 top-9 md:top-1/2 transform -translate-y-1/2 bg-navyblue text-white p-2 rounded-full cursor-pointer hover:bg-gray-700 z-10"
+            >
+              &#8249;
+            </div>
+            <div
+              ref={nextRef}
+              className="swiper-button-next-custom w-7 h-7 flex justify-center items-center text-center mr-8 lg:mr-44 absolute right-0 top-9 md:top-1/2 transform -translate-y-1/2 bg-navyblue text-white p-2 rounded-full cursor-pointer hover:bg-gray-700 z-10"
+            >
+              &#8250;
+            </div>
+
+            <Swiper
+              modules={[Navigation]}
+              spaceBetween={5}
+              slidesPerView={2}
+              loop={true}
+              className="rounded-lg overflow-hidden w-7/12"
+              breakpoints={{
+                1200: { slidesPerView: 5, spaceBetween: 20 },
+                992: { slidesPerView: 4, spaceBetween: 20 },
+                768: { slidesPerView: 4, spaceBetween: 10 },
+                576: { slidesPerView: 3, spaceBetween: 10 },
+                0: { slidesPerView: 2, spaceBetween: 5 },
+              }}
+            >
+              {Object.keys(categories).map((category) => (
+                <SwiperSlide key={category}>
+                  <button
+                    aria-pressed={activeCategory === category}
+                    className={`border w-26 lg:w-32 rounded-full p-2 transition-all duration-200 ${
+                      activeCategory === category
+                        ? "bg-[#1b345c] text-white font-semibold"
+                        : ""
+                    }`}
+                    onClick={() => handleCategoryChange(category)}
+                  >
+                    {category.charAt(0).toUpperCase() + category.slice(1)}
+                  </button>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        )}
+
+        {!isMobileSize && (
+          <div className="relative w-full mb-6 p-4 flex flex-col gap-4">
+            {/* First Row (5 items) */}
+            <div className="w-full mx-auto flex  gap-4 justify-center">
+              {firstRow.map((category) => (
                 <button
                   key={category}
-                  className={`border w-36 border-[#1b345c] rounded-md sm:rounded-full p-2 lg:p-3 transition-all duration-200 ${
+                  className={`border w-28 lg:w-32 border-[#1b345c] rounded-full sm:p-2  lg:p-3 py-2 transition-all duration-200 ${
                     activeCategory === category
                       ? "bg-[#1b345c] text-white font-semibold"
                       : ""
@@ -205,10 +229,44 @@ const Catalog = () => {
                 >
                   {category.charAt(0).toUpperCase() + category.slice(1)}
                 </button>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+              ))}
+            </div>
+
+            {/* Second Row (4 items) */}
+            <div className="w-full mx-auto flex flex-wrap gap-4 justify-center">
+              {secondRow.map((category,index) => (
+                <button
+                  key={index}
+                  className={`border w-28 lg:w-32 border-[#1b345c] rounded-full p-2 lg:p-3 transition-all duration-200 ${
+                    activeCategory === category
+                      ? "bg-[#1b345c] text-white font-semibold"
+                      : ""
+                  }`}
+                  onClick={() => handleCategoryChange(category)}
+                >
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </button>
+              ))}
+            </div>
+
+            {/* Third Row (4 items) */}
+            <div className="w-full mx-auto flex flex-wrap gap-4 justify-center">
+              {thirdRow.map((category) => (
+                <button
+                  key={category}
+                  className={`border w-28 lg:w-32 border-[#1b345c] rounded-full p-2 lg:p-3 transition-all duration-200 ${
+                    activeCategory === category
+                      ? "bg-[#1b345c] text-white font-semibold"
+                      : ""
+                  }`}
+                  onClick={() => handleCategoryChange(category)}
+                >
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Main Content */}
         <div className="flex flex-wrap lg:flex-row w-full">
