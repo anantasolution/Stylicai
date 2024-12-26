@@ -19,11 +19,11 @@ const Navbar = () => {
   return (
     <div className="fixed w-full  bg-white shadow-md z-40">
       {/* Navigation */}
-      <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <nav className="container mx-auto px-4 md:px-20 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <Link to={"/"}>
             <span className="text-2xl cursor-pointer font-bold text-gray-800">
-              <img src={logo} alt="logo" className="w-32" srcset="" />
+              <img src={logo} alt="logo" className="md:w-32 w-28" srcset="" />
             </span>
           </Link>
         </div>
@@ -73,7 +73,7 @@ const Navbar = () => {
         <div className="md:hidden flex items-center">
           <button
             onClick={toggleMenu}
-            className="text-gray-800 hover:text-black focus:outline-none relative z-50"
+            className="text-gray-800 focus:outline-none relative z-50"
           >
             {!isMenuOpen ? (
               <svg
@@ -118,7 +118,7 @@ const Navbar = () => {
         <div className="flex flex-col gap-3 items-center py-4 transition-all duration-300">
           <Link
             to={"/"}
-            className={`text-gray-800 py-2 hover:bg-black hover:text-white w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
+            className={`text-gray-800 py-2  w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
               isActive("/") &&
               "underline decoration-golden underline-offset-4 decoration-2"
             }`}
@@ -127,7 +127,7 @@ const Navbar = () => {
           </Link>
           <Link
             to={"/catalog"}
-            className={`text-gray-800 py-2 hover:bg-black hover:text-white w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
+            className={`text-gray-800 py-2 w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
               isActive("/catalog") &&
               "underline decoration-golden underline-offset-4 decoration-2"
             }`}
@@ -136,7 +136,7 @@ const Navbar = () => {
           </Link>
           <Link
             to={"/about"}
-            className={`text-gray-800 py-2 hover:bg-black hover:text-white w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
+            className={`text-gray-800 py-2 w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
               isActive("/about") &&
               "underline decoration-golden underline-offset-4 decoration-2"
             }`}
