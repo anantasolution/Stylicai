@@ -70,7 +70,7 @@ const Catalog = () => {
       thumbnails: boysShirtThumbnails,
       images: boysShirtImages,
     },
-    "sweet shirts": {
+    "sweat shirts": {
       thumbnails: sweetShirtThumbnails,
       images: sweetShirtImages,
     },
