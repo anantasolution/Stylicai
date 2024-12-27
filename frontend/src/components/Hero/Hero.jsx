@@ -18,11 +18,10 @@ export default function Hero() {
           {/* Text Section */}
           <div className="w-full flex flex-col gap-2 lg:w-1/2 text-center lg:text-left">
             <h1 className="text-3xl text-navyblue leading-10 sm:text-5xl md:text-5xl font-bold mb-2">
-              Fashion Photography<br></br>No Models,
-              <span className="text-golden"> AI Magics. </span> 
+            Transform your day with AI here now!
             </h1>
             <p className="text-gray-600 text-lg md:text-xl mb-4 max-w-2xl lg:max-w-none mx-auto lg:mx-0">
-             Revolutionize Fashion Visuals with AI
+            Upgrade your fashion brand with Stylic's state-of-the-art AI solutions and get lifelike visual representations of garments for your online store.
             </p>
             <Link to={'/contact'}>
              <button className="bg-golden text-white px-6 py-2 rounded-full hover:bg-navyblue  transition duration-300">
