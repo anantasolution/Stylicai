@@ -39,6 +39,13 @@ import "swiper/css/navigation";
 const Catalog = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
+  const prevRef1 = useRef(null);
+  const nextRef1 = useRef(null);
+
+  const prevRef2 = useRef(null);
+  const nextRef2 = useRef(null);
+
   const [isMobileSize, setIsMobileSize] = useState(false);
 
   useEffect(() => {
@@ -291,29 +298,44 @@ const Catalog = () => {
           </div>
 
           {/* Right Section - Transparent Div with Dynamic Height */}
-          <div className="lg:w-[55%] w-full bg-white/70 backdrop-blur-md p-10 rounded-md border border-gray-300 flex flex-col">
-            <div>
+          <div className="lg:w-[55%] relative w-full bg-white/70 backdrop-blur-md p-10 rounded-md border border-gray-300 flex flex-col">
+            <div className="relative">
               <div className="flex items-center gap-2 mb-6">
                 <CheckroomIcon style={{ color: "#3f3f3f" }} />
                 <p className="text-[#3f3f3f] font-medium text-xl">Product</p>
               </div>
 
-              <div className="w-full h-44 flex items-center ">
+              {/* Previous Button */}
+              <div
+                ref={prevRef1}
+                className="swiper-button-prev-custom w-7 h-7 flex justify-center items-center absolute -ml-8  top-2/3  transform -translate-y-1/2 bg-navyblue text-white rounded-full cursor-pointer hover:bg-gray-700 z-10"
+              >
+                &#8249;
+              </div>
+
+              {/* Next Button */}
+              <div
+                ref={nextRef1}
+                className="swiper-button-next-custom w-7 h-7 flex justify-center items-center absolute right-4  -mr-12  top-2/3 transform -translate-y-1/2 bg-navyblue text-white rounded-full cursor-pointer hover:bg-gray-700 z-10"
+              >
+                &#8250;
+              </div>
+
+              <div className="w-full relative h-44 flex items-center border">
                 <Swiper
                   modules={[Navigation]}
                   lazyPreloadPrevNext={true}
                   spaceBetween={20}
-                  slidesPerView={8}
+                  slidesPerView={4}
                   loop={true}
                   navigation={{
                     prevEl: prevRef.current,
                     nextEl: nextRef.current,
                   }}
                   onSwiper={(swiper) => {
-                    // Delay execution for the refs to be defined
                     setTimeout(() => {
-                      swiper.params.navigation.prevEl = prevRef.current;
-                      swiper.params.navigation.nextEl = nextRef.current;
+                      swiper.params.navigation.prevEl = prevRef1.current;
+                      swiper.params.navigation.nextEl = nextRef1.current;
                       swiper.navigation.destroy();
                       swiper.navigation.init();
                       swiper.navigation.update();
@@ -321,37 +343,16 @@ const Catalog = () => {
                   }}
                   className="rounded-lg overflow-hidden"
                   breakpoints={{
-                    // When the screen width is >= 1200px
-                    1200: {
-                      slidesPerView: 4,
-                      spaceBetween: 20,
-                    },
-                    // When the screen width is >= 992px
-                    992: {
-                      slidesPerView: 4,
-                      spaceBetween: 20,
-                    },
-                    // When the screen width is >= 768px
-                    768: {
-                      slidesPerView: 4,
-                      spaceBetween: 10,
-                    },
-                    // When the screen width is >= 576px
-                    576: {
-                      slidesPerView: 3,
-                      spaceBetween: 10,
-                    },
-                    // When the screen width is < 576px
-                    0: {
-                      slidesPerView: 2,
-                      spaceBetween: 5,
-                    },
+                    1200: { slidesPerView: 4, spaceBetween: 20 },
+                    992: { slidesPerView: 4, spaceBetween: 20 },
+                    768: { slidesPerView: 4, spaceBetween: 10 },
+                    576: { slidesPerView: 3, spaceBetween: 10 },
+                    0: { slidesPerView: 2, spaceBetween: 5 },
                   }}
                 >
                   {categories[activeCategory].thumbnails.map((item, index) => (
-                    <SwiperSlide>
+                    <SwiperSlide key={index}>
                       <div
-                        key={index}
                         onClick={() => handleThumbnailClick(index)}
                         className={`w-full h-48 rounded-md shadow-lg cursor-pointer overflow-hidden ${
                           activeIndex === index
@@ -372,13 +373,28 @@ const Catalog = () => {
             </div>
 
             {/* Photoshoot Section */}
-            <div>
+            <div className="relative">
               <div className="flex items-center gap-2 mb-6 mt-4">
                 <CameraAltOutlinedIcon />
                 <p className="text-[#3f3f3f] font-medium text-xl">Photoshoot</p>
               </div>
 
               {/* <div className="grid grid-cols-4 lg:grid-cols-4 gap-4"> */}
+
+              <div
+                ref={prevRef2}
+                className="swiper-button-prev-custom w-7 h-7 flex justify-center items-center absolute -ml-8  top-2/3  transform -translate-y-1/2 bg-navyblue text-white rounded-full cursor-pointer hover:bg-gray-700 z-10"
+              >
+                &#8249;
+              </div>
+
+              {/* Next Button */}
+              <div
+                ref={nextRef2}
+                className="swiper-button-next-custom w-7 h-7 flex justify-center items-center absolute right-4  -mr-12  top-2/3 transform -translate-y-1/2 bg-navyblue text-white rounded-full cursor-pointer hover:bg-gray-700 z-10"
+              >
+                &#8250;
+              </div>
 
               <Swiper
                 modules={[Navigation]}
@@ -387,14 +403,14 @@ const Catalog = () => {
                 slidesPerView={8}
                 loop={true}
                 navigation={{
-                  prevEl: prevRef.current,
-                  nextEl: nextRef.current,
+                  prevEl: prevRef2.current,
+                  nextEl: nextRef2.current,
                 }}
                 onSwiper={(swiper) => {
                   // Delay execution for the refs to be defined
                   setTimeout(() => {
-                    swiper.params.navigation.prevEl = prevRef.current;
-                    swiper.params.navigation.nextEl = nextRef.current;
+                    swiper.params.navigation.prevEl = prevRef2.current;
+                    swiper.params.navigation.nextEl = nextRef2.current;
                     swiper.navigation.destroy();
                     swiper.navigation.init();
                     swiper.navigation.update();
