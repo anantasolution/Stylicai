@@ -188,7 +188,7 @@ const Gallery = () => {
             <SwiperSlide key={category}>
               <button
                 aria-pressed={activeCategory === category}
-                className={`border w-26 lg:w-32 rounded-full p-2 transition-all duration-200 ${
+                className={`border w-28 lg:w-32 rounded-mds md:rounded-full p-2 transition-all duration-200 ${
                   activeCategory === category
                     ? "bg-[#1b345c] text-white font-semibold"
                     : ""
