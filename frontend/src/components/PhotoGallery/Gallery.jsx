@@ -147,11 +147,10 @@ const Gallery = () => {
       {/* Header Section */}
       <div className="w-full text-center py-10 px-6 flex flex-col gap-y-5">
         <p className="text-4xl font-bold">
-          Experience Stylic's AI Photoshoot Today
+        Walk into the Future of Fashion Imagery with Stylic
         </p>
         <p className="text-base text-gray-600">
-          Experience the future of product photography with Stylic AI-driven
-          photoshoots, delivering high-quality, captivating images in no time.
+        With Stylic, you can create stunning, lifelike product imagery. All at a fast, affordable, and seamless photoshoot, <br></br>elevating the visual storytelling of your brand.
         </p>
       </div>
 

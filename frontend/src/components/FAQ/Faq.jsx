@@ -6,20 +6,20 @@ export default function Faq (){
 
   const faqData = [
     {
-      question: 'What is an AI voice maker?',
-      answer: "AI isn't here to replace human creativity but it can amplify it and take it even further. So whether you're creating fanart of your favorite anime. Effortlessly creates and distributes innovative apps across any blockchain, while helping build a more open web"
+      question: 'What kinds of clothing can I upload for AI visualisation?',
+      answer: "You are free to post any category of clothes, starting with dresses, tops, and pants and finishing with jackets. However, make sure you have clear front and back images for the highest possible quality of the scan."
     },
     {
-      question: 'How can I quickly generate realistic voices from texts?',
-      answer: "Our AI voice generation technology allows you to quickly convert any text into natural-sounding speech. Simply input your text, choose a voice style, and generate high-quality audio in seconds."
+      question: 'What amount of time is taken to produce images?',
+      answer: "This AI can generate high-quality images quickly. The generated pictures will probably be ready for downloading in just a 4-5 hours after the requests are submitted."
     },
     {
-      question: 'How can I create a TTS video without any prior experience?',
-      answer: "Our platform makes it simple to create text-to-speech videos even if you're just getting started. The intuitive interface guides you through each step of the process."
+      question: 'Can I use these generated images on various platforms?',
+      answer: "Absolutely! The images are created to be easily used on your e-commerce websites, social media, and advertising campaigns."
     },
     {
-      question: 'How do I generate AI text-to-speech?',
-      answer: "Using our AI text-to-speech tool is straightforward. Just paste your text, select your preferred voice and language options, and click generate to create natural-sounding speech."
+      question: 'Do you have any recommended format when it comes to image uploads?',
+      answer: "You should input high-resolution image formats such as JPEG or PNG file formats. Be sure that the images have good illumination to support better AI visualisation performance."
     }
   ];
 
