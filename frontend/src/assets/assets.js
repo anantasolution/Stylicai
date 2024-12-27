@@ -88,7 +88,7 @@ import girlshirt5_img1 from "./girl shirt/g shirt 5/1.webp";
 import girlshirt5_img2 from "./girl shirt/g shirt 5/2.webp";
 import girlshirt5_img3 from "./girl shirt/g shirt 5/3.webp";
 
-import BoysShirt1Cat from "./shirts/shirt 1/1.webp";
+import BoysShirt1Cat from "./shirts/shirt 1/4.webp";
 import boysshirt1_img1 from "./shirts/shirt 1/1.webp";
 import boysshirt1_img2 from "./shirts/shirt 1/2.webp";
 import boysshirt1_img3 from "./shirts/shirt 1/3.webp";

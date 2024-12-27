@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import CheckroomIcon from "@mui/icons-material/Checkroom";
 import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
 import {
@@ -35,11 +35,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import Navbar from "../../components/Navbar/Navbar.jsx";
 
 const Catalog = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
+  const prevRef1 = useRef(null);
+  const nextRef1 = useRef(null);
+
+  const prevRef2 = useRef(null);
+  const nextRef2 = useRef(null);
+
   const [isMobileSize, setIsMobileSize] = useState(false);
 
   useEffect(() => {
@@ -48,8 +54,8 @@ const Catalog = () => {
     };
     handleResize();
     window.addEventListener("resize", handleResize);
-    return () => window.addEventListener("resize", handleResize);
-  }, []);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMobileSize]);
 
   const categories = {
     blazers: {
@@ -120,44 +126,43 @@ const Catalog = () => {
   );
 
   // Handle Category Change
-  const handleCategoryChange = (category) => {
-    setActiveCategory(category);
-    setActiveTypes(categories[category].images[0]); // Set images of the first product in the new category
-    setSelectedImage(categories[category].images[0][0]); // Set the default image of the new category
-    setActiveIndex(0); // Reset to the first thumbnail
-  };
+  const handleCategoryChange = useCallback(
+    (category) => {
+      setActiveCategory(category);
+      setActiveTypes(categories[category].images[0]);
+      setSelectedImage(categories[category].images[0][0]);
+      setActiveIndex(0);
+    },
+    [categories]
+  );
 
-  // Handle Image Click
-  const handleImageClick = (index) => {
-    setSelectedImage(activeTypes[index]);
-  };
+  // Memoize image click handler
+  const handleImageClick = useCallback(
+    (index) => {
+      setSelectedImage(activeTypes[index]);
+    },
+    [activeTypes]
+  );
 
-  // Handle Thumbnail Click
-  const handleThumbnailClick = (index) => {
-    setActiveIndex(index);
-    setActiveTypes(categories[activeCategory].images[index]);
-    setSelectedImage(categories[activeCategory].images[index][0]); // Set the first image of the selected product
-  };
-
-  useEffect(() => {
-    if (prevRef.current && nextRef.current) {
-      const swiper = document.querySelector(".swiper").swiper;
-      swiper.params.navigation.prevEl = prevRef.current;
-      swiper.params.navigation.nextEl = nextRef.current;
-      swiper.navigation.init();
-      swiper.navigation.update();
-    }
-  }, []);
+  // Memoize thumbnail click handler
+  const handleThumbnailClick = useCallback(
+    (index) => {
+      setActiveIndex(index);
+      setActiveTypes(categories[activeCategory].images[index]);
+      setSelectedImage(categories[activeCategory].images[index][0]);
+    },
+    [activeCategory, categories]
+  );
 
   return (
     <>
-      <div className="min-h-screen text-navyblue relative bg-white pb-10 pt-14">
+      <div className="min-h-screen text-navyblue relative bg-white py-24">
         {/* Header Section */}
-        <div className="w-full text-center py-10 flex flex-col gap-y-5 bg-white">
-          <p className="text-4xl font-bold">
+        <div className="w-full px-4 text-center py-10 flex flex-col gap-y-5 bg-white">
+          <p className="text-4xl text-center font-bold">
             Experience Stylic's AI Photoshoot Today
           </p>
-          <p className="text-xl text-gray-600">
+          <p className="text-base md:text-xl text-gray-600">
             Experience the future of product photography with Stylic AI-driven
             photoshoots,<br></br> delivering high-quality, captivating images in
             no time.
@@ -165,24 +170,25 @@ const Catalog = () => {
         </div>
 
         {/* category section with swiper js */}
+
         {isMobileSize && (
           <div className="relative w-full mb-6 p-4">
             <div
               ref={prevRef}
-              className="swiper-button-prev-custom w-7 h-7 ml-8 lg:ml-44 flex justify-center items-center absolute left-0 top-9 md:top-1/2 transform -translate-y-1/2 bg-navyblue text-white p-2 rounded-full cursor-pointer hover:bg-gray-700 z-10"
+              className="swiper-button-prev-custom w-7 h-7 ml-8 lg:ml-44 flex justify-center items-center absolute left-0 top-9 md:top-1/2 transform -translate-y-1/2 bg-navyblue text-white p-2 rounded-full cursor-pointer hover:bg-gray-700 "
             >
               &#8249;
             </div>
             <div
               ref={nextRef}
-              className="swiper-button-next-custom w-7 h-7 flex justify-center items-center text-center mr-8 lg:mr-44 absolute right-0 top-9 md:top-1/2 transform -translate-y-1/2 bg-navyblue text-white p-2 rounded-full cursor-pointer hover:bg-gray-700 z-10"
+              className="swiper-button-next-custom w-7 h-7 flex justify-center items-center text-center mr-8 lg:mr-44 absolute right-0 top-9 md:top-1/2 transform -translate-y-1/2 bg-navyblue text-white p-2 rounded-full cursor-pointer hover:bg-gray-700"
             >
               &#8250;
             </div>
 
             <Swiper
               modules={[Navigation]}
-              spaceBetween={5}
+              spaceBetween={10}
               slidesPerView={2}
               loop={true}
               className="rounded-lg overflow-hidden w-7/12"
@@ -193,12 +199,22 @@ const Catalog = () => {
                 576: { slidesPerView: 3, spaceBetween: 10 },
                 0: { slidesPerView: 2, spaceBetween: 5 },
               }}
+              onSwiper={(swiper) => {
+                // Delay execution for the refs to be defined
+                setTimeout(() => {
+                  swiper.params.navigation.prevEl = prevRef.current;
+                  swiper.params.navigation.nextEl = nextRef.current;
+                  swiper.navigation.destroy();
+                  swiper.navigation.init();
+                  swiper.navigation.update();
+                });
+              }}
             >
               {Object.keys(categories).map((category) => (
                 <SwiperSlide key={category}>
                   <button
                     aria-pressed={activeCategory === category}
-                    className={`border w-26 lg:w-32 rounded-full p-2 transition-all duration-200 ${
+                    className={`border w-28 lg:w-32 rounded-md  p-2 transition-all duration-200 ${
                       activeCategory === category
                         ? "bg-[#1b345c] text-white font-semibold"
                         : ""
@@ -234,7 +250,7 @@ const Catalog = () => {
 
             {/* Second Row (4 items) */}
             <div className="w-full mx-auto flex flex-wrap gap-4 justify-center">
-              {secondRow.map((category,index) => (
+              {secondRow.map((category, index) => (
                 <button
                   key={index}
                   className={`border w-28 lg:w-32 border-[#1b345c] rounded-full p-2 lg:p-3 transition-all duration-200 ${
@@ -282,29 +298,44 @@ const Catalog = () => {
           </div>
 
           {/* Right Section - Transparent Div with Dynamic Height */}
-          <div className="lg:w-[55%] w-full bg-white/70 backdrop-blur-md p-10 rounded-md border border-gray-300 flex flex-col">
-            <div>
+          <div className="lg:w-[55%] relative w-full bg-white/70 backdrop-blur-md p-10 rounded-md border border-gray-300 flex flex-col">
+            <div className="relative">
               <div className="flex items-center gap-2 mb-6">
                 <CheckroomIcon style={{ color: "#3f3f3f" }} />
                 <p className="text-[#3f3f3f] font-medium text-xl">Product</p>
               </div>
 
-              <div className="w-full h-44 flex items-center ">
+              {/* Previous Button */}
+              <div
+                ref={prevRef1}
+                className="swiper-button-prev-custom w-7 h-7 flex justify-center items-center absolute -ml-8  top-2/3  transform -translate-y-1/2 bg-navyblue text-white rounded-full cursor-pointer hover:bg-gray-700 z-10"
+              >
+                &#8249;
+              </div>
+
+              {/* Next Button */}
+              <div
+                ref={nextRef1}
+                className="swiper-button-next-custom w-7 h-7 flex justify-center items-center absolute right-4  -mr-12  top-2/3 transform -translate-y-1/2 bg-navyblue text-white rounded-full cursor-pointer hover:bg-gray-700 z-10"
+              >
+                &#8250;
+              </div>
+
+              <div className="w-full relative h-44 flex items-center border">
                 <Swiper
                   modules={[Navigation]}
                   lazyPreloadPrevNext={true}
                   spaceBetween={20}
-                  slidesPerView={8}
+                  slidesPerView={4}
                   loop={true}
                   navigation={{
                     prevEl: prevRef.current,
                     nextEl: nextRef.current,
                   }}
                   onSwiper={(swiper) => {
-                    // Delay execution for the refs to be defined
                     setTimeout(() => {
-                      swiper.params.navigation.prevEl = prevRef.current;
-                      swiper.params.navigation.nextEl = nextRef.current;
+                      swiper.params.navigation.prevEl = prevRef1.current;
+                      swiper.params.navigation.nextEl = nextRef1.current;
                       swiper.navigation.destroy();
                       swiper.navigation.init();
                       swiper.navigation.update();
@@ -312,37 +343,16 @@ const Catalog = () => {
                   }}
                   className="rounded-lg overflow-hidden"
                   breakpoints={{
-                    // When the screen width is >= 1200px
-                    1200: {
-                      slidesPerView: 4,
-                      spaceBetween: 20,
-                    },
-                    // When the screen width is >= 992px
-                    992: {
-                      slidesPerView: 4,
-                      spaceBetween: 20,
-                    },
-                    // When the screen width is >= 768px
-                    768: {
-                      slidesPerView: 4,
-                      spaceBetween: 10,
-                    },
-                    // When the screen width is >= 576px
-                    576: {
-                      slidesPerView: 3,
-                      spaceBetween: 10,
-                    },
-                    // When the screen width is < 576px
-                    0: {
-                      slidesPerView: 2,
-                      spaceBetween: 5,
-                    },
+                    1200: { slidesPerView: 4, spaceBetween: 20 },
+                    992: { slidesPerView: 4, spaceBetween: 20 },
+                    768: { slidesPerView: 4, spaceBetween: 10 },
+                    576: { slidesPerView: 3, spaceBetween: 10 },
+                    0: { slidesPerView: 2, spaceBetween: 5 },
                   }}
                 >
                   {categories[activeCategory].thumbnails.map((item, index) => (
-                    <SwiperSlide>
+                    <SwiperSlide key={index}>
                       <div
-                        key={index}
                         onClick={() => handleThumbnailClick(index)}
                         className={`w-full h-48 rounded-md shadow-lg cursor-pointer overflow-hidden ${
                           activeIndex === index
@@ -363,13 +373,28 @@ const Catalog = () => {
             </div>
 
             {/* Photoshoot Section */}
-            <div>
+            <div className="relative">
               <div className="flex items-center gap-2 mb-6 mt-4">
                 <CameraAltOutlinedIcon />
                 <p className="text-[#3f3f3f] font-medium text-xl">Photoshoot</p>
               </div>
 
               {/* <div className="grid grid-cols-4 lg:grid-cols-4 gap-4"> */}
+
+              <div
+                ref={prevRef2}
+                className="swiper-button-prev-custom w-7 h-7 flex justify-center items-center absolute -ml-8  top-2/3  transform -translate-y-1/2 bg-navyblue text-white rounded-full cursor-pointer hover:bg-gray-700 z-10"
+              >
+                &#8249;
+              </div>
+
+              {/* Next Button */}
+              <div
+                ref={nextRef2}
+                className="swiper-button-next-custom w-7 h-7 flex justify-center items-center absolute right-4  -mr-12  top-2/3 transform -translate-y-1/2 bg-navyblue text-white rounded-full cursor-pointer hover:bg-gray-700 z-10"
+              >
+                &#8250;
+              </div>
 
               <Swiper
                 modules={[Navigation]}
@@ -378,14 +403,14 @@ const Catalog = () => {
                 slidesPerView={8}
                 loop={true}
                 navigation={{
-                  prevEl: prevRef.current,
-                  nextEl: nextRef.current,
+                  prevEl: prevRef2.current,
+                  nextEl: nextRef2.current,
                 }}
                 onSwiper={(swiper) => {
                   // Delay execution for the refs to be defined
                   setTimeout(() => {
-                    swiper.params.navigation.prevEl = prevRef.current;
-                    swiper.params.navigation.nextEl = nextRef.current;
+                    swiper.params.navigation.prevEl = prevRef2.current;
+                    swiper.params.navigation.nextEl = nextRef2.current;
                     swiper.navigation.destroy();
                     swiper.navigation.init();
                     swiper.navigation.update();

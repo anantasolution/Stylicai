@@ -9,6 +9,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import axios from "axios";
 import { toast } from "react-toastify";
 
+
 const Footer = () => {
   const [email,setEmail] = useState('')
 

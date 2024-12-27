@@ -9,7 +9,7 @@ const Sechdule = () => {
       {/* Main Content Section */}
       <div className="max-w-2xl">
         <h1 className="text-[#1E335C] text-2xl md:text-4xl font-bold mb-4">
-          Experience AI-Powered Product Photoshoots
+        Walk into the Future of Fashion Imagery with Stylic
         </h1>
         <button className="bg-[#1E335C] text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-colors">
           <Link to={'/contact'}>Schedule a demo</Link>
@@ -20,11 +20,8 @@ const Sechdule = () => {
        <div className="absolute md:block hidden right-8 -top-16 space-y-4 max-w-xs">
         {/* APJ Card */}
         <div className="bg-white p-4 rounded-lg shadow border border-gray-100">
-          <h3 className="text-[#1E335C] font-bold text-lg mb-2">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, minus.
-          </h3>
           <p className="text-gray-600">
-            Lorem ipsum dolor sit amet.
+          Get ready to realise the full potential of product photography, which is both time and cost-effective, not to mention as realistic as possible.
           </p>
         </div>
 
