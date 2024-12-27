@@ -9,18 +9,18 @@ import IMG2 from '../../assets/upload.png'
 
 export default function How()  {
   return (
-    <div className="w-full bg-gradient-to-b from-white to-purple-50 py-16 md:py-10">
-      <div className="container mx-auto px-4 md:px-6">
+    <div className="w-full bg-gray-50 py-16 md:py-12">
+      <div className="containe mx-auto px-6 md:px-6">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="text-golden font-medium mb-4">HOW IT WORKS</div>
           <h2 className="text-2xl md:text-4xl font-bold text-navyblue">
-            How to Generate Photoshoot
+          Instant Photoshoots in Three Easy Steps
           </h2>
         </div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 max-w-6xl mx-auto">
           {/* Step 1 */}
           <div className="flex flex-col items-center text-center">
             <div className="bg-white h-44 rounded-3xl shadow-lg p-6 mb-6 w-full">
@@ -29,9 +29,9 @@ export default function How()  {
               </div>
               <div className="space-y-2">
                 <p className="text-black font-medium">
-                  Upload Garment
+                Upload Your Garment
                 </p>
-                <span className='text-sm text-gray-500'>Upload front and Back Garmet Photo</span>
+                <span className='text-sm text-gray-500'>Upload your attire's front and back pictures for effective AI visualisation.</span>
               </div>
             </div>
           </div>
@@ -44,9 +44,9 @@ export default function How()  {
               </div>
               <div className="space-y-2">
                 <p className="text-black font-medium">
-                  Click On Generate
+                  Click Generate
                 </p>
-                <span className='text-sm text-gray-500'>Generate photoshoot with magic</span>
+                <span className='text-sm text-gray-500'>Observe our AI perform wonders instantly, creating professional, high-quality visuals.</span>
               </div>
             </div>
           </div>
@@ -59,9 +59,9 @@ export default function How()  {
               </div>
               <div className="space-y-2">
                 <p className="text-black font-medium">
-                  Download Photoshoot
+                Download Your Photoshoot
                 </p>
-                <span className='text-sm text-gray-500'>Download photoshoot with different pose</span>
+                <span className='text-sm text-gray-500'>Get a ready collection of high-quality images with different poses for your campaigns.</span>
               </div>
             </div>
           </div>

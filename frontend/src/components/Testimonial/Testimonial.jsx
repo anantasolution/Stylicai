@@ -8,15 +8,15 @@ import './style.css'
 
 const Testimonial = () => {
   return (
-    <div className="flex flex-col items-center justify-center my-2 py-12">
-      <h1 className="text-3xl sm:text-4xl p-10 font-semibold mb-2 text-navyblue">
+    <div className="flex bg-gray-50 flex-col items-center justify-center my-2 px-4 md:px-12 py-12">
+      <h1 className="text-3xl text-center px-4 sm:text-4xl font-semibold mb-2 text-navyblue">
         What our customers have to say!
       </h1>
 
       <div className="w-full h-50 py-4">
         <Swiper
           slidesPerView={1}
-          spaceBetween={5}
+          spaceBetween={10}
           pagination={{
             clickable: true,
           }}
@@ -43,7 +43,7 @@ const Testimonial = () => {
         >
           {testimonialsData.map((data, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white/20 p-6 rounded-lg shadow-md border w-80 m-auto cursor-pointer hover:scale-105 transition-transform duration-200 ease-in-out">
+              <div className="bg-white/20 p-6 rounded-lg shadow-md border w-96 m-auto cursor-pointer hover:scale-105 transition-transform duration-200 ease-in-out">
                 <div className="flex flex-col items-center">
                   <img
                     src={data.image}

@@ -143,15 +143,14 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div className="min-h-screen text-navyblue relative bg-white pb-10">
+    <div className="min-h-screen py-4 text-navyblue relative bg-gray-50 pb-14">
       {/* Header Section */}
-      <div className="w-full text-center py-10 flex flex-col gap-y-5 bg-white">
+      <div className="w-full text-center py-10 px-6 flex flex-col gap-y-5">
         <p className="text-4xl font-bold">
-          Experience Stylic's AI Photoshoot Today
+        Walk into the Future of Fashion Imagery with Stylic
         </p>
-        <p className="text-xl text-gray-600">
-          Experience the future of product photography with Stylic AI-driven
-          photoshoots, delivering high-quality, captivating images in no time.
+        <p className="text-base text-gray-600">
+        With Stylic, you can create stunning, lifelike product imagery. All at a fast, affordable, and seamless photoshoot, <br></br>elevating the visual storytelling of your brand.
         </p>
       </div>
 
@@ -188,7 +187,7 @@ const Gallery = () => {
             <SwiperSlide key={category}>
               <button
                 aria-pressed={activeCategory === category}
-                className={`border w-26 lg:w-32 rounded-full p-2 transition-all duration-200 ${
+                className={`border w-28 lg:w-32 rounded-mds md:rounded-full p-2 transition-all duration-200 ${
                   activeCategory === category
                     ? "bg-[#1b345c] text-white font-semibold"
                     : ""
@@ -203,7 +202,7 @@ const Gallery = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-wrap lg:flex-row w-full">
+      <div className="flex md:flex-row flex-col px-5 gap-4 flex-wrap lg:flex-row w-full">
         {/* Left Section */}
         <div className="lg:w-[40%] w-full flex justify-center items-center">
           <div className="lg:w-3/4 w-4/5 h-full">
@@ -216,7 +215,7 @@ const Gallery = () => {
         </div>
 
         {/* Right Section */}
-        <div className="lg:w-[55%] w-full bg-white/70 backdrop-blur-md p-10 rounded-md border border-gray-300 flex flex-col">
+        <div className="lg:w-[55%] w-full bg-white/70 backdrop-blur-md py-10 px-6 rounded-md border border-gray-300 flex flex-col">
           {/* Thumbnail Section */}
           <div>
             <div className="flex items-center gap-2 mb-6">

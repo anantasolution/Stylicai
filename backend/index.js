@@ -23,8 +23,8 @@ const corsOptions = {
         const allowedOrigins = [
             "http://localhost:3000",
             "http://localhost:5173",
-            "https://api.stylic.ai",
-            "http://api.stylic.ai"
+            "https://stylic.ai",
+            "http://stylic.ai"
         ];
         // Allow requests with no origin (like mobile apps or CURL)
         if (!origin || allowedOrigins.includes(origin)) {
