@@ -11,16 +11,16 @@ export default function Aboutus() {
   ];
 
   return (
-    <div className="bg-gray-50 py-20 px-8 flex items-center justify-center">
+    <div className="bg-white py-20 px-8 flex items-center justify-center">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left side - Images */}
-        <div className="flex justify-center items-center gap-4">
+        <div className="flex justify-center items-center">
           <video
             src={VID}
             autoPlay
             muted
             loop
-            className="w-full h-[500px]"
+            className="w-full object-cover h-[500px]"
           ></video>
         </div>
 
@@ -50,7 +50,7 @@ export default function Aboutus() {
           </div>
 
           <button className="bg-golden text-white px-8 py-3 rounded-full font-medium hover:bg-navyblue transition-colors">
-            <Link to={'/about'}>Aboutus</Link>
+            <Link to={'/about'}>About Us</Link>
           </button>
         </div>
       </div>

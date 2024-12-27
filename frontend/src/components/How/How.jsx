@@ -9,8 +9,8 @@ import IMG2 from '../../assets/upload.png'
 
 export default function How()  {
   return (
-    <div className="w-full bg-gradient-to-b from-white to-purple-50 py-16 md:py-10">
-      <div className="container mx-auto px-4 md:px-6">
+    <div className="w-full bg-gray-50 py-16 md:py-12">
+      <div className="containe mx-auto px-6 md:px-6">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="text-golden font-medium mb-4">HOW IT WORKS</div>
@@ -20,7 +20,7 @@ export default function How()  {
         </div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 max-w-6xl mx-auto">
           {/* Step 1 */}
           <div className="flex flex-col items-center text-center">
             <div className="bg-white h-44 rounded-3xl shadow-lg p-6 mb-6 w-full">
