@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import img from "../../assets/Abou.jpg";
+import pf1 from "../../assets/profile_img_1.png";
+import pf2 from "../../assets/profile_img_2.png";
+import pf3 from "../../assets/profile_img_4.png"
 export default function About() {
   // Carousel data
 
@@ -19,16 +22,19 @@ export default function About() {
       text: "I'd be lost without web design agency. Web design agency is the most valuable business resource we have EVER purchased.",
       name: "Lete Mehari",
       title: "Customer",
+      img: pf1,
     },
     {
       text: "I am so pleased with this product. Absolutely wonderful! You wouldn't regret it. It's really wonderful. Definitely worth the investment.",
       name: "Gabriel Bisrat",
       title: "Customer",
+      img: pf2,
     },
     {
       text: "We've used web design agency for the last five years. We can't understand how we've been living without it. Thank you!",
       name: "Aziz Amanuel",
       title: "Customer",
+      img: pf3,
     },
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -41,14 +47,12 @@ export default function About() {
     return () => clearInterval(interval);
   }, [carouselTexts.length]);
 
-  const handleIndicatorClick = (index) => {
-    setCurrentIndex(index);
-  };
+
 
   return (
     <div className="min-h-screen bg-white">
       {/* Main Section */}
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 pt-36 pb-28 md:px-12">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 pt-44 pb-28 md:px-12">
         {/* Left Section with Circular Image */}
         <div className="relative flex-1 flex items-center justify-center">
           <div className="relative">
@@ -74,7 +78,7 @@ export default function About() {
             Tremendous involvement with power and departure, land master
             curement, liaisoning and working with state.
           </p>
-          <ul className="space-y-4 font-medium text-navyblue">
+          <ul className="space-y-4 font-medium text-gray-600">
             <li className="flex items-center">
               <span className="text-gray-700 text-xl mr-2">✓</span> Support that
               Helps.
@@ -90,54 +94,76 @@ export default function About() {
           </ul>
         </div>
       </div>
-      <div className="bg-white pt-10 pb-16">
-        <div className="flex flex-col items-center justify-center min-h-[300px] max-h-[350px] px-6 md:px-32 text-start relative">
+
+      <div className="bg-gray-50 flex justify-center items-center  py-20">
+        <div className="flex flex-col items-center justify-center px-4 md:px-32 text-start relative">
+          <h2 className="text-4xl font-bold text-navyblue mb-6">
+            What Our Clients Say
+          </h2>
+
           {/* Left Navigation Arrow */}
-          {!isMobileSize && <button
-            onClick={() =>
-              setCurrentIndex(
-                currentIndex === 0 ? carouselTexts.length - 1 : currentIndex - 1
-              )
-            }
-            className="absolute h-10 left-6 md:left-20 text-white -bottom-20 md:top-1/2 bg-navyblue p-2 rounded-full shadow-md  focus:outline-none"
-          >
-            &#8592; {/* Left Arrow */}
-          </button>}
+          {!isMobileSize && (
+            <button
+              onClick={() =>
+                setCurrentIndex(
+                  currentIndex === 0
+                    ? carouselTexts.length - 1
+                    : currentIndex - 1
+                )
+              }
+              className="absolute h-10 w-10 left-6 md:left-20 text-white -bottom-20 md:top-1/2 bg-navyblue p-2 rounded-full shadow-md  focus:outline-none"
+            >
+              &#8249; {/* Left Arrow */}
+            </button>
+          )}
 
           {/* Testimonial Text */}
-          <p className="text-3xl text-gray-800 font-medium italic max-w-3xl mb-6">
+          <p className="text-2xl text-center text-gray-800 font-medium italic mb-6 mt-10">
             {carouselTexts[currentIndex].text}
           </p>
 
-          {/* Client Details */}
-          <div className="w-4/5 px-6 mt-2">
-            <p className="text-gray-800 font-semibold text-xl">
-              {carouselTexts[currentIndex].name}
-            </p>
-            <p className="text-gray-800 text-sm">
-              {carouselTexts[currentIndex].title}
-            </p>
+          <div className="flex items-center bg-transparent  rounded-lg p-4 max-w-lg mx-auto">
+            {/* Left Section: Image */}
+            <div className="w-16 h-16">
+              <img
+                className="rounded-full object-cover w-full h-full"
+                src={carouselTexts[currentIndex].img} // Replace with the correct image URL
+                alt={`${carouselTexts[currentIndex].name}'s avatar`}
+              />
+            </div>
+
+            {/* Right Section: Name and Title */}
+            <div className="ml-4">
+              <p className="text-gray-800 font-semibold  text-lg">
+                {carouselTexts[currentIndex].name}
+              </p>
+              <p className="text-gray-600 text-sm">
+                {carouselTexts[currentIndex].title}
+              </p>
+            </div>
           </div>
 
           {/* Right Navigation Arrow */}
-          {!isMobileSize && <button
-            onClick={() =>
-              setCurrentIndex((currentIndex + 1) % carouselTexts.length)
-            }
-            className="absolute h-10 right-6 text-white md:right-20 -bottom-20 md:top-1/2  bg-navyblue p-2 rounded-full shadow-md  bfocus:outline-none"
-          >
-            &#8594; {/* Right Arrow */}
-          </button>}
+          {!isMobileSize && (
+            <button
+              onClick={() =>
+                setCurrentIndex((currentIndex + 1) % carouselTexts.length)
+              }
+              className="absolute h-10  w-10 right-6 text-white md:right-20 -bottom-20 md:top-1/2  bg-navyblue p-2 rounded-full shadow-md  bfocus:outline-none"
+            >
+              &#8250; {/* Right Arrow */}
+            </button>
+          )}
         </div>
       </div>
 
       {/* Additional Section */}
-      <div className="container mx-auto px-6 md:px-12 pt-10 pb-16">
-        <h3 className="text-4xl font-bold text-gray-800 mb-12 text-center">
+      <div className="container mx-auto px-1 py-20 md:px-12 ">
+        <h3 className="text-4xl font-bold text-navyblue mb-12 text-center">
           Why Choose Us?
         </h3>
-        <div className="grid px-12 grid-cols-1 md:grid-cols-3 gap-12">
-          <div className="bg-white p-8 shadow-lg rounded-lg text-center">
+        <div className="grid px-12 grid-cols-1  md:grid-cols-3 gap-10">
+          <div className="bg-white p-8 shadow rounded-lg text-center ">
             <h4 className="text-2xl font-bold text-gray-800 mb-4">
               Innovative Solutions
             </h4>
@@ -146,7 +172,7 @@ export default function About() {
               ensuring you stand out.
             </p>
           </div>
-          <div className="bg-white p-8 shadow-lg rounded-lg text-center">
+          <div className="bg-white p-8 shadow rounded-lg text-center">
             <h4 className="text-2xl font-bold text-gray-800 mb-4">
               Dedicated Team
             </h4>
@@ -155,7 +181,7 @@ export default function About() {
               business.
             </p>
           </div>
-          <div className="bg-white p-8 shadow-lg rounded-lg text-center">
+          <div className="bg-white p-8 shadow rounded-lg text-center">
             <h4 className="text-2xl font-bold text-gray-800 mb-4">
               Proven Results
             </h4>
