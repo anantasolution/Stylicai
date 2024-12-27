@@ -10,6 +10,7 @@ import cookieParser from "cookie-parser"
 
 //import routers
 import contactRoute from './routes/contact.js'
+import emailRoute from './routes/email.js'
 
 //app configure 
 const port = process.env.PORT || 8000
@@ -71,6 +72,7 @@ mongoose.connection.on("connected",()=>{
 
 //middlewares
 app.use('/api/contact',contactRoute)
+app.use('/api/email',emailRoute)
 
 
 
