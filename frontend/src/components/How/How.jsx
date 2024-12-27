@@ -1,5 +1,4 @@
 import React from 'react';
-import { Download, MousePointerClick, Type } from 'lucide-react';
 // import Bird from '../../assets/Bird.webp'
 
 //importing icons
@@ -23,7 +22,7 @@ export default function How()  {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 max-w-6xl mx-auto">
           {/* Step 1 */}
           <div className="flex flex-col items-center text-center">
-            <div className="bg-white h-44 rounded-3xl shadow-lg p-6 mb-6 w-full">
+            <div className="bg-white h-48 rounded-3xl shadow-lg p-6 mb-6 w-full">
               <div className="bg-gray-50 rounded-xl p-4 mb-2 inline-block">
                 <img src={IMG2} className='w-8 h-8'></img>
               </div>
@@ -38,7 +37,7 @@ export default function How()  {
 
           {/* Step 2 */}
           <div className="flex flex-col items-center text-center">
-            <div className="bg-white h-44 rounded-3xl shadow-lg p-6 mb-6 w-full">
+            <div className="bg-white h-48 rounded-3xl shadow-lg p-6 mb-6 w-full">
               <div className="bg-gray-50 rounded-xl p-4 mb-2 inline-block">
                 <img src={IMG1} className='w-8 h-8'></img>
               </div>
@@ -53,7 +52,7 @@ export default function How()  {
 
           {/* Step 3 */}
           <div className="flex flex-col items-center text-center">
-            <div className="bg-white h-44 rounded-3xl shadow-lg p-6 mb-6 w-full">
+            <div className="bg-white h-48 rounded-3xl shadow-lg p-6 mb-6 w-full">
               <div className="bg-gray-50 rounded-xl p-4 mb-2 inline-block">
                 <img src={IMG} className='w-8 h-8'></img>
               </div>

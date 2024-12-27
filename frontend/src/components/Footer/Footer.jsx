@@ -17,6 +17,7 @@ const Footer = () => {
     if(validateEmail()){
       try{
         await axios.post(`${import.meta.env.VITE_API_BASE_URL}/email`,{email})
+        setEmail('')
         toast.success("Request submitted successfully.")
       }catch(err){
        toast.error(err.message)
