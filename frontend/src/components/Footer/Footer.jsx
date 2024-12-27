@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -6,8 +6,38 @@ import logo from "../../assets/footer_logo.png";
 import CallIcon from "@mui/icons-material/Call";
 import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import axios from "axios";
+import { toast } from "react-toastify";
+
 
 const Footer = () => {
+  const [email,setEmail] = useState('')
+
+  const handleSaveEmail = async () =>{
+    if(validateEmail()){
+      try{
+        await axios.post(`${import.meta.env.VITE_API_BASE_URL}/email`,{email})
+        toast.success("Request submitted successfully.")
+      }catch(err){
+       toast.error(err.message)
+      }
+    }
+  }
+
+  const validateEmail = () =>{
+    let newErrors = {}
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if(!email){
+      newErrors.email = "Email address is required."
+      toast.error("Email address is required.")
+    }
+    if(!emailRegex.test(email)){
+      newErrors.email = "Invalid email address."
+      toast.error("Invalid email address.")
+    }
+    return Object.keys(newErrors).length===0
+  }
+
   return (
     <div className="py-16 px-4 bg-navyblue text-white  border">
       <div className="h-full flex flex-col items-center md:justify-center">
@@ -45,11 +75,12 @@ const Footer = () => {
             </p>
             <div className="flex justify-center flex-row items-center mt-6 w-full">
               <input
+                onChange={(e)=>setEmail(e.target.value)}
                 type="email"
                 placeholder="Enter your email"
-                className="text-center py-2 rounded-l-md  md:rounded-r-none border-[#1b345c] bg-white text-[#1b345c] placeholder-[#1b345c] focus:outline-none focus:ring-2 focus:ring-[#1b345c] w-[60%] md:w-auto"
+                className="px-2 py-2 rounded-l-md  md:rounded-r-none border-[#1b345c] bg-white text-[#1b345c] placeholder-[#1b345c] focus:outline-none focus:ring-2 focus:ring-[#1b345c] w-[60%] md:w-auto"
               />
-              <button className="bg-golden text-white W-[30%] px-6 py-2 rounded-r-md cursor-pointer transition duration-300">
+              <button onClick={handleSaveEmail} className="bg-golden text-white W-[30%] px-6 py-2 rounded-r-md cursor-pointer transition duration-300">
                 Subscribe
               </button>
             </div>
