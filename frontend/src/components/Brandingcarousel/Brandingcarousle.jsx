@@ -22,14 +22,14 @@ const BrandCarousel = () => {
   const duplicatedBrands = [...brands, ...brands];
 
   return (
-    <div className="w-full bg-white py-12 overflow-hidden">
+    <div className="w-full bg-white py-4 md:py-16 px-4 md:px-16 overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-4">
-        <div className="overflow-hidden">
+        <div className="py-6 overflow-hidden">
           <div className="flex space-x-10 animate-scroll">
             {duplicatedBrands.map((brand) => (
               <div
                 key={brand.id}
-                className="flex-none w-52 h-24 rounded-lg flex items-center justify-center shadow-md"
+                className="flex-none w-52 h-24 rounded-lg flex items-center justify-center shadow"
               >
                 <img
                   src={brand.imgSrc}

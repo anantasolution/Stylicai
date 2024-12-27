@@ -24,7 +24,7 @@ export default function Faq (){
   ];
 
   return (
-    <div className="min-h-screen bg-white p-8">
+    <div className="py-20 bg-gray-50 p-8">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-golden font-medium mb-4">FAQ'S</p>
@@ -37,7 +37,7 @@ export default function Faq (){
           {faqData.map((faq, index) => (
             <div 
               key={index}
-              className="border rounded-lg overflow-hidden"
+              className="border rounded-lg overflow-hidden bg-white"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
