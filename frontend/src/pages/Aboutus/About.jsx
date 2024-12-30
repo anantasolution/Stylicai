@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import img from "../../assets/Abou.jpg";
 import pf1 from "../../assets/profile_img_1.png";
 import pf2 from "../../assets/profile_img_2.png";
-import pf3 from "../../assets/profile_img_4.png"
+import pf3 from "../../assets/profile_img_4.png";
 export default function About() {
   // Carousel data
 
@@ -47,8 +47,6 @@ export default function About() {
     return () => clearInterval(interval);
   }, [carouselTexts.length]);
 
-
-
   return (
     <div className="min-h-screen bg-white">
       {/* Main Section */}
@@ -72,24 +70,33 @@ export default function About() {
         {/* Right Section with Text */}
         <div className="flex-1 mt-12 md:mt-0 md:ml-12 text-center md:text-left">
           <h2 className="text-5xl font-semibold text-navyblue leading-tight mb-6">
-            We Provide Best Design Solutions
+            Behold the Future of Design Service
           </h2>
           <p className="text-gray-800 font-medium text-lg leading-relaxed mb-8">
-            Tremendous involvement with power and departure, land master
-            curement, liaisoning and working with state.
+            Transform the way fashion comes to life with the help of our AI
+            technology. From Hyper-Realistic Visuals to Brand Identity
+            Revolutionisation, all Innovation is Made Simpler.
           </p>
           <ul className="space-y-4 font-medium text-gray-600">
             <li className="flex items-center">
-              <span className="text-gray-700 text-xl mr-2">✓</span> Support that
-              Helps.
+              <span className="text-gray-700 text-xl mr-2">✓</span> Expert
+              advice at every step of the way.
             </li>
             <li className="flex items-center">
-              <span className="text-gray-700 text-xl mr-2">✓</span> An abundance
-              of resources.
+              <span className="text-gray-700 text-xl mr-2">✓</span> Access to
+              potent tools and resources.
             </li>
             <li className="flex items-center">
-              <span className="text-gray-700 text-xl mr-2">✓</span> Optimize
-              search engines.
+              <span className="text-gray-700 text-xl mr-2">✓</span> AI solutions
+              that bring significant results.
+            </li>
+            <li className="flex items-center">
+              <span className="text-gray-700 text-xl mr-2">✓</span> Easy to
+              integrate into your workflow.
+            </li>
+            <li className="flex items-center">
+              <span className="text-gray-700 text-xl mr-2">✓</span> Optimised
+              visuals for a better online presence.
             </li>
           </ul>
         </div>
@@ -165,20 +172,22 @@ export default function About() {
         <div className="grid px-12 grid-cols-1  md:grid-cols-3 gap-10">
           <div className="bg-white p-8 shadow rounded-lg text-center ">
             <h4 className="text-2xl font-bold text-gray-800 mb-4">
-              Innovative Solutions
+              Exceptional Solutions
             </h4>
             <p className="text-gray-600">
-              We bring creativity and innovation to every project we handle,
-              ensuring you stand out.
+              Fashion photography with the most advanced artificial intelligence
+              technologies. Create imagery that mesmerises and makes your brand
+              the talk of the town.
             </p>
           </div>
           <div className="bg-white p-8 shadow rounded-lg text-center">
             <h4 className="text-2xl font-bold text-gray-800 mb-4">
-              Dedicated Team
+              Devoted Team
             </h4>
             <p className="text-gray-600">
-              Our team is committed to delivering the best outcomes for your
-              business.
+              Our enthusiastic experts combine their efforts to provide
+              customised solutions that actualise your vision. In return, these
+              efforts contribute to raising your brand status and visibility.
             </p>
           </div>
           <div className="bg-white p-8 shadow rounded-lg text-center">
@@ -186,8 +195,8 @@ export default function About() {
               Proven Results
             </h4>
             <p className="text-gray-600">
-              We have a track record of success with satisfied clients across
-              the globe.
+              With a global track record of success, we empower brands with
+              impactful visuals, leaving a lasting impression on audiences.
             </p>
           </div>
         </div>
