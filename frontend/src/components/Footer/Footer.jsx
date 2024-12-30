@@ -95,14 +95,14 @@ const Footer = () => {
               <p className="font-semibold">Contact</p>
               <p className="text-base flex gap-2 items-center">
                 <CallIcon />
-                +91 98989 65365
+                +91 63566 65365
               </p>
             </div>
             <div className="flex flex-col gap-3">
               <p className="font-semibold">Mail us</p>
               <p className="text-sm flex gap-2 items-center">
                 <EmailIcon />
-                info@anantasolution.com
+                info@stylic.ai
               </p>
             </div>
           </div>
