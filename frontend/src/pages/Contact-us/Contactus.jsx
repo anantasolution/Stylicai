@@ -82,14 +82,14 @@ const Contactus = () => {
                  <span className="text-golden"><EmailIcon style={{fontSize:'1.8rem'}}></EmailIcon></span>
                  <div className="flex flex-col gap-.5">
                     <span className="font-semibold">Our Email:</span>
-                    <span>info@anantasoluotion.com</span>
+                    <span>info@stylic.ai</span>
                  </div>
               </div>
               <div className="flex items-center gap-4">
                  <span className="text-golden"><CallIcon style={{fontSize:'1.8rem'}}></CallIcon></span>
                  <div className="flex flex-col gap-.5">
                     <span className="font-semibold">Our Phone:</span>
-                    <span>+91 98989 65365</span>
+                    <span>+91 63566 65365</span>
                  </div>
               </div>
               <div className="m-auto w-full  flex items-center mt-2 gap-2">
