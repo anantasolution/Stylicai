@@ -191,7 +191,7 @@ const Catalog = () => {
               spaceBetween={10}
               slidesPerView={2}
               loop={true}
-              className="rounded-lg overflow-hidden w-7/12"
+              className="rounded-lg overflow-hidden w-8/12 flex justify-center items-center"
               breakpoints={{
                 1200: { slidesPerView: 5, spaceBetween: 20 },
                 992: { slidesPerView: 4, spaceBetween: 20 },
@@ -214,7 +214,7 @@ const Catalog = () => {
                 <SwiperSlide key={category}>
                   <button
                     aria-pressed={activeCategory === category}
-                    className={`border w-28 lg:w-32 rounded-md  p-2 transition-all duration-200 ${
+                    className={`border w-28 lg:w-32 rounded-full  p-2 transition-all duration-200 ${
                       activeCategory === category
                         ? "bg-[#1b345c] text-white font-semibold"
                         : ""
