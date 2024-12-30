@@ -155,16 +155,16 @@ const Gallery = () => {
       </div>
 
       {/* Category Section */}
-      <div className="relative w-full mb-6 p-4">
+      <div className="relative w-full mb-6 py-4">
         <div
           ref={prevRef}
-          className="swiper-button-prev-custom w-7 h-7 ml-8 lg:ml-44 flex justify-center items-center absolute left-0 top-9 md:top-1/2 transform -translate-y-1/2 bg-navyblue text-white p-2 rounded-full cursor-pointer hover:bg-gray-700 z-10"
+          className="swiper-button-prev-custom w-7 h-7 ml-8 lg:ml-44 md:ml-32 flex justify-center items-center absolute left-0 top-9 md:top-1/2 transform -translate-y-1/2 bg-navyblue text-white p-2 rounded-full cursor-pointer hover:bg-gray-700 z-10"
         >
           &#8249;
         </div>
         <div
           ref={nextRef}
-          className="swiper-button-next-custom w-7 h-7 flex justify-center items-center text-center mr-8 lg:mr-44 absolute right-0 top-9 md:top-1/2 transform -translate-y-1/2 bg-navyblue text-white p-2 rounded-full cursor-pointer hover:bg-gray-700 z-10"
+          className="swiper-button-next-custom w-7 h-7 md:mr-32 flex justify-center items-center text-center mr-8 lg:mr-44 absolute right-0 top-9 md:top-1/2 transform -translate-y-1/2 bg-navyblue text-white p-2 rounded-full cursor-pointer hover:bg-gray-700 z-10"
         >
           &#8250;
         </div>
@@ -174,11 +174,11 @@ const Gallery = () => {
           spaceBetween={10}
           slidesPerView={5}
           loop={true}
-          className="rounded-lg overflow-hidden w-7/12"
+          className="rounded-lg overflow-hidden w-8/12 flex justify-center items-center"
           breakpoints={{
             1200: { slidesPerView: 5, spaceBetween: 20 },
-            992: { slidesPerView: 4, spaceBetween: 20 },
-            768: { slidesPerView: 4, spaceBetween: 10 },
+            992: { slidesPerView: 5, spaceBetween: 20 },
+            768: { slidesPerView: 5, spaceBetween: 10 },
             576: { slidesPerView: 3, spaceBetween: 10 },
             0: { slidesPerView: 2, spaceBetween: 5 },
           }}
@@ -187,7 +187,7 @@ const Gallery = () => {
             <SwiperSlide key={category}>
               <button
                 aria-pressed={activeCategory === category}
-                className={`border w-28 lg:w-32 rounded-mds md:rounded-full p-2 transition-all duration-200 ${
+                className={`border w-28 mx-1 lg:mx-4 lg:w-32 rounded-full md:rounded-full py-2 transition-all duration-200 ${
                   activeCategory === category
                     ? "bg-[#1b345c] text-white font-semibold"
                     : ""
