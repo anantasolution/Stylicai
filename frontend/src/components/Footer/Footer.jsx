@@ -77,6 +77,7 @@ const Footer = () => {
             <div className="flex justify-center flex-row items-center mt-6 w-full">
               <input
                 onChange={(e)=>setEmail(e.target.value)}
+                value={email}
                 type="email"
                 placeholder="Enter your email"
                 className="px-2 py-2 rounded-l-md  md:rounded-r-none border-[#1b345c] bg-white text-[#1b345c] placeholder-[#1b345c] focus:outline-none focus:ring-2 focus:ring-[#1b345c] w-[60%] md:w-auto"
