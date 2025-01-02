@@ -11,6 +11,7 @@ import cookieParser from "cookie-parser"
 //import routers
 import contactRoute from './routes/contact.js'
 import emailRoute from './routes/email.js'
+import mailRoute from './routes/mail.js'
 
 //app configure 
 const port = process.env.PORT || 8000
@@ -37,6 +38,10 @@ const corsOptions = {
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS", "HEAD"], // Add OPTIONS
     credentials: true,
 };
+
+console.log("SMTP USER:", process.env.USER_USERNAME);
+console.log("SMTP PASS:", process.env.USER_APP_PASS);
+
 
 
 // Preflight request handling for OPTIONS
@@ -73,6 +78,11 @@ mongoose.connection.on("connected",()=>{
 //middlewares
 app.use('/api/contact',contactRoute)
 app.use('/api/email',emailRoute)
+app.use('/api/mail',mailRoute)
+
+app.get('/', (req, res) => {
+    res.send("Bahut maja ara hai bhai🐱")
+})
 
 
 

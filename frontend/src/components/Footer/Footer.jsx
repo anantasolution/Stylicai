@@ -17,6 +17,7 @@ const Footer = () => {
     if(validateEmail()){
       try{
         await axios.post(`${import.meta.env.VITE_API_BASE_URL}/email`,{email})
+        await axios.post(`${import.meta.env.VITE_API_BASE_URL}/mail`,{email})
         setEmail('')
         toast.success("Request submitted successfully.")
       }catch(err){
@@ -49,8 +50,7 @@ const Footer = () => {
               <img src={logo} alt="StylicAI Logo" className="object-contain" />
             </div>
             <p className="text-sm md:text-base px-4 md:px-10">
-              STYLICAI is revolutionizing the fashion industry with cutting-edge
-              AI-generated photoshoots. Experience the future of fashion today.
+              STYLIC brings innovation to fashion photography with the help of artificial intelligence technology. Make impressive, photorealistic designs with minimal effort, and enhance your commerce enterprise.
             </p>
             <div className="flex gap-4 justify-center">
               <a href="#" aria-label="Facebook" className="hover:text-gray-400">
