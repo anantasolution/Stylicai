@@ -51,6 +51,7 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-white">
+      <div className="w-full"></div>
       {/* Main Section */}
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 pt-44 pb-28 md:px-12">
         {/* Left Section with Circular Image */}
