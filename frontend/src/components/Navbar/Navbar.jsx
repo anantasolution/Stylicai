@@ -41,7 +41,7 @@ const Navbar = () => {
                 Home
               </span>
             </Link>
-            <Link to={"/catalog"}>
+            {/* <Link to={"/catalog"}>
               <span
                 className={`text-gray-800 rounded-full font-medium  px-2 py-1 transition duration-300 hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
                   isActive("/catalog") &&
@@ -50,7 +50,7 @@ const Navbar = () => {
               >
                 Showcase
               </span>
-            </Link>
+            </Link> */}
             <Link to={"/about"}>
               <span
                 className={`text-gray-800 rounded-full font-medium  px-2 py-1 transition duration-300 hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${

@@ -19,7 +19,7 @@ const Home = () => {
       <How />
       <Aboutus />
       {/* <MyCarousle></MyCarousle> */}
-      <Gallery />
+      {/* <Gallery /> */}
       <BrandCarousel></BrandCarousel>
       <Faq/>
       <Schedule></Schedule>
