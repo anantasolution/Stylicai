@@ -81,7 +81,7 @@ const Gallery = () => {
       thumbnails: boysJeansThumbnails,
       images: boysJeansImages,
     },
-    bra: {
+    lingerie: {
       thumbnails: braThumbnails,
       images: braImages,
     },
