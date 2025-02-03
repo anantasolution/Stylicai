@@ -20,7 +20,7 @@ const App = () => {
           element={
             <>
               <Navbar />
-              {/* <Catalog /> */}
+              <Catalog />
               <Footer />
             </>
           }
