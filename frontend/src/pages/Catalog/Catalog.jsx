@@ -98,7 +98,7 @@ const Catalog = () => {
       thumbnails: boysJeansThumbnails,
       images: boysJeansImages,
     },
-    bras: {
+    lingerie: {
       thumbnails: braThumbnails,
       images: braImages,
     },
@@ -298,7 +298,7 @@ const Catalog = () => {
           </div>
 
           {/* Right Section - Transparent Div with Dynamic Height */}
-          <div className="lg:w-[55%] relative w-full bg-white/70 backdrop-blur-md p-10 rounded-md border border-gray-300 flex flex-col">
+          <div className="lg:w-[55%] relative w-full bg-white/70 backdrop-blur-md py-10 px-6 rounded-md border border-gray-300 flex flex-col">
             <div className="relative">
               <div className="flex items-center gap-2 mb-6">
                 <CheckroomIcon style={{ color: "#3f3f3f" }} />
@@ -306,20 +306,20 @@ const Catalog = () => {
               </div>
 
               {/* Previous Button */}
-              <div
+              {/* <div
                 ref={prevRef1}
                 className="swiper-button-prev-custom w-7 h-7 flex justify-center items-center absolute -ml-8  top-2/3  transform -translate-y-1/2 bg-navyblue text-white rounded-full cursor-pointer hover:bg-gray-700 z-10"
               >
                 &#8249;
-              </div>
+              </div> */}
 
               {/* Next Button */}
-              <div
+              {/* <div
                 ref={nextRef1}
                 className="swiper-button-next-custom w-7 h-7 flex justify-center items-center absolute right-4  -mr-12  top-2/3 transform -translate-y-1/2 bg-navyblue text-white rounded-full cursor-pointer hover:bg-gray-700 z-10"
               >
                 &#8250;
-              </div>
+              </div> */}
 
               <div className="w-full relative h-44 flex items-center border">
                 <Swiper
@@ -381,20 +381,20 @@ const Catalog = () => {
 
               {/* <div className="grid grid-cols-4 lg:grid-cols-4 gap-4"> */}
 
-              <div
+              {/* <div
                 ref={prevRef2}
                 className="swiper-button-prev-custom w-7 h-7 flex justify-center items-center absolute -ml-8  top-2/3  transform -translate-y-1/2 bg-navyblue text-white rounded-full cursor-pointer hover:bg-gray-700 z-10"
               >
                 &#8249;
-              </div>
+              </div> */}
 
               {/* Next Button */}
-              <div
+              {/* <div
                 ref={nextRef2}
                 className="swiper-button-next-custom w-7 h-7 flex justify-center items-center absolute right-4  -mr-12  top-2/3 transform -translate-y-1/2 bg-navyblue text-white rounded-full cursor-pointer hover:bg-gray-700 z-10"
               >
                 &#8250;
-              </div>
+              </div> */}
 
               <Swiper
                 modules={[Navigation]}
@@ -451,6 +451,7 @@ const Catalog = () => {
                       key={index}
                       onClick={() => handleImageClick(index)}
                       className={`w-full h-52 rounded-md shadow-lg cursor-pointer overflow-hidden ${
+                        
                         selectedImage === item
                           ? "border-4 border-[#1b345c]"
                           : "border border-transparent"
