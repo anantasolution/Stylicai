@@ -11,7 +11,7 @@ const Sechdule = () => {
         <h1 className="text-[#1E335C] text-2xl md:text-4xl font-bold mb-4">
         Walk into the Future of Fashion Imagery with Stylic
         </h1>
-        <button className="bg-[#1E335C] text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-colors">
+        <button className="bg-golden text-white px-8 py-3 rounded-full font-medium hover:bg-[#1E335C] transition-colors">
           <Link to={'/contact'}>Schedule a demo</Link>
         </button>
       </div>
