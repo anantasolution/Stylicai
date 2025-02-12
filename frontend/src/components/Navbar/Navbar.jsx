@@ -23,7 +23,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-2">
           <Link to={"/"}>
             <span className="text-2xl cursor-pointer font-bold text-gray-800">
-              <img src={logo} alt="logo" className="md:w-32 w-28"  />
+              <img src={logo} alt="logo" className="md:w-32 w-28" />
             </span>
           </Link>
         </div>
@@ -63,11 +63,18 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-        <Link to={"/contact"}>
-          <button className="bg-golden text-white px-6 py-2 rounded-full hover:bg-navyblue  transition duration-300">
-          Schedule a demo
-          </button>
-        </Link>
+        <div className="flex gap-3">
+          <Link to={"/contact"}>
+            <button className="bg-golden text-white px-6 py-2 rounded-full hover:bg-navyblue  transition duration-300">
+              Schedule a demo
+            </button>
+          </Link>
+          <a href="https://app.stylic.ai" className="hidden md:block">
+            <button className="bg-golden text-white px-6 py-2 rounded-full hover:bg-navyblue  transition duration-300">
+              Login
+            </button>
+          </a>
+        </div>
 
         {/* Hamburger Menu for Small Screens */}
         <div className="md:hidden flex items-center">
@@ -132,7 +139,7 @@ const Navbar = () => {
               "underline decoration-golden underline-offset-4 decoration-2"
             }`}
           >
-            Catalog
+            Showcase
           </Link>
           <Link
             to={"/about"}
@@ -143,13 +150,18 @@ const Navbar = () => {
           >
             About
           </Link>
+          <a href="https://app.stylic.ai">
+            <button className="bg-golden text-white px-6 py-2 rounded-full hover:bg-navyblue  transition duration-300">
+              Login
+            </button>
+          </a>
 
-          <Link
+          {/* <Link
             to={"/contact"}
             className="bg-golden text-white hover:bg-navyblue px-6 py-2 rounded-full  transition duration-300"
           >
             Schedule a demo
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Check, Video } from "lucide-react";
-import VID from "../../assets/nature.mp4";
+import VID from "../../assets/video.mp4";
 import { Link } from "react-router-dom";
 
 export default function Aboutus() {
@@ -20,7 +20,7 @@ export default function Aboutus() {
             autoPlay
             muted
             loop
-            className="w-full object-cover h-[500px]"
+            className="w-full object-contain h-[500px]"
           ></video>
         </div>
 

@@ -28,6 +28,8 @@ import {
   tshirtImages,
   jacketThumbnails,
   jacketImages,
+  minnerImages,
+  minnerThumbnails
 } from "../../assets/assets.js";
 
 //Importigng swiper
@@ -110,20 +112,26 @@ const Catalog = () => {
       thumbnails: jacketThumbnails,
       images: jacketImages,
     },
+    "means inner":{
+      thumbnails : minnerThumbnails,
+      images : minnerImages
+    }
   };
 
   const firstRow = Object.keys(categories).slice(0, 5);
   const secondRow = Object.keys(categories).slice(5, 9);
-  const thirdRow = Object.keys(categories).slice(9, 13);
+  const thirdRow = Object.keys(categories).slice(9, 14);
 
   const [activeCategory, setActiveCategory] = useState("blazers");
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState(
-    categories["blazers"].images[0][0]
+    categories["blazers"]?.images[0][0]
   );
   const [activeTypes, setActiveTypes] = useState(
     categories["blazers"].images[0]
   );
+  console.log(activeTypes);
+  
 
   // Handle Category Change
   const handleCategoryChange = useCallback(
@@ -321,7 +329,7 @@ const Catalog = () => {
                 &#8250;
               </div> */}
 
-              <div className="w-full relative h-44 flex items-center border">
+              <div className="w-full relative  flex items-center border">
                 <Swiper
                   modules={[Navigation]}
                   lazyPreloadPrevNext={true}
@@ -354,7 +362,7 @@ const Catalog = () => {
                     <SwiperSlide key={index}>
                       <div
                         onClick={() => handleThumbnailClick(index)}
-                        className={`w-full h-48 rounded-md shadow-lg cursor-pointer overflow-hidden ${
+                        className={`w-full md:h-60  rounded-md shadow-lg cursor-pointer overflow-hidden ${
                           activeIndex === index
                             ? "border-4 border-[#1b345c]"
                             : "border border-transparent"
@@ -450,7 +458,7 @@ const Catalog = () => {
                     <div
                       key={index}
                       onClick={() => handleImageClick(index)}
-                      className={`w-full h-52 rounded-md shadow-lg cursor-pointer overflow-hidden ${
+                      className={`w-full rounded-md shadow-lg cursor-pointer overflow-hidden ${
                         
                         selectedImage === item
                           ? "border-4 border-[#1b345c]"
