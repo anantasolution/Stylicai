@@ -215,7 +215,7 @@ const Gallery = () => {
             <img
               src={selectedImage}
               alt="Model"
-              className="h-full w-full object-cover rounded-md shadow-lg pb-10 lg:pb-0"
+              className="h-full w-full object-fill rounded-md shadow-lg pb-10 lg:pb-0"
             />
           </div>
         </div>
