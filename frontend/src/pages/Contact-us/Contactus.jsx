@@ -34,7 +34,7 @@ const Contactus = () => {
       let newErrors = {}
       if(!formData.name) newErrors.name="Name is required."
       if(formData.contactno.length!==10) newErrors.contact="Contact number is not valid."
-      if(!formData.contactno) newErrors.contact='Contact number is required.'
+      if(!formData.contactno) newErrors.contactno='Contact number is required.'
       if(!emailRegax.test(formData.email)) newErrors.email ='Email address is not valid.'
       if(!formData.email) newErrors.email ='Email addres is required.'
       if(!formData.message) newErrors.message = 'Message is required'
@@ -117,9 +117,9 @@ const Contactus = () => {
              <div className="flex flex-col gap-.5">
                 <div className="flex flex-col gap-2">
                 <label>Contact No <span className="text-sm text-red-500">*</span></label>
-                <input onChange={(e)=>handleChange(e)} name="name" value={formData.contactno} className="bg-transparent outline-none text-black border border-gray-600 p-2.5" type="text" placeholder="Enter Contact "></input>
+                <input  onChange={(e)=>handleChange(e)} name="contactno" value={formData.contactno} className="bg-transparent outline-none text-black border border-gray-600 p-2.5" type="text" placeholder="Enter Contact "></input>
                 </div>
-                {errors.contact && <span className="text-sm text-red-500">{errors.contact}</span>}
+                {errors.contactno && <span className="text-sm text-red-500">{errors.contactno}</span>}
              </div>
              <div className="flex flex-col gap-.5">
                <div className="flex flex-col gap-2">
