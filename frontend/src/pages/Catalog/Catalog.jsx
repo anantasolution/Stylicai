@@ -362,7 +362,7 @@ const Catalog = () => {
                     <SwiperSlide key={index}>
                       <div
                         onClick={() => handleThumbnailClick(index)}
-                        className={`w-full md:h-60  rounded-md shadow-lg cursor-pointer overflow-hidden ${
+                        className={`w-full md:h-60 h-52 rounded-md shadow-lg cursor-pointer overflow-hidden ${
                           activeIndex === index
                             ? "border-4 border-[#1b345c]"
                             : "border border-transparent"
@@ -458,7 +458,7 @@ const Catalog = () => {
                     <div
                       key={index}
                       onClick={() => handleImageClick(index)}
-                      className={`w-full rounded-md shadow-lg cursor-pointer overflow-hidden ${
+                      className={`w-full rounded-md h-48 md:h-full shadow-lg cursor-pointer overflow-hidden ${
                         
                         selectedImage === item
                           ? "border-4 border-[#1b345c]"

@@ -41,10 +41,10 @@ const Navbar = () => {
                 Home
               </span>
             </Link>
-            <Link to={"/catalog"}>
+            <Link to={"/showcase"}>
               <span
                 className={`text-gray-800 rounded-full font-medium  px-2 py-1 transition duration-300 hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
-                  isActive("/catalog") &&
+                  isActive("/showcase") &&
                   "underline decoration-golden underline-offset-4 decoration-2"
                 }`}
               >
@@ -133,9 +133,9 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            to={"/catalog"}
+            to={"/showcase"}
             className={`text-gray-800 py-2 w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
-              isActive("/catalog") &&
+              isActive("/showcase") &&
               "underline decoration-golden underline-offset-4 decoration-2"
             }`}
           >

@@ -68,7 +68,7 @@ const Contactus = () => {
   return (
     <div className="py-28 md:py-32 flex bg-white justify-center items-center">
 
-        <div className="flex flex-col md:flex-row gap-8 md:w-[89%] w-4/5 items-center">
+        <div className="flex flex-col md:flex-row-reverse gap-8 md:w-[89%] w-4/5 items-center">
            <div className="md:flex-1 p-4 flex flex-col gap-6">
               <h1 className="text-5xl leading-[3rem] mb-3">Get In Touch</h1>
               <div className="flex items-center gap-4">
@@ -98,21 +98,34 @@ const Contactus = () => {
                  <span className="text-black hover:text-golden"><LinkedInIcon style={{fontSize:'1.3rem'}}></LinkedInIcon></span>
               </div>
            </div>
-           <div className="md:flex-1 rounded-md   w-full bg-navyblue p-4 flex flex-col gap-5">
+           <div className="md:flex-1 rounded-md   w-full border p-4 flex flex-col gap-5">
+            <h2 className="font-medium text-5xl mb-2">Request a Demo</h2>
              <div className="flex flex-col gap-.5">
-                <input onChange={(e)=>handleChange(e)} name="name" value={formData.name} className="bg-transparent outline-none text-white placeholder-white border-b p-2.5" type="text" placeholder="Name *"></input>
+                <div className="flex flex-col gap-2">
+                <label>Name <span className="text-sm text-red-500">*</span></label>
+                <input onChange={(e)=>handleChange(e)} name="name" value={formData.name} className="bg-transparent outline-none text-black border border-gray-600 p-2.5" type="text" placeholder="Enter Name "></input>
+                </div>
                 {errors.name && <span className="text-sm text-red-500">{errors.name}</span>}
              </div>
              <div className="flex flex-col gap-.5">
-                <input onChange={(e)=>handleChange(e)} name="contactno" value={formData.contactno} className="bg-transparent outline-none text-white placeholder-white border-b p-2.5" type="text" placeholder="Contact Number *"></input>
-                {errors.contact && <span className="text-sm text-red-500">{errors.contact}</span>}
-             </div>
-             <div className="flex flex-col gap-.5">
-                <input onChange={(e)=>handleChange(e)} name="email" value={formData.email} className="bg-transparent  outline-none text-white placeholder-white border-b p-2.5" type="email" placeholder="Email *"></input>
+                <div className="flex flex-col gap-2">
+                <label>Email <span className="text-sm text-red-500">*</span></label>
+                <input onChange={(e)=>handleChange(e)} name="email" value={formData.email} className="bg-transparent outline-none text-black border border-gray-600 p-2.5" type="text" placeholder="Enter Email "></input>
+                </div>
                 {errors.email && <span className="text-sm text-red-500">{errors.email}</span>}
              </div>
              <div className="flex flex-col gap-.5">
-               <textarea onChange={(e)=>handleChange(e)} name="message" value={formData.message} placeholder="Message *" rows={8} title="message" className="resize-none border-b p-2.5 bg-transparent outline-none text-white placeholder-white"></textarea>
+                <div className="flex flex-col gap-2">
+                <label>Contact No <span className="text-sm text-red-500">*</span></label>
+                <input onChange={(e)=>handleChange(e)} name="name" value={formData.contactno} className="bg-transparent outline-none text-black border border-gray-600 p-2.5" type="text" placeholder="Enter Contact "></input>
+                </div>
+                {errors.contact && <span className="text-sm text-red-500">{errors.contact}</span>}
+             </div>
+             <div className="flex flex-col gap-.5">
+               <div className="flex flex-col gap-2">
+               <label>Message <span className="text-sm text-red-500">*</span></label>
+               <textarea onChange={(e)=>handleChange(e)} name="message" value={formData.message} placeholder="Enter Message " rows={8} title="message" className="resize-none border border-gray-600  p-2.5 bg-transparent outline-none"></textarea>
+               </div>
                {errors.message && <span className="text-sm text-red-500">{errors.message}</span>}
              </div>
              <button onClick={handleSubmit} className="bg-white hover:font-semibold transition-all duration-300 text-navyblue p-1 ">SUBMIT</button>
