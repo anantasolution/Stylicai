@@ -1,67 +1,40 @@
-import blazzer1Cat from "./blazer/blazer 1/blazer1.webp";
-import blazzer1_img1 from "./blazer/blazer 1/1.webp";
-import blazzer1_img2 from "./blazer/blazer 1/2.webp";
-import blazzer1_img3 from "./blazer/blazer 1/3.webp";
+import blazzer1Cat from "./blazer/blazer 1/garment.webp";
+import blazzer1_img1 from "./blazer/blazer 1/b1.webp";
+import blazzer1_img2 from "./blazer/blazer 1/b2.webp";
+import blazzer1_img3 from "./blazer/blazer 1/b3.webp";
 
-import blazzer2Cat from "./blazer/blazer 2/blazer2.webp";
-import blazzer2_img1 from "./blazer/blazer 2/1.webp";
-import blazzer2_img2 from "./blazer/blazer 2/2.webp";
-import blazzer2_img3 from "./blazer/blazer 2/3.webp";
+import blazzer2Cat from "./blazer/blazer 2/garment.webp";
+import blazzer2_img1 from "./blazer/blazer 2/b1.webp";
+import blazzer2_img2 from "./blazer/blazer 2/b2.webp";
+import blazzer2_img3 from "./blazer/blazer 2/b3.webp";
 
-import blazzer3Cat from "./blazer/blazer 3/blazer3.webp";
-import blazzer3_img1 from "./blazer/blazer 3/1.webp";
-import blazzer3_img2 from "./blazer/blazer 3/2.webp";
-import blazzer3_img3 from "./blazer/blazer 3/3.webp";
+import blazzer3Cat from "./blazer/blazer 3/garment.webp";
+import blazzer3_img1 from "./blazer/blazer 3/b1.webp";
+import blazzer3_img2 from "./blazer/blazer 3/b2.webp";
+import blazzer3_img3 from "./blazer/blazer 3/b3.webp";
 
-import blazzer4Cat from "./blazer/blazer 4/blazer4.webp";
-import blazzer4_img1 from "./blazer/blazer 4/1.webp";
-import blazzer4_img2 from "./blazer/blazer 4/2.webp";
-import blazzer4_img3 from "./blazer/blazer 4/3.webp";
+import blazzer4Cat from "./blazer/blazer 4/garment.webp";
+import blazzer4_img1 from "./blazer/blazer 4/b1.webp";
+import blazzer4_img2 from "./blazer/blazer 4/b2.webp";
+import blazzer4_img3 from "./blazer/blazer 4/b3.webp";
 
-import blazzer5Cat from "./blazer/blazer 5/blazer5.webp";
-import blazzer5_img1 from "./blazer/blazer 5/1.webp";
-import blazzer5_img2 from "./blazer/blazer 5/2.webp";
-import blazzer5_img3 from "./blazer/blazer 5/3.webp";
+import blazzer5Cat from "./blazer/blazer 5/garment.webp";
+import blazzer5_img1 from "./blazer/blazer 5/b1.webp";
+import blazzer5_img2 from "./blazer/blazer 5/b2.webp";
+import blazzer5_img3 from "./blazer/blazer 5/b3.webp";
 
-import blazzer6Cat from "./blazer/blazer 6/blazer6.webp";
-import blazzer6_img1 from "./blazer/blazer 6/1.webp";
-import blazzer6_img2 from "./blazer/blazer 6/2.webp";
-import blazzer6_img3 from "./blazer/blazer 6/3.webp";
+import blazzer6Cat from "./blazer/blazer 6/garment.webp";
+import blazzer6_img1 from "./blazer/blazer 6/b1.webp";
+import blazzer6_img2 from "./blazer/blazer 6/b2.webp";
+import blazzer6_img3 from "./blazer/blazer 6/b3.webp";
 
-import blazzer7Cat from "./blazer/blazer 7/blazer7.webp";
-import blazzer7_img1 from "./blazer/blazer 7/1.webp";
-import blazzer7_img2 from "./blazer/blazer 7/2.webp";
-import blazzer7_img3 from "./blazer/blazer 7/3.webp";
+import blazzer7Cat from "./blazer/blazer 7/garment.webp";
+import blazzer7_img1 from "./blazer/blazer 7/b1.webp";
+import blazzer7_img2 from "./blazer/blazer 7/b2.webp";
+import blazzer7_img3 from "./blazer/blazer 7/b3.webp";
 
-import blazzer8Cat from "./blazer/blazer 8/blazer8.webp";
-import blazzer8_img1 from "./blazer/blazer 8/1.webp";
-import blazzer8_img2 from "./blazer/blazer 8/2.webp";
-import blazzer8_img3 from "./blazer/blazer 8/3.webp";
 
-import blazzer9Cat from "./blazer/blazer 9/blazer9.webp";
-import blazzer9_img1 from "./blazer/blazer 9/1.webp";
-import blazzer9_img2 from "./blazer/blazer 9/2.webp";
-import blazzer9_img3 from "./blazer/blazer 9/3.webp";
-
-import blazzer10Cat from "./blazer/blazer 10/blazer10.webp";
-import blazzer10_img1 from "./blazer/blazer 10/1.webp";
-import blazzer10_img2 from "./blazer/blazer 10/2.webp";
-import blazzer10_img3 from "./blazer/blazer 10/3.webp";
-
-import blazzer13Cat from "./blazer/blazer 13/blazer13.webp";
-import blazzer13_img1 from "./blazer/blazer 13/1.webp";
-import blazzer13_img2 from "./blazer/blazer 13/2.webp";
-import blazzer13_img3 from "./blazer/blazer 13/3.webp";
-
-import blazzer14Cat from "./blazer/blazer 14/blazer14.webp";
-import blazzer14_img1 from "./blazer/blazer 14/1.webp";
-import blazzer14_img2 from "./blazer/blazer 14/2.webp";
-import blazzer14_img3 from "./blazer/blazer 14/3.webp";
-
-import blazzer16Cat from "./blazer/blazer 16/blazer16.webp";
-import blazzer16_img1 from "./blazer/blazer 16/1.webp";
-import blazzer16_img2 from "./blazer/blazer 16/2.webp";
-import blazzer16_img3 from "./blazer/blazer 16/3.webp";
+// ===================================
 
 import GirlShirt1Cat from "./girl shirt/g shirt 1/gs1.webp";
 import girlshirt1_img1 from "./girl shirt/g shirt 1/1.webp";
@@ -88,108 +61,164 @@ import girlshirt5_img1 from "./girl shirt/g shirt 5/1.webp";
 import girlshirt5_img2 from "./girl shirt/g shirt 5/2.webp";
 import girlshirt5_img3 from "./girl shirt/g shirt 5/3.webp";
 
-import BoysShirt1Cat from "./shirts/shirt 1/4.webp";
-import boysshirt1_img1 from "./shirts/shirt 1/1.webp";
-import boysshirt1_img2 from "./shirts/shirt 1/2.webp";
-import boysshirt1_img3 from "./shirts/shirt 1/3.webp";
+// ===================================================
 
-import BoysShirt2Cat from "./shirts/shirt 2/s2.webp";
-import boysshirt2_img1 from "./shirts/shirt 2/1.webp";
-import boysshirt2_img2 from "./shirts/shirt 2/2.webp";
-import boysshirt2_img3 from "./shirts/shirt 2/3.webp";
+// Category 1
+import BoysShirt1Cat from "./shirts/shirt 1/garment.webp";
+import boysshirt1_img1 from "./shirts/shirt 1/sh1.webp";
+import boysshirt1_img2 from "./shirts/shirt 1/sh2.webp";
+import boysshirt1_img3 from "./shirts/shirt 1/sh3.webp";
 
-import BoysShirt3Cat from "./shirts/shirt 3/s3.webp";
-import boysshirt3_img1 from "./shirts/shirt 3/1.webp";
-import boysshirt3_img2 from "./shirts/shirt 3/2.webp";
-import boysshirt3_img3 from "./shirts/shirt 3/3.webp";
+// Category 2
+import BoysShirt2Cat from "./shirts/shirt 2/garment.webp";
+import boysshirt2_img1 from "./shirts/shirt 2/sh1.webp";
+import boysshirt2_img2 from "./shirts/shirt 2/sh2.webp";
+import boysshirt2_img3 from "./shirts/shirt 2/sh3.webp";
 
-import BoysShirt4Cat from "./shirts/shirt 4/s4.webp";
-import boysshirt4_img1 from "./shirts/shirt 4/1.webp";
-import boysshirt4_img2 from "./shirts/shirt 4/2.webp";
-import boysshirt4_img3 from "./shirts/shirt 4/3.webp";
+// Category 3
+import BoysShirt3Cat from "./shirts/shirt 3/garment.webp";
+import boysshirt3_img1 from "./shirts/shirt 3/sh1.webp";
+import boysshirt3_img2 from "./shirts/shirt 3/sh2.webp";
+import boysshirt3_img3 from "./shirts/shirt 3/sh3.webp";
 
-import BoysShirt5Cat from "./shirts/shirt 5/s5.webp";
-import boysshirt5_img1 from "./shirts/shirt 5/1.webp";
-import boysshirt5_img2 from "./shirts/shirt 5/2.webp";
-import boysshirt5_img3 from "./shirts/shirt 5/3.webp";
+// Category 4
+import BoysShirt4Cat from "./shirts/shirt 4/garment.webp";
+import boysshirt4_img1 from "./shirts/shirt 4/sh1.webp";
+import boysshirt4_img2 from "./shirts/shirt 4/sh2.webp";
+import boysshirt4_img3 from "./shirts/shirt 4/sh3.webp";
 
-import BoysShirt6Cat from "./shirts/shirt 6/s6.webp";
-import boysshirt6_img1 from "./shirts/shirt 6/1.webp";
-import boysshirt6_img2 from "./shirts/shirt 6/2.webp";
-import boysshirt6_img3 from "./shirts/shirt 6/3.webp";
+// Category 5
+import BoysShirt5Cat from "./shirts/shirt 5/garment.webp";
+import boysshirt5_img1 from "./shirts/shirt 5/sh1.webp";
+import boysshirt5_img2 from "./shirts/shirt 5/sh2.webp";
+import boysshirt5_img3 from "./shirts/shirt 5/sh3.webp";
 
-import BoysShirt7Cat from "./shirts/shirt 7/s7.webp";
-import boysshirt7_img1 from "./shirts/shirt 7/1.webp";
-import boysshirt7_img2 from "./shirts/shirt 7/2.webp";
-import boysshirt7_img3 from "./shirts/shirt 7/3.webp";
+// Category 6
+import BoysShirt6Cat from "./shirts/shirt 6/garment.webp";
+import boysshirt6_img1 from "./shirts/shirt 6/sh1.webp";
+import boysshirt6_img2 from "./shirts/shirt 6/sh2.webp";
+import boysshirt6_img3 from "./shirts/shirt 6/sh3.webp";
 
-import BoysShirt8Cat from "./shirts/shirt 8/s8.webp";
-import boysshirt8_img1 from "./shirts/shirt 8/1.webp";
-import boysshirt8_img2 from "./shirts/shirt 8/2.webp";
-import boysshirt8_img3 from "./shirts/shirt 8/3.webp";
+// Category 7
+import BoysShirt7Cat from "./shirts/shirt 7/garment.webp";
+import boysshirt7_img1 from "./shirts/shirt 7/sh1.webp";
+import boysshirt7_img2 from "./shirts/shirt 7/sh2.webp";
+import boysshirt7_img3 from "./shirts/shirt 7/sh3.webp";
 
-import BoysShirt9Cat from "./shirts/shirt 9/s9.webp";
-import boysshirt9_img1 from "./shirts/shirt 9/1.webp";
-import boysshirt9_img2 from "./shirts/shirt 9/2.webp";
-import boysshirt9_img3 from "./shirts/shirt 9/3.webp";
+// Category 8
+import BoysShirt8Cat from "./shirts/shirt 8/garment.webp";
+import boysshirt8_img1 from "./shirts/shirt 8/sh1.webp";
+import boysshirt8_img2 from "./shirts/shirt 8/sh2.webp";
+import boysshirt8_img3 from "./shirts/shirt 8/sh3.webp";
 
-import BoysShirt10Cat from "./shirts/shirt 10/s10.webp";
-import boysshirt10_img1 from "./shirts/shirt 10/1.webp";
-import boysshirt10_img2 from "./shirts/shirt 10/2.webp";
-import boysshirt10_img3 from "./shirts/shirt 10/3.webp";
+// Category 9
+import BoysShirt9Cat from "./shirts/shirt 9/garment.webp";
+import boysshirt9_img1 from "./shirts/shirt 9/sh1.webp";
+import boysshirt9_img2 from "./shirts/shirt 9/sh2.webp";
+import boysshirt9_img3 from "./shirts/shirt 9/sh3.webp";
 
-import sweetShirt1Cat from "./sweetshirt/sw shirt 1/2268.webp";
-import sweetshirt1_img1 from "./sweetshirt/sw shirt 1/1.webp";
-import sweetshirt1_img2 from "./sweetshirt/sw shirt 1/2.webp";
-import sweetshirt1_img3 from "./sweetshirt/sw shirt 1/3.webp";
-import sweetshirt1_img4 from "./sweetshirt/sw shirt 1/4.webp";
+// Category 10
+import BoysShirt10Cat from "./shirts/shirt 10/garment.webp";
+import boysshirt10_img1 from "./shirts/shirt 10/sh1.webp";
+import boysshirt10_img2 from "./shirts/shirt 10/sh2.webp";
+import boysshirt10_img3 from "./shirts/shirt 10/sh3.webp";
 
-import sweetShirt2Cat from "./sweetshirt/sw shirt 2/2286.webp";
-import sweetshirt2_img1 from "./sweetshirt/sw shirt 2/1.webp";
-import sweetshirt2_img2 from "./sweetshirt/sw shirt 2/2.webp";
-import sweetshirt2_img3 from "./sweetshirt/sw shirt 2/3.webp";
-import sweetshirt2_img4 from "./sweetshirt/sw shirt 2/4.webp";
 
-import sweetShirt3Cat from "./sweetshirt/sw shirt 3/15317.webp";
-import sweetshirt3_img1 from "./sweetshirt/sw shirt 3/1.webp";
-import sweetshirt3_img2 from "./sweetshirt/sw shirt 3/2.webp";
-import sweetshirt3_img3 from "./sweetshirt/sw shirt 3/3.webp";
-import sweetshirt3_img4 from "./sweetshirt/sw shirt 3/4.webp";
+// ===========================================================
 
-import sweetShirt4Cat from "./sweetshirt/sw shirt 4/13997.webp";
-import sweetshirt4_img1 from "./sweetshirt/sw shirt 4/1.webp";
-import sweetshirt4_img2 from "./sweetshirt/sw shirt 4/2.webp";
-import sweetshirt4_img3 from "./sweetshirt/sw shirt 4/3.webp";
+// Category 1
+import minner1Cat from "./m inner/minner 1/garment.webp";
+import minner1_img1 from "./m inner/minner 1/m1.webp";
+import minner1_img2 from "./m inner/minner 1/m2.webp";
+import minner1_img3 from "./m inner/minner 1/m3.webp";
 
-import sweetShirt5Cat from "./sweetshirt/sw shirt 5/15320.webp";
-import sweetshirt5_img1 from "./sweetshirt/sw shirt 5/1.webp";
-import sweetshirt5_img2 from "./sweetshirt/sw shirt 5/2.webp";
-import sweetshirt5_img3 from "./sweetshirt/sw shirt 5/3.webp";
+// Category 2
+import minner2Cat from "./m inner/minner 2/garment.webp";
+import minner2_img1 from "./m inner/minner 2/m1.webp";
+import minner2_img2 from "./m inner/minner 2/m2.webp";
+import minner2_img3 from "./m inner/minner 2/m3.webp";
 
-import sweetShirt6Cat from "./sweetshirt/sw shirt 6/15625.webp";
-import sweetshirt6_img1 from "./sweetshirt/sw shirt 6/1.webp";
-import sweetshirt6_img2 from "./sweetshirt/sw shirt 6/2.webp";
-import sweetshirt6_img3 from "./sweetshirt/sw shirt 6/3.webp";
+// Category 3
+import minner3Cat from "./m inner/minner 3/garment.webp";
+import minner3_img1 from "./m inner/minner 3/m1.webp";
+import minner3_img2 from "./m inner/minner 3/m2.webp";
+import minner3_img3 from "./m inner/minner 3/m3.webp";
 
-import sweetShirt7Cat from "./sweetshirt/sw shirt 7/17909.webp";
-import sweetshirt7_img1 from "./sweetshirt/sw shirt 7/1.webp";
-import sweetshirt7_img2 from "./sweetshirt/sw shirt 7/2.webp";
-import sweetshirt7_img3 from "./sweetshirt/sw shirt 7/3.webp";
+// Category 4
+import minner4Cat from "./m inner/minner 4/garment.webp";
+import minner4_img1 from "./m inner/minner 4/m1.webp";
+import minner4_img2 from "./m inner/minner 4/m2.webp";
+import minner4_img3 from "./m inner/minner 4/m3.webp";
 
-import sweetShirt8Cat from "./sweetshirt/sw shirt 8/17923.webp";
-import sweetshirt8_img1 from "./sweetshirt/sw shirt 8/1.webp";
-import sweetshirt8_img2 from "./sweetshirt/sw shirt 8/2.webp";
-import sweetshirt8_img3 from "./sweetshirt/sw shirt 8/3.webp";
+// Category 5
+import minner5Cat from "./m inner/minner 5/garment.webp";
+import minner5_img1 from "./m inner/minner 5/m1.webp";
+import minner5_img2 from "./m inner/minner 5/m2.webp";
+import minner5_img3 from "./m inner/minner 5/m3.webp";
 
-import sweetShirt9Cat from "./sweetshirt/sw shirt 9/22580.webp";
-import sweetshirt9_img1 from "./sweetshirt/sw shirt 9/1.webp";
-import sweetshirt9_img2 from "./sweetshirt/sw shirt 9/2.webp";
-import sweetshirt9_img3 from "./sweetshirt/sw shirt 9/3.webp";
+// Category 6
+import minner6Cat from "./m inner/minner 6/garment.webp";
+import minner6_img1 from "./m inner/minner 6/m1.webp";
+import minner6_img2 from "./m inner/minner 6/m2.webp";
+import minner6_img3 from "./m inner/minner 6/m3.webp";
 
-import sweetShirt10Cat from "./sweetshirt/sw shirt 10/22609.webp";
-import sweetshirt10_img1 from "./sweetshirt/sw shirt 10/1.webp";
-import sweetshirt10_img2 from "./sweetshirt/sw shirt 10/2.webp";
-import sweetshirt10_img3 from "./sweetshirt/sw shirt 10/3.webp";
+// Category 7
+import minner7Cat from "./m inner/minner 7/garment.webp";
+import minner7_img1 from "./m inner/minner 7/m1.webp";
+import minner7_img2 from "./m inner/minner 7/m2.webp";
+import minner7_img3 from "./m inner/minner 7/m3.webp";
+
+//  ========================================================
+
+// Category 1
+import sweetShirt1Cat from "./sweetshirt/ss 1/garment.webp";
+import sweetshirt1_img1 from "./sweetshirt/ss 1/ss1.webp";
+import sweetshirt1_img2 from "./sweetshirt/ss 1/ss2.webp";
+import sweetshirt1_img3 from "./sweetshirt/ss 1/ss3.webp";
+
+// Category 2
+import sweetShirt2Cat from "./sweetshirt/ss 2/garment.webp";
+import sweetshirt2_img1 from "./sweetshirt/ss 2/ss1.webp";
+import sweetshirt2_img2 from "./sweetshirt/ss 2/ss2.webp";
+import sweetshirt2_img3 from "./sweetshirt/ss 2/ss3.webp";
+
+// Category 3
+import sweetShirt3Cat from "./sweetshirt/ss 3/garment.webp";
+import sweetshirt3_img1 from "./sweetshirt/ss 3/ss1.webp";
+import sweetshirt3_img2 from "./sweetshirt/ss 3/ss2.webp";
+import sweetshirt3_img3 from "./sweetshirt/ss 3/ss3.webp";
+
+// Category 4
+import sweetShirt4Cat from "./sweetshirt/ss 4/garment.webp";
+import sweetshirt4_img1 from "./sweetshirt/ss 4/ss1.webp";
+import sweetshirt4_img2 from "./sweetshirt/ss 4/ss2.webp";
+import sweetshirt4_img3 from "./sweetshirt/ss 4/ss3.webp";
+
+// Category 5
+import sweetShirt5Cat from "./sweetshirt/ss 5/garment.webp";
+import sweetshirt5_img1 from "./sweetshirt/ss 5/ss1.webp";
+import sweetshirt5_img2 from "./sweetshirt/ss 5/ss2.webp";
+import sweetshirt5_img3 from "./sweetshirt/ss 5/ss3.webp";
+
+// Category 6
+import sweetShirt6Cat from "./sweetshirt/ss 6/garment.webp";
+import sweetshirt6_img1 from "./sweetshirt/ss 6/ss1.webp";
+import sweetshirt6_img2 from "./sweetshirt/ss 6/ss2.webp";
+import sweetshirt6_img3 from "./sweetshirt/ss 6/ss3.webp";
+
+// Category 7
+import sweetShirt7Cat from "./sweetshirt/ss 7/garment.webp";
+import sweetshirt7_img1 from "./sweetshirt/ss 7/ss1.webp";
+import sweetshirt7_img2 from "./sweetshirt/ss 7/ss2.webp";
+import sweetshirt7_img3 from "./sweetshirt/ss 7/ss3.webp";
+
+// Category 8
+import sweetShirt8Cat from "./sweetshirt/ss 8/garment.webp";
+import sweetshirt8_img1 from "./sweetshirt/ss 8/ss1.webp";
+import sweetshirt8_img2 from "./sweetshirt/ss 8/ss2.webp";
+import sweetshirt8_img3 from "./sweetshirt/ss 8/ss3.webp";
+
+//  ==============================================================
 
 import boxer1Cat from "./boxer/boxer 1/b1.webp";
 import boxer1_img1 from "./boxer/boxer 1/1.webp";
@@ -224,6 +253,8 @@ import boxer7_img1 from "./boxer/boxer 7/1.webp";
 import boxer7_img2 from "./boxer/boxer 7/2.webp";
 import boxer7_img3 from "./boxer/boxer 7/3.webp";
 
+// ===========================================================
+
 import jeans1Cat from "./jeans/Jeans 1/42595_enhanced.webp";
 import jeans1_img1 from "./jeans/Jeans 1/1_enhanced.webp";
 import jeans1_img2 from "./jeans/Jeans 1/2_enhanced.webp";
@@ -254,255 +285,178 @@ import jeans6_img1 from "./jeans/Jeans 6/1.webp";
 import jeans6_img2 from "./jeans/Jeans 6/2.webp";
 import jeans6_img3 from "./jeans/Jeans 6/image.webp";
 
-import top1Cat from "./tops/top 1/t1.webp";
-import top1_img1 from "./tops/top 1/1.webp";
-import top1_img2 from "./tops/top 1/2.webp";
-import top1_img3 from "./tops/top 1/3.webp";
+//  =====================================================
 
-import top2Cat from "./tops/top 2/t2.webp";
-import top2_img1 from "./tops/top 2/1.webp";
-import top2_img2 from "./tops/top 2/2.webp";
-import top2_img3 from "./tops/top 2/3.webp";
+// Category 1
+import top1Cat from "./tops/top 1/garment.webp";
+import top1_img1 from "./tops/top 1/t1.webp";
+import top1_img2 from "./tops/top 1/t2.webp";
+import top1_img3 from "./tops/top 1/t3.webp";
 
-import top3Cat from "./tops/top 3/t3.webp";
-import top3_img1 from "./tops/top 3/1.webp";
-import top3_img2 from "./tops/top 3/2.webp";
-import top3_img3 from "./tops/top 3/3.webp";
+// Category 2
+import top2Cat from "./tops/top 2/garment.webp";
+import top2_img1 from "./tops/top 2/t1.webp";
+import top2_img2 from "./tops/top 2/t2.webp";
+import top2_img3 from "./tops/top 2/t3.webp";
 
-import top4Cat from "./tops/top 4/t4.webp";
-import top4_img1 from "./tops/top 4/1.webp";
-import top4_img2 from "./tops/top 4/2.webp";
-import top4_img3 from "./tops/top 4/3.webp";
+// Category 3
+import top3Cat from "./tops/top 3/garment.webp";
+import top3_img1 from "./tops/top 3/t1.webp";
+import top3_img2 from "./tops/top 3/t2.webp";
+import top3_img3 from "./tops/top 3/t3.webp";
 
-import top5Cat from "./tops/top 5/t5.webp";
-import top5_img1 from "./tops/top 5/1.webp";
-import top5_img2 from "./tops/top 5/2.webp";
-import top5_img3 from "./tops/top 5/3.webp";
-import top5_img4 from "./tops/top 5/4.webp";
+// Category 4
+import top4Cat from "./tops/top 4/garment.webp";
+import top4_img1 from "./tops/top 4/t1.webp";
+import top4_img2 from "./tops/top 4/t2.webp";
+import top4_img3 from "./tops/top 4/t3.webp";
 
-import top6Cat from "./tops/top 6/t6.webp";
-import top6_img1 from "./tops/top 6/1.webp";
-import top6_img2 from "./tops/top 6/2.webp";
-import top6_img3 from "./tops/top 6/3.webp";
+// Category 5
+import top5Cat from "./tops/top 5/garment.webp";
+import top5_img1 from "./tops/top 5/t1.webp";
+import top5_img2 from "./tops/top 5/t2.webp";
+import top5_img3 from "./tops/top 5/t3.webp";
 
-import top7Cat from "./tops/top 7/t7.webp";
-import top7_img1 from "./tops/top 7/1.webp";
-import top7_img2 from "./tops/top 7/2.webp";
-import top7_img3 from "./tops/top 7/3.webp";
+// Category 6
+import top6Cat from "./tops/top 6/garment.webp";
+import top6_img1 from "./tops/top 6/t1.webp";
+import top6_img2 from "./tops/top 6/t2.webp";
+import top6_img3 from "./tops/top 6/t3.webp";
 
-import top8Cat from "./tops/top 8/t8.webp";
-import top8_img1 from "./tops/top 8/1.webp";
-import top8_img2 from "./tops/top 8/2.webp";
-import top8_img3 from "./tops/top 8/3.webp";
+// Category 7
+import top7Cat from "./tops/top 7/garment.webp";
+import top7_img1 from "./tops/top 7/t1.webp";
+import top7_img2 from "./tops/top 7/t2.webp";
+import top7_img3 from "./tops/top 7/t3.webp";
 
-import top9Cat from "./tops/top 9/t9.webp";
-import top9_img1 from "./tops/top 9/1.webp";
-import top9_img2 from "./tops/top 9/2.webp";
-import top9_img3 from "./tops/top 9/3.webp";
+// =============================================================
 
-import top10Cat from "./tops/top 10/t10.webp";
-import top10_img1 from "./tops/top 10/1.webp";
-import top10_img2 from "./tops/top 10/2.webp";
-import top10_img3 from "./tops/top 10/3.webp";
+import camisole1Cat from "./camisole/camisole 1/garment.webp";
+import camisole1_img1 from "./camisole/camisole 1/c1.webp";
+import camisole1_img2 from "./camisole/camisole 1/c2.webp";
+import camisole1_img3 from "./camisole/camisole 1/c3.webp";
 
-import top11Cat from "./tops/top 11/t11.webp";
-import top11_img1 from "./tops/top 11/1.webp";
-import top11_img2 from "./tops/top 11/2.webp";
-import top11_img3 from "./tops/top 11/3.webp";
+import camisole2Cat from "./camisole/camisole 2/garment.webp";
+import camisole2_img1 from "./camisole/camisole 2/c1.webp";
+import camisole2_img2 from "./camisole/camisole 2/c2.webp";
+import camisole2_img3 from "./camisole/camisole 2/c3.webp";
 
-import camisole1Cat from "./camisole/c 1/c1.webp";
-import camisole1_img1 from "./camisole/c 1/1.webp";
-import camisole1_img2 from "./camisole/c 1/2.webp";
-import camisole1_img3 from "./camisole/c 1/3.webp";
+import camisole3Cat from "./camisole/camisole 3/garment.webp";
+import camisole3_img1 from "./camisole/camisole 3/c1.webp";
+import camisole3_img2 from "./camisole/camisole 3/c2.webp";
+import camisole3_img3 from "./camisole/camisole 3/c3.webp";
 
-import camisole2Cat from "./camisole/c 2/c2.webp";
-import camisole2_img1 from "./camisole/c 2/1.webp";
-import camisole2_img2 from "./camisole/c 2/2.webp";
-import camisole2_img3 from "./camisole/c 2/3.webp";
+import camisole4Cat from "./camisole/camisole 4/garment.webp";
+import camisole4_img1 from "./camisole/camisole 4/c1.webp";
+import camisole4_img2 from "./camisole/camisole 4/c2.webp";
+import camisole4_img3 from "./camisole/camisole 4/c3.webp";
 
-import camisole3Cat from "./camisole/c 3/c3.avif";
-import camisole3_img1 from "./camisole/c 3/1.webp";
-import camisole3_img2 from "./camisole/c 3/2.webp";
-import camisole3_img3 from "./camisole/c 3/3.webp";
+import camisole5Cat from "./camisole/camisole 5/garment.webp";
+import camisole5_img1 from "./camisole/camisole 5/c1.webp";
+import camisole5_img2 from "./camisole/camisole 5/c2.webp";
+import camisole5_img3 from "./camisole/camisole 5/c3.webp";
 
-import camisole4Cat from "./camisole/c 4/c4.webp";
-import camisole4_img1 from "./camisole/c 4/1.webp";
-import camisole4_img2 from "./camisole/c 4/2.webp";
-import camisole4_img3 from "./camisole/c 4/3.webp";
+import camisole6Cat from "./camisole/camisole 6/garment.webp";
+import camisole6_img1 from "./camisole/camisole 6/c1.webp";
+import camisole6_img2 from "./camisole/camisole 6/c2.webp";
+import camisole6_img3 from "./camisole/camisole 6/c3.webp";
 
-import camisole5Cat from "./camisole/c 5/c5.avif";
-import camisole5_img1 from "./camisole/c 5/1.webp";
-import camisole5_img2 from "./camisole/c 5/2.webp";
-import camisole5_img3 from "./camisole/c 5/3.webp";
 
-import camisole6Cat from "./camisole/c 6/c6.webp";
-import camisole6_img1 from "./camisole/c 6/1.webp";
-import camisole6_img2 from "./camisole/c 6/2.webp";
-import camisole6_img3 from "./camisole/c 6/3.webp";
+// ===============================================================
 
-import camisole7Cat from "./camisole/c 7/c7.webp";
-import camisole7_img1 from "./camisole/c 7/1.webp";
-import camisole7_img2 from "./camisole/c 7/2.webp";
-import camisole7_img3 from "./camisole/c 7/3.webp";
+// Category 1
+import tshirt1Cat from "./tshirt/tshirt 1/garment.webp";
+import tshirt1_img1 from "./tshirt/tshirt 1/t1.webp";
+import tshirt1_img2 from "./tshirt/tshirt 1/t2.webp";
+import tshirt1_img3 from "./tshirt/tshirt 1/t3.webp";
 
-import camisole8Cat from "./camisole/c 8/c8.webp";
-import camisole8_img1 from "./camisole/c 8/1.webp";
-import camisole8_img2 from "./camisole/c 8/2.webp";
-import camisole8_img3 from "./camisole/c 8/3.webp";
+// Category 2
+import tshirt2Cat from "./tshirt/tshirt 2/garment.webp";
+import tshirt2_img1 from "./tshirt/tshirt 2/t1.webp";
+import tshirt2_img2 from "./tshirt/tshirt 2/t2.webp";
+import tshirt2_img3 from "./tshirt/tshirt 2/t3.webp";
 
-import camisole9Cat from "./camisole/c 9/c9.webp";
-import camisole9_img1 from "./camisole/c 9/1.webp";
-import camisole9_img2 from "./camisole/c 9/2.webp";
-import camisole9_img3 from "./camisole/c 9/3.webp";
+// Category 3
+import tshirt3Cat from "./tshirt/tshirt 3/garment.webp";
+import tshirt3_img1 from "./tshirt/tshirt 3/t1.webp";
+import tshirt3_img2 from "./tshirt/tshirt 3/t2.webp";
+import tshirt3_img3 from "./tshirt/tshirt 3/t3.webp";
 
-import tshirt1Cat from "./tshirt/tshirt 1/tshirt1.webp";
-import tshirt1_img1 from "./tshirt/tshirt 1/1.webp";
-import tshirt1_img2 from "./tshirt/tshirt 1/2.webp";
-import tshirt1_img3 from "./tshirt/tshirt 1/3.webp";
-import tshirt1_img4 from "./tshirt/tshirt 1/4.webp";
+// Category 4
+import tshirt4Cat from "./tshirt/tshirt 4/garment.webp";
+import tshirt4_img1 from "./tshirt/tshirt 4/t1.webp";
+import tshirt4_img2 from "./tshirt/tshirt 4/t2.webp";
+import tshirt4_img3 from "./tshirt/tshirt 4/t3.webp";
 
-import tshirt2Cat from "./tshirt/tshirt 2/tshirt2.webp";
-import tshirt2_img1 from "./tshirt/tshirt 2/1.webp";
-import tshirt2_img2 from "./tshirt/tshirt 2/2.webp";
-import tshirt2_img3 from "./tshirt/tshirt 2/3.webp";
+// Category 5
+import tshirt5Cat from "./tshirt/tshirt 5/garment.webp";
+import tshirt5_img1 from "./tshirt/tshirt 5/t1.webp";
+import tshirt5_img2 from "./tshirt/tshirt 5/t2.webp";
+import tshirt5_img3 from "./tshirt/tshirt 5/t3.webp";
 
-import tshirt3Cat from "./tshirt/tshirt 3/tshirt3.webp";
-import tshirt3_img1 from "./tshirt/tshirt 3/1.webp";
-import tshirt3_img2 from "./tshirt/tshirt 3/2.webp";
-import tshirt3_img3 from "./tshirt/tshirt 3/3.webp";
-import tshirt3_img4 from "./tshirt/tshirt 3/4.webp";
+// Category 6
+import tshirt6Cat from "./tshirt/tshirt 6/garment.webp";
+import tshirt6_img1 from "./tshirt/tshirt 6/t1.webp";
+import tshirt6_img2 from "./tshirt/tshirt 6/t2.webp";
+import tshirt6_img3 from "./tshirt/tshirt 6/t3.webp";
 
-import tshirt4Cat from "./tshirt/tshirt 4/t1.webp";
-import tshirt4_img1 from "./tshirt/tshirt 4/1.webp";
-import tshirt4_img2 from "./tshirt/tshirt 4/2.webp";
-import tshirt4_img3 from "./tshirt/tshirt 4/3.webp";
+// Category 7
+import tshirt7Cat from "./tshirt/tshirt 7/garment.webp";
+import tshirt7_img1 from "./tshirt/tshirt 7/t1.webp";
+import tshirt7_img2 from "./tshirt/tshirt 7/t2.webp";
+import tshirt7_img3 from "./tshirt/tshirt 7/t3.webp";
 
-import tshirt5Cat from "./tshirt/tshirt 5/t2.webp";
-import tshirt5_img1 from "./tshirt/tshirt 5/1.webp";
-import tshirt5_img2 from "./tshirt/tshirt 5/2.webp";
-import tshirt5_img3 from "./tshirt/tshirt 5/3.webp";
+// Category 8
+import tshirt8Cat from "./tshirt/tshirt 8/garment.webp";
+import tshirt8_img1 from "./tshirt/tshirt 8/t1.webp";
+import tshirt8_img2 from "./tshirt/tshirt 8/t2.webp";
+import tshirt8_img3 from "./tshirt/tshirt 8/t3.webp";
 
-import tshirt6Cat from "./tshirt/tshirt 6/t3.webp";
-import tshirt6_img1 from "./tshirt/tshirt 6/1.webp";
-import tshirt6_img2 from "./tshirt/tshirt 6/2.webp";
-import tshirt6_img3 from "./tshirt/tshirt 6/3.webp";
+// Category 9
+import tshirt9Cat from "./tshirt/tshirt 9/garment.webp";
+import tshirt9_img1 from "./tshirt/tshirt 9/t1.webp";
+import tshirt9_img2 from "./tshirt/tshirt 9/t2.webp";
+import tshirt9_img3 from "./tshirt/tshirt 9/t3.webp";
 
-import tshirt7Cat from "./tshirt/tshirt 7/t4.webp";
-import tshirt7_img1 from "./tshirt/tshirt 7/1.webp";
-import tshirt7_img2 from "./tshirt/tshirt 7/2.webp";
-import tshirt7_img3 from "./tshirt/tshirt 7/3.webp";
+// Category 10
+import tshirt10Cat from "./tshirt/tshirt 10/garment.webp";
+import tshirt10_img1 from "./tshirt/tshirt 10/t1.webp";
+import tshirt10_img2 from "./tshirt/tshirt 10/t2.webp";
+import tshirt10_img3 from "./tshirt/tshirt 10/t3.webp";
 
-import tshirt8Cat from "./tshirt/tshirt 8/t5.webp";
-import tshirt8_img1 from "./tshirt/tshirt 8/1.webp";
-import tshirt8_img2 from "./tshirt/tshirt 8/2.webp";
-import tshirt8_img3 from "./tshirt/tshirt 8/3.webp";
+//   ====================================================================
 
-import tshirt9Cat from "./tshirt/tshirt 9/t6.webp";
-import tshirt9_img1 from "./tshirt/tshirt 9/1.webp";
-import tshirt9_img2 from "./tshirt/tshirt 9/2.webp";
-import tshirt9_img3 from "./tshirt/tshirt 9/3.webp";
+import jacket1Cat from "./jacket/jacket 1/garment.webp";
+import jacket1_img1 from "./jacket/jacket 1/j1.webp";
+import jacket1_img2 from "./jacket/jacket 1/j2.webp";
+import jacket1_img3 from "./jacket/jacket 1/j3.webp";
 
-import tshirt10Cat from "./tshirt/tshirt 10/t7.webp";
-import tshirt10_img1 from "./tshirt/tshirt 10/1.webp";
-import tshirt10_img2 from "./tshirt/tshirt 10/2.webp";
-import tshirt10_img3 from "./tshirt/tshirt 10/3.webp";
-import tshirt10_img4 from "./tshirt/tshirt 10/4.webp";
+import jacket2Cat from "./jacket/jacket 2/garment.webp";
+import jacket2_img1 from "./jacket/jacket 2/j1.webp";
+import jacket2_img2 from "./jacket/jacket 2/j2.webp";
+import jacket2_img3 from "./jacket/jacket 2/j3.webp";
 
-import tshirt11Cat from "./tshirt/tshirt 11/t8.webp";
-import tshirt11_img1 from "./tshirt/tshirt 11/1.webp";
-import tshirt11_img2 from "./tshirt/tshirt 11/2.webp";
-import tshirt11_img3 from "./tshirt/tshirt 11/3.webp";
+import jacket3Cat from "./jacket/jacket 3/garment.webp";
+import jacket3_img1 from "./jacket/jacket 3/j1.webp";
+import jacket3_img2 from "./jacket/jacket 3/j2.webp";
+import jacket3_img3 from "./jacket/jacket 3/j3.webp";
 
-import tshirt12Cat from "./tshirt/tshirt 12/1163.webp";
-import tshirt12_img1 from "./tshirt/tshirt 12/1.webp";
-import tshirt12_img2 from "./tshirt/tshirt 12/2.webp";
-import tshirt12_img3 from "./tshirt/tshirt 12/3.webp";
+import jacket4Cat from "./jacket/jacket 4/garment.webp";
+import jacket4_img1 from "./jacket/jacket 4/j1.webp";
+import jacket4_img2 from "./jacket/jacket 4/j2.webp";
+import jacket4_img3 from "./jacket/jacket 4/j3.webp";
 
-import tshirt13Cat from "./tshirt/tshirt 13/1907.webp";
-import tshirt13_img1 from "./tshirt/tshirt 13/1.webp";
-import tshirt13_img2 from "./tshirt/tshirt 13/2.webp";
-import tshirt13_img3 from "./tshirt/tshirt 13/3.webp";
+import jacket5Cat from "./jacket/jacket 5/garment.webp";
+import jacket5_img1 from "./jacket/jacket 5/j1.webp";
+import jacket5_img2 from "./jacket/jacket 5/j2.webp";
+import jacket5_img3 from "./jacket/jacket 5/j3.webp";
 
-import tshirt14Cat from "./tshirt/tshirt 14/2272.webp";
-import tshirt14_img1 from "./tshirt/tshirt 14/1.webp";
-import tshirt14_img2 from "./tshirt/tshirt 14/2.webp";
-import tshirt14_img3 from "./tshirt/tshirt 14/3.webp";
-import tshirt14_img4 from "./tshirt/tshirt 14/4.webp";
+import jacket6Cat from "./jacket/jacket 6/garment.webp";
+import jacket6_img1 from "./jacket/jacket 6/j1.webp";
+import jacket6_img2 from "./jacket/jacket 6/j2.webp";
+import jacket6_img3 from "./jacket/jacket 6/j3.webp";
 
-import tshirt15Cat from "./tshirt/tshirt 15/2617.webp";
-import tshirt15_img1 from "./tshirt/tshirt 15/1.webp";
-import tshirt15_img2 from "./tshirt/tshirt 15/2.webp";
-import tshirt15_img3 from "./tshirt/tshirt 15/3.webp";
-
-import jacket1Cat from "./jacket/jacket 1/4462.webp";
-import jacket1_img1 from "./jacket/jacket 1/1.webp";
-import jacket1_img2 from "./jacket/jacket 1/2.webp";
-import jacket1_img3 from "./jacket/jacket 1/3.webp";
-
-// import jacket2Cat from "./jacket/jacket 2/9980.webp";
-// import jacket2_img1 from "./jacket/jacket 2/1.webp";
-// import jacket2_img2 from "./jacket/jacket 2/2.webp";
-// import jacket2_img3 from "./jacket/jacket 2/3.webp";
-
-import jacket3Cat from "./jacket/jacket 3/11273.webp";
-import jacket3_img1 from "./jacket/jacket 3/1.webp";
-import jacket3_img2 from "./jacket/jacket 3/2.webp";
-import jacket3_img3 from "./jacket/jacket 3/3.webp";
-
-import jacket4Cat from "./jacket/jacket 4/13996.webp";
-import jacket4_img1 from "./jacket/jacket 4/1.webp";
-import jacket4_img2 from "./jacket/jacket 4/2.webp";
-import jacket4_img3 from "./jacket/jacket 4/3.webp";
-
-import jacket5Cat from "./jacket/jacket 5/15319.webp";
-import jacket5_img1 from "./jacket/jacket 5/1.webp";
-import jacket5_img2 from "./jacket/jacket 5/2.webp";
-import jacket5_img3 from "./jacket/jacket 5/3.webp";
-
-import jacket6Cat from "./jacket/jacket 6/15620.webp";
-import jacket6_img1 from "./jacket/jacket 6/1.webp";
-import jacket6_img2 from "./jacket/jacket 6/2.webp";
-import jacket6_img3 from "./jacket/jacket 6/3.webp";
-
-import jacket7Cat from "./jacket/jacket 7/15630.webp";
-import jacket7_img1 from "./jacket/jacket 7/1.webp";
-import jacket7_img2 from "./jacket/jacket 7/2.webp";
-import jacket7_img3 from "./jacket/jacket 7/3.webp";
-
-import jacket8Cat from "./jacket/jacket 8/15323.webp";
-import jacket8_img1 from "./jacket/jacket 8/1.webp";
-import jacket8_img2 from "./jacket/jacket 8/2.webp";
-import jacket8_img3 from "./jacket/jacket 8/3.webp";
-
-import jacket9Cat from "./jacket/jacket 9/17900.webp";
-import jacket9_img1 from "./jacket/jacket 9/1.webp";
-import jacket9_img2 from "./jacket/jacket 9/2.webp";
-import jacket9_img3 from "./jacket/jacket 9/3.webp";
-
-import jacket10Cat from "./jacket/jacket 10/18491.webp";
-import jacket10_img1 from "./jacket/jacket 10/1.webp";
-import jacket10_img2 from "./jacket/jacket 10/2.webp";
-import jacket10_img3 from "./jacket/jacket 10/3.webp";
-
-import jacket11Cat from "./jacket/jacket 11/22608.webp";
-import jacket11_img1 from "./jacket/jacket 11/1.webp";
-import jacket11_img2 from "./jacket/jacket 11/2.webp";
-import jacket11_img3 from "./jacket/jacket 11/3.webp";
-
-import jacket12Cat from "./jacket/jacket 12/30615.webp";
-import jacket12_img1 from "./jacket/jacket 12/1.webp";
-import jacket12_img2 from "./jacket/jacket 12/2.webp";
-import jacket12_img3 from "./jacket/jacket 12/3.webp";
-
-import jacket13Cat from "./jacket/jacket 13/31443.webp";
-import jacket13_img1 from "./jacket/jacket 13/1.webp";
-import jacket13_img2 from "./jacket/jacket 13/2.webp";
-import jacket13_img3 from "./jacket/jacket 13/3.webp";
-
-import jacket14Cat from "./jacket/jacket 14/32618.webp";
-import jacket14_img1 from "./jacket/jacket 14/1.webp";
-import jacket14_img2 from "./jacket/jacket 14/2.webp";
-import jacket14_img3 from "./jacket/jacket 14/3.webp";
+// ======================================================
 
 import bra1Cat from "./bra/bra 1/10716.webp";
 import bra1_img1 from "./bra/bra 1/1.webp";
@@ -563,6 +517,8 @@ import bra12Cat from "./bra/bra 12/27475.webp";
 import bra12_img1 from "./bra/bra 12/1.webp";
 import bra12_img2 from "./bra/bra 12/2.webp";
 
+// =====================================================================
+
 import boysJeans1Cat from "./boys jeans/Jeans 1/j1_enhanced.webp";
 import jeans1_boys_img1 from "./boys jeans/Jeans 1/1_enhanced.webp";
 import jeans1_boys_img2 from "./boys jeans/Jeans 1/2_enhanced.webp";
@@ -603,50 +559,47 @@ import jeans10_boys_img1 from "./boys jeans/Jeans 10/image (5)_enhanced.webp";
 import jeans10_boys_img2 from "./boys jeans/Jeans 10/image (6)_enhanced.webp";
 import jeans10_boys_img3 from "./boys jeans/Jeans 10/image (7)_enhanced.webp";
 
-import Dress1Cat1 from "./dresses/Dress 1/4983_enhanced.webp";
-import Dress1_img1 from "./dresses/Dress 1/1_enhanced.webp";
-import Dress1_img2 from "./dresses/Dress 1/2_enhanced.webp";
-import Dress1_img3 from "./dresses/Dress 1/3_enhanced.webp";
+// ========================================================
 
-import Dress2Cat2 from "./dresses/Dress 2/24929_enhanced.webp";
-import Dress2_img1 from "./dresses/Dress 2/1_enhanced.webp";
-import Dress2_img2 from "./dresses/Dress 2/2_enhanced.webp";
-import Dress2_img3 from "./dresses/Dress 2/3_enhanced.webp";
+import Dress1Cat1 from "./dress/d 1/garment.webp";
+import Dress1_img1 from "./dress/d 1/d1.webp";
+import Dress1_img2 from "./dress/d 1/d2.webp";
+import Dress1_img3 from "./dress/d 1/d3.webp";
 
-import Dress3Cat3 from "./dresses/Dress 3/4991_enhanced.webp";
-import Dress3_img1 from "./dresses/Dress 3/1_enhanced.webp";
-import Dress3_img2 from "./dresses/Dress 3/2_enhanced.webp";
-import Dress3_img3 from "./dresses/Dress 3/3_enhanced.webp";
+import Dress2Cat2 from "./dress/d 2/garment.webp";
+import Dress2_img1 from "./dress/d 2/d1.webp";
+import Dress2_img2 from "./dress/d 2/d2.webp";
+import Dress2_img3 from "./dress/d 2/d3.webp";
 
-import Dress4Cat4 from "./dresses/Dress 4/4992_enhanced.webp";
-import Dress4_img1 from "./dresses/Dress 4/1_enhanced.webp";
-import Dress4_img2 from "./dresses/Dress 4/2_enhanced.webp";
-import Dress4_img3 from "./dresses/Dress 4/3_enhanced.webp";
+import Dress3Cat3 from "./dress/d 3/garment.webp";
+import Dress3_img1 from "./dress/d 3/d1.webp";
+import Dress3_img2 from "./dress/d 3/d2.webp";
+import Dress3_img3 from "./dress/d 3/d3.webp";
 
-import Dress5Cat5 from "./dresses/Dress 5/10016_enhanced.webp";
-import Dress5_img1 from "./dresses/Dress 5/1_enhanced (1).webp";
-import Dress5_img2 from "./dresses/Dress 5/2_enhanced (1).webp";
-import Dress5_img3 from "./dresses/Dress 5/3_enhanced.webp";
+import Dress4Cat4 from "./dress/d 4/garment.webp";
+import Dress4_img1 from "./dress/d 4/d1.webp";
+import Dress4_img2 from "./dress/d 4/d2.webp";
+import Dress4_img3 from "./dress/d 4/d3.webp";
 
-import Dress6Cat6 from "./dresses/Dress 6/5566.webp";
-import Dress6_img1 from "./dresses/Dress 6/image (1)_enhanced.webp";
-import Dress6_img2 from "./dresses/Dress 6/image (1)_enhanced.webp";
-import Dress6_img3 from "./dresses/Dress 6/WhatsApp Image 2024-12-10 at 4,31,10 PM_enhanced.webp";
+import Dress5Cat5 from "./dress/d 5/garment.webp";
+import Dress5_img1 from "./dress/d 5/d1.webp";
+import Dress5_img2 from "./dress/d 5/d2.webp";
+import Dress5_img3 from "./dress/d 5/d3.webp";
 
-import Dress7Cat7 from "./dresses/Dress 7/29167.webp";
-import Dress7_img1 from "./dresses/Dress 7/image (2)_enhanced.webp";
-import Dress7_img2 from "./dresses/Dress 7/image (5)_enhanced.webp";
-import Dress7_img3 from "./dresses/Dress 7/image (8)_enhanced.webp";
+import Dress6Cat6 from "./dress/d 6/garment.webp";
+import Dress6_img1 from "./dress/d 6/d1.webp";
+import Dress6_img2 from "./dress/d 6/d2.webp";
+import Dress6_img3 from "./dress/d 6/d3.webp";
 
-import Dress8Cat8 from "./dresses/Dress 8/25503.webp";
-import Dress8_img1 from "./dresses/Dress 8/image (1)_enhanced.webp";
-import Dress8_img2 from "./dresses/Dress 8/image (6)_enhanced.webp";
-import Dress8_img3 from "./dresses/Dress 8/image (7)_enhanced.webp";
+import Dress7Cat7 from "./dress/d 7/garment.webp";
+import Dress7_img1 from "./dress/d 7/d1.webp";
+import Dress7_img2 from "./dress/d 7/d2.webp";
+import Dress7_img3 from "./dress/d 7/d3.webp";
 
-import Dress9Cat8 from "./dresses/Dress 9/35434.webp";
-import Dress9_img1 from "./dresses/Dress 9/image (3)_enhanced.webp";
-import Dress9_img2 from "./dresses/Dress 9/image (4)_enhanced.webp";
-import Dress9_img3 from "./dresses/Dress 9/WhatsApp Image 2024-12-10 at 4,54,50 PM_enhanced.webp";
+import Dress8Cat8 from "./dress/d 8/garment.webp";
+import Dress8_img1 from "./dress/d 8/d1.webp";
+import Dress8_img2 from "./dress/d 8/d2.webp";
+import Dress8_img3 from "./dress/d 8/d3.webp";
 
 import rating_star from "./rating_star.svg"
 
@@ -658,12 +611,6 @@ const blazerThumbnails = [
   blazzer5Cat,
   blazzer6Cat,
   blazzer7Cat,
-  blazzer8Cat,
-  blazzer9Cat,
-  blazzer10Cat,
-  blazzer13Cat,
-  blazzer14Cat,
-  blazzer16Cat,
 ];
 
 const blazerImages = [
@@ -674,12 +621,6 @@ const blazerImages = [
   [blazzer5_img1, blazzer5_img2, blazzer5_img3],
   [blazzer6_img1, blazzer6_img2, blazzer6_img3],
   [blazzer7_img1, blazzer7_img2, blazzer7_img3],
-  [blazzer8_img1, blazzer8_img2, blazzer8_img3],
-  [blazzer9_img1, blazzer9_img2, blazzer9_img3],
-  [blazzer10_img1, blazzer10_img2, blazzer10_img3],
-  [blazzer13_img1, blazzer13_img2, blazzer13_img3],
-  [blazzer14_img1, blazzer14_img2, blazzer14_img3],
-  [blazzer16_img1, blazzer16_img2, blazzer16_img3],
 ];
 
 const girlShirtThumbnails = [
@@ -733,21 +674,17 @@ const sweetShirtThumbnails = [
   sweetShirt6Cat,
   sweetShirt7Cat,
   sweetShirt8Cat,
-  sweetShirt9Cat,
-  sweetShirt10Cat,
 ];
 
 const sweetShirtImages = [
-  [sweetshirt1_img1, sweetshirt1_img2, sweetshirt1_img3, sweetshirt1_img4],
-  [sweetshirt2_img1, sweetshirt2_img2, sweetshirt2_img3, sweetshirt2_img4],
-  [sweetshirt3_img1, sweetshirt3_img2, sweetshirt3_img3, sweetshirt3_img4],
+  [sweetshirt1_img1, sweetshirt1_img2, sweetshirt1_img3],
+  [sweetshirt2_img1, sweetshirt2_img2, sweetshirt2_img3],
+  [sweetshirt3_img1, sweetshirt3_img2, sweetshirt3_img3,],
   [sweetshirt4_img1, sweetshirt4_img2, sweetshirt4_img3],
   [sweetshirt5_img1, sweetshirt5_img2, sweetshirt5_img3],
   [sweetshirt6_img1, sweetshirt6_img2, sweetshirt6_img3],
   [sweetshirt7_img1, sweetshirt7_img2, sweetshirt7_img3],
   [sweetshirt8_img1, sweetshirt8_img2, sweetshirt8_img3],
-  [sweetshirt9_img1, sweetshirt9_img2, sweetshirt9_img3],
-  [sweetshirt10_img1, sweetshirt10_img2, sweetshirt10_img3],
 ];
 
 const boxerThumbnails = [
@@ -778,10 +715,6 @@ const topThumbnails = [
   top5Cat,
   top6Cat,
   top7Cat,
-  top8Cat,
-  top9Cat,
-  top10Cat,
-  top11Cat,
 ];
 
 const topImages = [
@@ -789,13 +722,9 @@ const topImages = [
   [top2_img1, top2_img2, top2_img3],
   [top3_img1, top3_img2, top3_img3],
   [top4_img1, top4_img2, top4_img3],
-  [top5_img1, top5_img2, top5_img3, top5_img4],
+  [top5_img1, top5_img2, top5_img3],
   [top6_img1, top6_img2, top6_img3],
   [top7_img1, top7_img2, top7_img3],
-  [top8_img1, top8_img2, top8_img3],
-  [top9_img1, top9_img2, top9_img3],
-  [top10_img1, top10_img2, top10_img3],
-  [top11_img1, top11_img2, top11_img3],
 ];
 
 const jeansThumbnails = [
@@ -823,9 +752,6 @@ const camisoleThumbnails = [
   camisole4Cat,
   camisole5Cat,
   camisole6Cat,
-  camisole7Cat,
-  camisole8Cat,
-  camisole9Cat,
 ];
 
 const camisoleImages = [
@@ -835,9 +761,26 @@ const camisoleImages = [
   [camisole4_img1, camisole4_img2, camisole4_img3],
   [camisole5_img1, camisole5_img2, camisole5_img3],
   [camisole6_img1, camisole6_img2, camisole6_img3],
-  [camisole7_img1, camisole7_img2, camisole7_img3],
-  [camisole8_img1, camisole8_img2, camisole8_img3],
-  [camisole9_img1, camisole9_img2, camisole9_img3],
+];
+
+const minnerThumbnails = [
+  minner1Cat,
+  minner2Cat,
+  minner3Cat,
+  minner4Cat,
+  minner5Cat,
+  minner6Cat,
+  minner7Cat,
+];
+
+const minnerImages = [
+  [minner1_img1, minner1_img2, minner1_img3],
+  [minner2_img1, minner2_img2, minner2_img3],
+  [minner3_img1, minner3_img2, minner3_img3],
+  [minner4_img1, minner4_img2, minner4_img3],
+  [minner5_img1, minner5_img2, minner5_img3],
+  [minner6_img1, minner6_img2, minner6_img3],
+  [minner7_img1, minner7_img2, minner7_img3],
 ];
 
 const tshirtThumbnails = [
@@ -851,63 +794,37 @@ const tshirtThumbnails = [
   tshirt8Cat,
   tshirt9Cat,
   tshirt10Cat,
-  tshirt11Cat,
-  tshirt12Cat,
-  tshirt13Cat,
-  tshirt14Cat,
-  tshirt15Cat,
 ];
 
 const tshirtImages = [
-  [tshirt1_img1, tshirt1_img2, tshirt1_img3, tshirt1_img4],
+  [tshirt1_img1, tshirt1_img2, tshirt1_img3,],
   [tshirt2_img1, tshirt2_img2, tshirt2_img3],
-  [tshirt3_img1, tshirt3_img2, tshirt3_img3, tshirt3_img4],
+  [tshirt3_img1, tshirt3_img2, tshirt3_img3,],
   [tshirt4_img1, tshirt4_img2, tshirt4_img3],
   [tshirt5_img1, tshirt5_img2, tshirt5_img3],
   [tshirt6_img1, tshirt6_img2, tshirt6_img3],
   [tshirt7_img1, tshirt7_img2, tshirt7_img3],
   [tshirt8_img1, tshirt8_img2, tshirt8_img3],
   [tshirt9_img1, tshirt9_img2, tshirt9_img3],
-  [tshirt10_img1, tshirt10_img2, tshirt10_img3, tshirt10_img4],
-  [tshirt11_img1, tshirt11_img2, tshirt11_img3],
-  [tshirt12_img1, tshirt12_img2, tshirt12_img3],
-  [tshirt13_img1, tshirt13_img2, tshirt13_img3],
-  [tshirt14_img1, tshirt14_img2, tshirt14_img3, tshirt14_img4],
-  [tshirt15_img1, tshirt15_img2, tshirt15_img3],
+  [tshirt10_img1, tshirt10_img2, tshirt10_img3],
 ];
 
 const jacketThumbnails = [
   jacket1Cat,
-  // jacket2Cat,
+  jacket2Cat,
   jacket3Cat,
   jacket4Cat,
   jacket5Cat,
   jacket6Cat,
-  jacket7Cat,
-  jacket8Cat,
-  jacket9Cat,
-  jacket10Cat,
-  jacket11Cat,
-  jacket12Cat,
-  jacket13Cat,
-  jacket14Cat,
 ];
 
 const jacketImages = [
   [jacket1_img1, jacket1_img2, jacket1_img3],
-  // [jacket2_img1, jacket2_img2, jacket2_img3],
+  [jacket2_img1, jacket2_img2, jacket2_img3],
   [jacket3_img1, jacket3_img2, jacket3_img3],
   [jacket4_img1, jacket4_img2, jacket4_img3],
   [jacket5_img1, jacket5_img2, jacket5_img3],
   [jacket6_img1, jacket6_img2, jacket6_img3],
-  [jacket7_img1, jacket7_img2, jacket7_img3],
-  [jacket8_img1, jacket8_img2, jacket8_img3],
-  [jacket9_img1, jacket9_img2, jacket9_img3],
-  [jacket10_img1, jacket10_img2, jacket10_img3],
-  [jacket11_img1, jacket11_img2, jacket11_img3],
-  [jacket12_img1, jacket12_img2, jacket12_img3],
-  [jacket13_img1, jacket13_img2, jacket13_img3],
-  [jacket14_img1, jacket14_img2, jacket14_img3],
 ];
 
 const braThumbnails = [
@@ -971,7 +888,6 @@ const dressThumbnails = [
   Dress6Cat6,
   Dress7Cat7,
   Dress8Cat8,
-  Dress9Cat8,
 ];
 
 const dressImages = [
@@ -983,7 +899,6 @@ const dressImages = [
   [Dress6_img1, Dress6_img2, Dress6_img3],
   [Dress7_img1, Dress7_img2, Dress7_img3],
   [Dress8_img1, Dress8_img2, Dress8_img3],
-  [Dress9_img1, Dress9_img2, Dress9_img3],
 ];
 
 import profile_img_1 from "./profile_img_1.png"
@@ -1017,6 +932,8 @@ export {
   jacketThumbnails,
   jacketImages,
   testimonialsData,
+  minnerThumbnails,
+  minnerImages,
   rating_star,
   profile_img_1,
   profile_img_2,

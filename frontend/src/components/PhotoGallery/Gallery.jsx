@@ -28,6 +28,8 @@ import {
   tshirtImages,
   jacketThumbnails,
   jacketImages,
+  minnerThumbnails,
+  minnerImages
 } from "../../assets/assets.js";
 
 // Importing Swiper
@@ -93,6 +95,10 @@ const Gallery = () => {
       thumbnails: jacketThumbnails,
       images: jacketImages,
     },
+    "means inner":{
+      thumbnails : minnerThumbnails,
+      images : minnerImages
+    }
   };
 
   const [activeCategory, setActiveCategory] = useState("blazer");

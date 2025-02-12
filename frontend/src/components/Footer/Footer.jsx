@@ -53,16 +53,16 @@ const Footer = () => {
               STYLIC brings innovation to fashion photography with the help of artificial intelligence technology. Make impressive, photorealistic designs with minimal effort, and enhance your commerce enterprise.
             </p>
             <div className="flex gap-4 justify-center">
-              <a href="#" aria-label="Facebook" className="hover:text-gray-400">
+              <a href="https://www.facebook.com/stylicai" target="_blank" aria-label="Facebook" className="hover:text-gray-400">
                 <FacebookIcon />
               </a>
-              <a href="#" aria-label="Instagram" className="hover:text-gray-400">
+              <a href="https://www.instagram.com/stylicai/" target="_blank" aria-label="Instagram" className="hover:text-gray-400">
                 <InstagramIcon />
               </a>
-              <a href="#" aria-label="Twitter" className="hover:text-gray-400">
+              <a href="#" aria-label="Twitter" target="_blank" className="hover:text-gray-400">
                 <TwitterIcon />
               </a>
-              <a href="#" aria-label="LinkedIn" className="hover:text-gray-400">
+              <a href="#" aria-label="LinkedIn" target="_blank" className="hover:text-gray-400">
                 <LinkedInIcon />
               </a>
             </div>
