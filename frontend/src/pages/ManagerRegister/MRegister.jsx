@@ -103,9 +103,9 @@ export default function ManagerForm() {
     try{
       setLoading(true)
       //For Register new manager
-      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/auth/cmanager-register`,formData)
+      await axios.post(`${import.meta.env.VITE_API_BASE_DASHBOARD_URL}/auth/cmanager-register`,formData)
       //For send invitation mail
-      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/mail/send-manager-mail`,{managerMail:formData.email,managerName:formData.name,password:formData.password})
+      await axios.post(`${import.meta.env.VITE_API_BASE_DASHBOARD_URL}/mail/send-manager-mail`,{managerMail:formData.email,managerName:formData.name,password:formData.password})
 
       toast.success("Manager created successfully.")
     }catch(err){
