@@ -95,9 +95,9 @@ export default function ManagerForm() {
     setErrors(newErrors);
 
     if (!Object.values(newErrors).some(error => error !== '')) {
-      setFormData({name: '', email: '', password: '', mobileno: ''});
-      setTouched({name: false, email: false, password: false, mobileno: false});
-      setErrors({name: '', email: '', password: '', mobileno: ''});
+      setFormData({name: '', email: '', password: '', mobileno: '',assignto: "67add6ea08ccee832594ed97"});
+      setTouched({name: false, email: false, password: false, mobileno: false,assignto: "67add6ea08ccee832594ed97"});
+      setErrors({name: '', email: '', password: '', mobileno: '',assignto: "67add6ea08ccee832594ed97"});
     }
 
     try{
