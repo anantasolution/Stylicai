@@ -208,10 +208,10 @@ const Gallery = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex md:flex-row flex-col px-5 gap-4 flex-wrap lg:flex-row w-full">
+      <div className="flex md:flex-row flex-col px-8 gap-6 flex-wrap lg:flex-row w-full">
         {/* Left Section */}
         <div className="lg:w-[40%] w-full flex justify-center items-center">
-          <div className="lg:w-3/4 w-4/5 h-full">
+          <div className="w-full h-full">
             <img
               src={selectedImage}
               alt="Model"
@@ -226,7 +226,7 @@ const Gallery = () => {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <CheckroomIcon style={{ color: "#3f3f3f" }} />
-              <p className="text-[#3f3f3f] font-medium text-xl">Product</p>
+              <p className="text-[#3f3f3f] font-medium text-xl">Garmate</p>
             </div>
             <div className="grid grid-cols-4 gap-4 mb-8">
               {categories[activeCategory]?.thumbnails

@@ -8,7 +8,7 @@ import How from "../../components/How/How";
 import Faq from "../../components/FAQ/Faq";
 import Schedule from "../../components/Sechdule/Sechdule"; // Kept 'Schedule' from main
 import Aboutus from "../../components/Aboutus/Aboutus";
-import Testimonial from "../../components/Testimonial/Testimonial"
+// import Testimonial from "../../components/Testimonial/Testimonial"
 import BrandCarousel from "../../components/Brandingcarousel/Brandingcarousle";
 
 const Home = () => {
@@ -23,7 +23,7 @@ const Home = () => {
       <BrandCarousel></BrandCarousel>
       <Faq/>
       <Schedule></Schedule>
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Footer />
     </div>
   );

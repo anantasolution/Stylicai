@@ -11,7 +11,7 @@ export default function Faq (){
     },
     {
       question: 'What amount of time is taken to produce images?',
-      answer: "This AI can generate high-quality images quickly. The generated pictures will probably be ready for downloading in just a 4-5 hours after the requests are submitted."
+      answer: "This AI can generate high-quality images quickly. The generated pictures will probably be ready for downloading in just a 12-24 hours after the requests are submitted."
     },
     {
       question: 'Can I use these generated images on various platforms?',

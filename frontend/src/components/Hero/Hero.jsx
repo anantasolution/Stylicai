@@ -2,10 +2,10 @@ import React from "react";
 import Navbar from "../Navbar/Navbar";
 import {Link} from 'react-router-dom'
 
-import i5 from "../../assets/hearders_images/i1.jpg"
-import i6 from "../../assets/hearders_images/i2.jpg"
-import i7 from "../../assets/hearders_images/i3.jpg"
-import i8 from "../../assets/hearders_images/i4.jpg"
+import i5 from "../../assets/hearders_images/i1.webp"
+import i6 from "../../assets/hearders_images/i2.webp"
+import i7 from "../../assets/hearders_images/i3.webp"
+import i8 from "../../assets/hearders_images/i4.webp"
 
 
 export default function Hero() {  

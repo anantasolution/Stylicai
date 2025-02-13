@@ -39,10 +39,6 @@ const corsOptions = {
     credentials: true,
 };
 
-console.log("SMTP USER:", process.env.USER_USERNAME);
-console.log("SMTP PASS:", process.env.USER_APP_PASS);
-
-
 
 // Preflight request handling for OPTIONS
 app.options("*", cors(corsOptions)); // Allow OPTIONS for all routes

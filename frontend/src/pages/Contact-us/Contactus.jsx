@@ -9,6 +9,7 @@ import CallIcon from '@mui/icons-material/Call';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { LoaderCircle } from 'lucide-react';
 import { toast } from "react-toastify";
 
 
@@ -20,7 +21,7 @@ const Contactus = () => {
     email:'',
     message:'',
   })
-
+  const [loading,setLoading] = useState(false)
   const [errors,setErrors] = useState({})
 
   const handleChange = (e) =>{
@@ -43,11 +44,10 @@ const Contactus = () => {
       return Object.keys(newErrors).length===0
   }
 
-  console.log(errors)
-
   const handleSubmit = async ()=>{
        if(validateData()){
          try{
+            setLoading(true)
             await axios.post(`${import.meta.env.VITE_API_BASE_URL}/contact`,formData)
             setFormData({
                name:'',
@@ -55,11 +55,12 @@ const Contactus = () => {
                email:'',
                message:'',
             })
-            console.log("Succesfully form filling")
             toast.success("Congratulations !! Our Representative Will Call You Shortly")
          }catch(err){
-            toast.error(err.message)
+           toast.error(err.response.data?.message || "Something went wrong.")
            console.log(err)
+         } finally{
+            setLoading(false)
          }
        }
   }
@@ -93,13 +94,13 @@ const Contactus = () => {
                  </div>
               </div>
               <div className="m-auto w-full  flex items-center mt-2 gap-2">
-                 <span className="text-black hover:text-golden"><InstagramIcon style={{fontSize:'1.3rem'}}></InstagramIcon></span>
-                 <span className="text-black hover:text-golden"><FacebookOutlinedIcon style={{fontSize:'1.3rem'}}></FacebookOutlinedIcon></span>
-                 <span className="text-black hover:text-golden"><LinkedInIcon style={{fontSize:'1.3rem'}}></LinkedInIcon></span>
+                 <span className="text-navyblue hover:text-golden"><InstagramIcon style={{fontSize:'1.3rem'}}></InstagramIcon></span>
+                 <span className="text-navyblue hover:text-golden"><FacebookOutlinedIcon style={{fontSize:'1.3rem'}}></FacebookOutlinedIcon></span>
+                 <span className="text-navyblue hover:text-golden"><LinkedInIcon style={{fontSize:'1.3rem'}}></LinkedInIcon></span>
               </div>
            </div>
            <div className="md:flex-1 rounded-md   w-full border p-4 flex flex-col gap-5">
-            <h2 className="font-medium text-5xl mb-2">Request a Demo</h2>
+            <h2 className="font-medium text-4xl md:text-5xl mb-2">Request a Demo</h2>
              <div className="flex flex-col gap-.5">
                 <div className="flex flex-col gap-2">
                 <label>Name <span className="text-sm text-red-500">*</span></label>
@@ -124,11 +125,20 @@ const Contactus = () => {
              <div className="flex flex-col gap-.5">
                <div className="flex flex-col gap-2">
                <label>Message <span className="text-sm text-red-500">*</span></label>
-               <textarea onChange={(e)=>handleChange(e)} name="message" value={formData.message} placeholder="Enter Message " rows={8} title="message" className="resize-none border border-gray-600  p-2.5 bg-transparent outline-none"></textarea>
+               <textarea onChange={(e)=>handleChange(e)} name="message" value={formData.message} placeholder="Enter Message " rows={8} title="message" className="resize-none border h-24 border-gray-600  p-2.5 bg-transparent outline-none"></textarea>
                </div>
                {errors.message && <span className="text-sm text-red-500">{errors.message}</span>}
              </div>
-             <button onClick={handleSubmit} className="bg-white hover:font-semibold transition-all duration-300 text-navyblue p-1 ">SUBMIT</button>
+             <button onClick={handleSubmit} disabled={loading} className="bg-golden hover:bg-navyblue text-white flex justify-center items-center hover:font-semibold transition-all duration-300 p-2 ">
+               {
+                  loading ? 
+                  <div className="flex items-center gap-2">
+                     <span><LoaderCircle className="animate-spin"></LoaderCircle></span>
+                     Loading...
+                  </div>
+                  :<span>SUBMIT</span>
+               }
+             </button>
            </div>
         </div>
         

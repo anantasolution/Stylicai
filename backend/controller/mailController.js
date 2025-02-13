@@ -1,23 +1,25 @@
 import nodemailer from "nodemailer";
+import dotenv from "dotenv"
+
+dotenv.config()
 
 
 const transporter = nodemailer.createTransport({
   host: "email-smtp.us-east-1.amazonaws.com", // Replace with your SES SMTP endpoint
   port: 587, // For secure connection
-  secure: true, // Use TLS
+  secure: false, // Use TLS
   auth: {
     user: process.env.USER_USERNAME, // SES SMTP username
     pass: process.env.USER_APP_PASS, // SES SMTP password
+  },
+  tls: {
+    rejectUnauthorized: true,
   },
 });
 
 // Email options remain the same
 
 export const sendMail = async (req, res, next) => {
-    console.log("SMTP USER:", process.env.USER_USERNAME);
-console.log("SMTP PASS:", process.env.USER_APP_PASS);
-
-  console.log("request gone")
   try {
     const mailOptions = {
       from: process.env.USER_MAIL, // Must be a verified email in Amazon SES
@@ -32,8 +34,8 @@ console.log("SMTP PASS:", process.env.USER_APP_PASS);
       if (error) {
         return console.error("Error:", error);
       }
-      console.log("Email sent:", info);
     });
+    
     res.status(200).json("mail sended.")
   } catch (err) {
     next(err);
