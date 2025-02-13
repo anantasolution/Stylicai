@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 // import About from "./components/Aboutus/About";
+import MRegister from "./pages/ManagerRegister/MRegister";
 import About from "./pages/Aboutus/About";
 import Contactus from "./pages/Contact-us/Contactus";
 import ShowCase from "./pages/showcase/ShowCase";
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/showcase" element={<><Navbar/><ShowCase/><Footer/></>}></Route>
         <Route path="/about" element={<><Navbar /><About /><Footer /></>}/>
         <Route path="/contact" element={<><Navbar /><Contactus /><Footer /></>}/>
+        <Route path="/registeruser-ldcollage" element={<><Navbar/><MRegister/><Footer/></>}></Route>
       </Routes>
       <ToastContainer />
     </BrowserRouter>

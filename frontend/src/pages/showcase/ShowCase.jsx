@@ -310,7 +310,7 @@ function ShowCase() {
           
             <div className="flex items-center gap-2 mb-6">
               <CheckroomIcon style={{ color: "#3f3f3f" }} />
-              <p className="text-[#3f3f3f] font-medium text-xl">Garmate</p>
+              <p className="text-[#3f3f3f] font-medium text-xl">Garments</p>
             </div>
 
             {/* Previous Button */}

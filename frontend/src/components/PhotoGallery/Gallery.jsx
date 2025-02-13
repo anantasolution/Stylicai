@@ -226,7 +226,7 @@ const Gallery = () => {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <CheckroomIcon style={{ color: "#3f3f3f" }} />
-              <p className="text-[#3f3f3f] font-medium text-xl">Garmate</p>
+              <p className="text-[#3f3f3f] font-medium text-xl">Garments</p>
             </div>
             <div className="grid grid-cols-4 gap-4 mb-8">
               {categories[activeCategory]?.thumbnails

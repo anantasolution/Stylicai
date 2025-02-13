@@ -61,10 +61,10 @@ const Footer = () => {
               </a>
               {/* <a href="#" aria-label="Twitter" target="_blank" className="hover:text-gray-400">
                 <TwitterIcon />
-              </a>
-              <a href="#" aria-label="LinkedIn" target="_blank" className="hover:text-gray-400">
-                <LinkedInIcon />
               </a> */}
+              <a href="https://www.linkedin.com/company/stylicai/" aria-label="LinkedIn" target="_blank" className="hover:text-gray-400">
+                <LinkedInIcon />
+              </a>
             </div>
           </div>
 

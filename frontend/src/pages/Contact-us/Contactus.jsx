@@ -75,7 +75,7 @@ const Contactus = () => {
               <div className="flex items-center gap-4">
                  <span className="text-golden"><PlaceIcon style={{fontSize:'1.8rem'}}></PlaceIcon></span>
                  <div className="flex flex-col gap-.5">
-                    <span className="font-semibold">Our Address:</span>
+                    <span className="font-semibold">Communication Address:</span>
                     <span>402, Shangrila Arcade, Shyamal Cross Road, Ahmedabad - 380015.</span>
                  </div>
               </div>
@@ -94,38 +94,38 @@ const Contactus = () => {
                  </div>
               </div>
               <div className="m-auto w-full  flex items-center mt-2 gap-2">
-                 <span className="text-navyblue hover:text-golden"><InstagramIcon style={{fontSize:'1.3rem'}}></InstagramIcon></span>
-                 <span className="text-navyblue hover:text-golden"><FacebookOutlinedIcon style={{fontSize:'1.3rem'}}></FacebookOutlinedIcon></span>
-                 <span className="text-navyblue hover:text-golden"><LinkedInIcon style={{fontSize:'1.3rem'}}></LinkedInIcon></span>
+                 <a href="https://www.instagram.com/stylicai/" target="_blank" aria-label="Instagram" className="text-navyblue hover:text-golden"><InstagramIcon style={{fontSize:'1.3rem'}}></InstagramIcon></a>
+                 <a href="https://www.facebook.com/stylicai" target="_blank" aria-label="Facebook" className="text-navyblue hover:text-golden"><FacebookOutlinedIcon style={{fontSize:'1.3rem'}}></FacebookOutlinedIcon></a>
+                 <a href="https://www.linkedin.com/company/stylicai/" aria-label="LinkedIn" target="_blank" className="text-navyblue hover:text-golden"><LinkedInIcon style={{fontSize:'1.3rem'}}></LinkedInIcon></a>
               </div>
            </div>
-           <div className="md:flex-1 rounded-md   w-full border p-4 flex flex-col gap-5">
+           <div className="md:flex-1 rounded-md w-full border p-4 flex flex-col gap-5">
             <h2 className="font-medium text-4xl md:text-5xl mb-2">Request a Demo</h2>
              <div className="flex flex-col gap-.5">
                 <div className="flex flex-col gap-2">
                 <label>Name <span className="text-sm text-red-500">*</span></label>
-                <input onChange={(e)=>handleChange(e)} name="name" value={formData.name} className="bg-transparent outline-none text-black border border-gray-600 p-2.5" type="text" placeholder="Enter Name "></input>
+                <input onChange={(e)=>handleChange(e)} name="name" value={formData.name} className="bg-transparent outline-none text-black  border p-2.5" type="text" placeholder="Enter Name "></input>
                 </div>
                 {errors.name && <span className="text-sm text-red-500">{errors.name}</span>}
              </div>
              <div className="flex flex-col gap-.5">
                 <div className="flex flex-col gap-2">
                 <label>Email <span className="text-sm text-red-500">*</span></label>
-                <input onChange={(e)=>handleChange(e)} name="email" value={formData.email} className="bg-transparent outline-none text-black border border-gray-600 p-2.5" type="text" placeholder="Enter Email "></input>
+                <input onChange={(e)=>handleChange(e)} name="email" value={formData.email} className="bg-transparent outline-none text-black border p-2.5" type="text" placeholder="Enter Email "></input>
                 </div>
                 {errors.email && <span className="text-sm text-red-500">{errors.email}</span>}
              </div>
              <div className="flex flex-col gap-.5">
                 <div className="flex flex-col gap-2">
                 <label>Contact No <span className="text-sm text-red-500">*</span></label>
-                <input  onChange={(e)=>handleChange(e)} name="contactno" value={formData.contactno} className="bg-transparent outline-none text-black border border-gray-600 p-2.5" type="text" placeholder="Enter Contact "></input>
+                <input  onChange={(e)=>handleChange(e)} name="contactno" value={formData.contactno} className="bg-transparent outline-none text-black border  p-2.5" type="text" placeholder="Enter Contact "></input>
                 </div>
                 {errors.contactno && <span className="text-sm text-red-500">{errors.contactno}</span>}
              </div>
              <div className="flex flex-col gap-.5">
                <div className="flex flex-col gap-2">
                <label>Message <span className="text-sm text-red-500">*</span></label>
-               <textarea onChange={(e)=>handleChange(e)} name="message" value={formData.message} placeholder="Enter Message " rows={8} title="message" className="resize-none border h-24 border-gray-600  p-2.5 bg-transparent outline-none"></textarea>
+               <textarea onChange={(e)=>handleChange(e)} name="message" value={formData.message} placeholder="Enter Message " rows={8} title="message" className="resize-none border h-24   p-2.5 bg-transparent outline-none"></textarea>
                </div>
                {errors.message && <span className="text-sm text-red-500">{errors.message}</span>}
              </div>

@@ -103,67 +103,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="bg-gray-50 flex justify-center items-center  py-20">
-        <div className="flex flex-col items-center justify-center px-4 md:px-32 text-start relative">
-          <h2 className="text-4xl font-bold text-navyblue mb-6">
-            What Our Clients Say
-          </h2>
-
-          {/* Left Navigation Arrow */}
-          {!isMobileSize && (
-            <button
-              onClick={() =>
-                setCurrentIndex(
-                  currentIndex === 0
-                    ? carouselTexts.length - 1
-                    : currentIndex - 1
-                )
-              }
-              className="absolute h-10 w-10 left-6 md:left-20 text-white -bottom-20 md:top-1/2 bg-navyblue p-2 rounded-full shadow-md  focus:outline-none"
-            >
-              &#8249; {/* Left Arrow */}
-            </button>
-          )}
-
-          {/* Testimonial Text */}
-          <p className="text-2xl text-center text-gray-800 font-medium italic mb-6 mt-10">
-            {carouselTexts[currentIndex].text}
-          </p>
-
-          <div className="flex items-center bg-transparent  rounded-lg p-4 max-w-lg mx-auto">
-            {/* Left Section: Image */}
-            <div className="w-16 h-16">
-              <img
-                className="rounded-full object-cover w-full h-full"
-                src={carouselTexts[currentIndex].img} // Replace with the correct image URL
-                alt={`${carouselTexts[currentIndex].name}'s avatar`}
-              />
-            </div>
-
-            {/* Right Section: Name and Title */}
-            <div className="ml-4">
-              <p className="text-gray-800 font-semibold  text-lg">
-                {carouselTexts[currentIndex].name}
-              </p>
-              <p className="text-gray-600 text-sm">
-                {carouselTexts[currentIndex].title}
-              </p>
-            </div>
-          </div>
-
-          {/* Right Navigation Arrow */}
-          {!isMobileSize && (
-            <button
-              onClick={() =>
-                setCurrentIndex((currentIndex + 1) % carouselTexts.length)
-              }
-              className="absolute h-10  w-10 right-6 text-white md:right-20 -bottom-20 md:top-1/2  bg-navyblue p-2 rounded-full shadow-md  bfocus:outline-none"
-            >
-              &#8250; {/* Right Arrow */}
-            </button>
-          )}
-        </div>
-      </div>
+      
 
       {/* Additional Section */}
       <div className="container mx-auto px-1 py-20 md:px-12 ">
