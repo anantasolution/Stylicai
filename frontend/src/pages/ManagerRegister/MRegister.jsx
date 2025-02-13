@@ -10,6 +10,7 @@ export default function ManagerForm() {
     email: '',
     password: '',
     mobileno: '',
+    credit_balance:1,
     assignto: "67add6ea08ccee832594ed97"
   });
   const [loading,setLoading] = useState(false)
@@ -19,6 +20,7 @@ export default function ManagerForm() {
     email: '',
     password: '',
     mobileno: '',
+    credit_balance:1,
     assignto: "67add6ea08ccee832594ed97"
   });
 
@@ -27,6 +29,7 @@ export default function ManagerForm() {
     email: false,
     password: false,
     mobileno: false,
+    credit_balance:1,
     assignto: false
   });
 
@@ -95,9 +98,9 @@ export default function ManagerForm() {
     setErrors(newErrors);
 
     if (!Object.values(newErrors).some(error => error !== '')) {
-      setFormData({name: '', email: '', password: '', mobileno: '',assignto: "67add6ea08ccee832594ed97"});
-      setTouched({name: false, email: false, password: false, mobileno: false,assignto: "67add6ea08ccee832594ed97"});
-      setErrors({name: '', email: '', password: '', mobileno: '',assignto: "67add6ea08ccee832594ed97"});
+      setFormData({name: '', email: '',credit_balance:1, password: '', mobileno: '',assignto: "67add6ea08ccee832594ed97"});
+      setTouched({name: false, email: false,credit_balance:1, password: false, mobileno: false,assignto: "67add6ea08ccee832594ed97"});
+      setErrors({name: '', email: '',credit_balance:1, password: '', mobileno: '',assignto: "67add6ea08ccee832594ed97"});
     }
 
     try{
