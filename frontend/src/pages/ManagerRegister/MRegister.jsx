@@ -9,7 +9,7 @@ export default function ManagerForm() {
     name: '',
     email: '',
     password: '',
-    mobile: '',
+    mobileno: '',
     assignto: "67add6ea08ccee832594ed97"
   });
   const [loading,setLoading] = useState(false)
@@ -18,7 +18,7 @@ export default function ManagerForm() {
     name: '',
     email: '',
     password: '',
-    mobile: '',
+    mobileno: '',
     assignto: "67add6ea08ccee832594ed97"
   });
 
@@ -26,7 +26,7 @@ export default function ManagerForm() {
     name: false,
     email: false,
     password: false,
-    mobile: false,
+    mobileno: false,
     assignto: false
   });
 
@@ -42,7 +42,7 @@ export default function ManagerForm() {
       }
     }
     
-    if (name === 'mobile' && value.trim()) {
+    if (name === 'mobileno' && value.trim()) {
       const phoneRegex = /^\d{10}$/;
       if (!phoneRegex.test(value.replace(/\D/g, ''))) {
         return 'Please enter a valid 10-digit mobile number';
@@ -95,9 +95,9 @@ export default function ManagerForm() {
     setErrors(newErrors);
 
     if (!Object.values(newErrors).some(error => error !== '')) {
-      setFormData({name: '', email: '', password: '', mobile: ''});
-      setTouched({name: false, email: false, password: false, mobile: false});
-      setErrors({name: '', email: '', password: '', mobile: ''});
+      setFormData({name: '', email: '', password: '', mobileno: ''});
+      setTouched({name: false, email: false, password: false, mobileno: false});
+      setErrors({name: '', email: '', password: '', mobileno: ''});
     }
 
     try{
@@ -122,11 +122,11 @@ export default function ManagerForm() {
         {/* Header Section */}
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
           <div className="flex items-center space-x-4">
-            <div className="bg-blue-600 rounded-xl p-3">
+            <div className="bg-golden rounded-xl p-3">
               <UserPlus className="w-8 h-8 text-white" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+              <h1 className="text-3xl font-bold bg-golden bg-clip-text text-transparent">
                 Add New Manager
               </h1>
               <p className="text-gray-600 mt-1">Complete the form to add team member</p>
@@ -240,13 +240,13 @@ export default function ManagerForm() {
                 <div className="relative">
                   <input
                     type="tel"
-                    id="mobile"
-                    name="mobile"
-                    value={formData.mobile}
+                    id="mobileno"
+                    name="mobileno"
+                    value={formData.mobileno}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className={`w-full p-4 border rounded-xl transition-all pl-12 ${
-                      errors.mobile && touched.mobile
+                      errors.mobileno && touched.mobileno
                         ? 'border-red-300 bg-red-50 focus:ring-red-200'
                         : 'border-gray-200 focus:border-blue-400 focus:ring-blue-100'
                     } focus:ring-4 focus:outline-none`}
@@ -254,10 +254,10 @@ export default function ManagerForm() {
                   />
                   <Phone className="w-5 h-5 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
                 </div>
-                {errors.mobile && touched.mobile && (
+                {errors.mobileno && touched.mobileno && (
                   <p className="mt-2 text-red-500 text-sm flex items-center">
                     <ChevronRight className="w-4 h-4 mr-1" />
-                    {errors.mobile}
+                    {errors.mobileno}
                   </p>
                 )}
               </div>
@@ -266,7 +266,7 @@ export default function ManagerForm() {
             <div className="mt-8">
               <button
                 type="submit"
-                className="w-full md:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 focus:ring-4 focus:ring-blue-100 transition-all flex items-center justify-center group"
+                className="w-full md:w-auto px-8 py-4 bg-golden text-white rounded-xl hover:bg-golden focus:ring-4 focus:ring-blue-100 transition-all flex items-center justify-center group"
               >
                 {
                     loading ?
