@@ -34,7 +34,7 @@ export default function ManagerForm() {
   });
 
   const validateField = (name, value) => {
-    if (!value.trim()) {
+    if (!value) {
       return `${name.charAt(0).toUpperCase() + name.slice(1)} is required`;
     }
     
