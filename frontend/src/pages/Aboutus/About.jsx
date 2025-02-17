@@ -3,6 +3,9 @@ import img from "../../assets/Abou.jpg";
 import pf1 from "../../assets/profile_img_1.png";
 import pf2 from "../../assets/profile_img_2.png";
 import pf3 from "../../assets/profile_img_4.png";
+
+import BreadCrub from "../../components/BreadCrub";
+
 export default function About() {
   // Carousel data
 
@@ -49,6 +52,7 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-white">
+      <BreadCrub></BreadCrub>
       <div className="w-full"></div>
       {/* Main Section */}
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 pt-44 pb-28 md:px-12">

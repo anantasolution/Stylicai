@@ -39,6 +39,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
+import BreadCrub from "../../components/BreadCrub.jsx";
 
 function ShowCase() {
     const prevRef = useRef(null);
@@ -165,7 +166,8 @@ function ShowCase() {
   
   return (
     <>
-    <div className="min-h-screen text-navyblue relative bg-white py-24">
+    <BreadCrub></BreadCrub>
+    <div className="min-h-screen pb-20 text-navyblue relative bg-white">
       {/* Header Section */}
       <div className="w-full px-4 text-center py-10 flex flex-col gap-y-5 bg-white">
         <p className="text-4xl text-center font-bold">
