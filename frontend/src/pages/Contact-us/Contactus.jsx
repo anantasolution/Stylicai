@@ -70,7 +70,7 @@ const Contactus = () => {
   };
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex pb-8 flex-col gap-10">
       <BreadCrub></BreadCrub>
       <div className="w-full flex items-center justify-center px-4">
         <div className="max-w-6xl w-full">
@@ -89,7 +89,7 @@ const Contactus = () => {
               <h1 className="text-5xl font-bold text-gray-900">Contact</h1>
 
               <div className="space-y-4">
-                <h2 className="text-3xl font-medium text-gray-900">
+                <h2 className="text-2xl font-medium text-gray-900">
                   Communication Address
                 </h2>
 
@@ -102,7 +102,7 @@ const Contactus = () => {
                 </p>
 
                 {/* Phone */}
-                <p className="text-gray-900 font-medium text-2xl">
+                <p className="text-gray-900 font-medium text-lg">
                   +91 63566 65365
                 </p>
 
