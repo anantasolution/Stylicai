@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed w-full  bg-white shadow-md z-40">
+    <div className="fixed w-full bg-white shadow-md z-40">
       {/* Navigation */}
       <nav className="container mx-auto px-4 md:px-20 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
@@ -64,7 +64,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex gap-3">
-          <Link to={"/contact"}>
+          <Link to={"/contactus"}>
             <button className="bg-golden text-white px-6 py-2 rounded-full hover:bg-navyblue  transition duration-300">
               Schedule a demo
             </button>
@@ -156,12 +156,6 @@ const Navbar = () => {
             </button>
           </a>
 
-          {/* <Link
-            to={"/contact"}
-            className="bg-golden text-white hover:bg-navyblue px-6 py-2 rounded-full  transition duration-300"
-          >
-            Schedule a demo
-          </Link> */}
         </div>
       </div>
     </div>
