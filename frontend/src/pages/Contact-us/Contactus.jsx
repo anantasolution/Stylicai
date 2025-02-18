@@ -94,7 +94,7 @@ const Contactus = () => {
                 </h2>
 
                 <p className="text-gray-800 font-normal text-lg">
-                  402, Shangri-La arcade, 4th floor, near
+                  402, Shangrila Arcade, near Shyamal Cross Road,
                   <br />
                   Shyamal cross road, Ahmedabad, Gujarat
                   <br />
