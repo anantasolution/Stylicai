@@ -45,14 +45,17 @@ export const sendMail = async (req, res, next) => {
             width: 100%;
             max-width: 600px;
             margin: 0 auto;
-            background-color: #ffffff;
+            background-color: #f2f2f2;
+            margin-top: 50px;
+            margin-bottom: 50px;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px #333;
           }
           .header {
             text-align: center;
             padding-bottom: 20px;
+            padding-top: 30px;
           }
           .header h1 {
             font-size: 24px;
@@ -74,7 +77,7 @@ export const sendMail = async (req, res, next) => {
           .button {
             display: inline-block;
             background-color: #1B345C;
-            color: white;
+            color: white !important;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
@@ -95,9 +98,10 @@ export const sendMail = async (req, res, next) => {
       <body>
         <div class="container">
           <div class="header">
+            <img src="https://stylic.ai/assets/stylic-logo-1-BQOP5sjr.png" style="width: 30%;">
             <h1>Exciting Product Update from Stylic AI</h1>
           </div>
-          <p>Hello,</p>
+          <p>Hi</p>
           <p>We hope this message finds you well! We're excited to bring you the latest updates and offers from Stylic AI.</p>
           
           <div class="product">
