@@ -2,7 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: "Roboto", serif;
+}
 
-*{
-    font-family: "Roboto", serif;
+@layer utilities {
+  .text-outline {
+    -webkit-text-stroke: 1px black;
+    color: transparent;
+  }
 }

@@ -9,7 +9,7 @@ import MRegister from "./pages/ManagerRegister/MRegister";
 import About from "./pages/Aboutus/About";
 import Contactus from "./pages/Contact-us/Contactus";
 import ShowCase from "./pages/showcase/ShowCase";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 
 const App = () => {

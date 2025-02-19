@@ -3,6 +3,8 @@ import img from "../../assets/Abou.jpg";
 import pf1 from "../../assets/profile_img_1.png";
 import pf2 from "../../assets/profile_img_2.png";
 import pf3 from "../../assets/profile_img_4.png";
+import { motion } from "framer-motion";
+import { LinearProgress, Box } from "@mui/material";
 
 import BreadCrub from "../../components/BreadCrub";
 
@@ -10,6 +12,13 @@ export default function About() {
   // Carousel data
 
   const [isMobileSize, setIsMobileSize] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const stats = [
+    { id: 1, label: "Happy Customers", progress: 70 },
+    { id: 2, label: "Total Photoshoots", progress: 70 },
+    { id: 3, label: "Completed Photoshoots", progress: 70 },
+  ];
 
   useEffect(() => {
     const handleResize = () => {
@@ -57,11 +66,8 @@ export default function About() {
       {/* Main Section */}
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 pt-44 pb-28 md:px-12">
         {/* Left Section with Circular Image */}
-        <div className="relative flex-1 flex items-center justify-center">
+        {/* <div className="relative flex-1 flex items-center justify-center">
           <div className="relative">
-            {/* Circle with Text */}
-
-            {/* Image */}
             <div className="relative z-10 overflow-hidden rounded-full w-80 h-80 md:w-96 md:h-96 shadow-lg">
               <img
                 src={img} // Replace with your actual imported image
@@ -69,6 +75,76 @@ export default function About() {
                 className="object-cover w-full h-full"
               />
             </div>
+          </div>
+        </div> */}
+
+        {/* <div className="relative h-96 w-96 rounded-full overflow-hidden">
+          <motion.div
+            className="w-full absolute h-full"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          >
+            <svg className="w-full h-full" viewBox="0 0 400 400">
+              <path
+                id="circlePath"
+                d="M 200,200 m -150,0 a 150,150 0 1,1 300,0 a 150,150 0 1,1 -300,0"
+                fill="none"
+                className="border border-red-500"
+                stroke="#f3f4f6"
+                strokeWidth="70"
+                strokeLinecap="round"
+              />
+
+              <text className="text-3xl text-gray-700">
+                <textPath
+                  href="#circlePath"
+                  startOffset="20%"
+                  textAnchor="middle" 
+                  dominantBaseline="middle"      
+                  spacing="auto"          
+                >
+                  A I - P H O T O S H O O T
+                </textPath>
+              </text>
+            </svg>
+          </motion.div>
+
+          <div className="bg-blue-500 w-1/2 h-full absolute top-0 right-0">
+            <img src={img} alt="image" className="h-full w-full object-cover" />
+          </div>
+        </div> */}
+
+        <div className="relative h-[70vh] w-[70vh] rounded-full overflow-hidden">
+          <motion.div
+            className="w-full absolute h-full"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          >
+            <svg className="w-full h-full" viewBox="0 0 400 400">
+              <path
+                id="circlePath"
+                d="M 200,200 m -150,0 a 150,150 0 1,1 300,0 a 150,150 0 1,1 -300,0"
+                fill="none"
+                stroke="#f3f4f6"
+                strokeWidth="70"
+                strokeLinecap="round"
+              />
+
+              <text className="text-xl fill-gray-700  tracking-[0.7em]">
+                <textPath
+                  href="#circlePath"
+                  startOffset="0%"
+                  dominantBaseline="middle"
+                  spacing="40px"
+                >
+                  S T Y L I C - A I - P H O T O S H O O T
+                </textPath>
+              </text>
+            </svg>
+          </motion.div>
+
+          <div className="bg-blue-500 w-1/2 h-full absolute top-0 right-0 flex items-center justify-center">
+            <img src={img} alt="image" className="h-full w-full object-cover" />
           </div>
         </div>
 
@@ -107,8 +183,6 @@ export default function About() {
         </div>
       </div>
 
-      
-
       {/* Additional Section */}
       <div className="container mx-auto px-1 py-20 md:px-12 ">
         <h3 className="text-4xl font-bold text-navyblue mb-12 text-center">
@@ -143,6 +217,56 @@ export default function About() {
               With a global track record of success, we empower brands with
               impactful visuals, leaving a lasting impression on audiences.
             </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Work Impression */}
+      <div className="w-full flex justify-center pb-14">
+        <div className="w-full md:w-[86%]">
+          <div className="w-full mx-auto text-4xl px-4 md:px-0 md:text-6xl py-10 font-medium">
+            <p>Our Work Impressions</p>
+          </div>
+
+          <div className="w-full flex flex-col gap-4 md:gap-2 md:flex-row justify-between">
+            {stats.map((stat, index) => (
+              <div
+                key={stat.id}
+                className="flex px-4 flex-col gap-2 md:gap-4 w-full md:w-1/3"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                <Box
+                  sx={{
+                    width: "70%",
+                    position: "relative",
+                    backgroundColor: "#e0e0e0",
+                    overflow: "hidden",
+                    height: "5px",
+                  }}
+                >
+                  <LinearProgress
+                    variant="determinate"
+                    value={hoveredIndex === index ? stat.progress : 0}
+                    sx={{
+                      height: "100%",
+                      transition: "width 1s ease-in-out",
+                      backgroundColor: "#e0e0e0",
+                      "& .MuiLinearProgress-bar": {
+                        backgroundColor:
+                          hoveredIndex === index ? "blue" : "#e0e0e0",
+                      },
+                    }}
+                  />
+                </Box>
+                <p className="text-8xl font-bold text-outline text-transparent font-sans">
+                  0+
+                </p>
+                <p className="text-xl text-gray-500 font-semibold">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

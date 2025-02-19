@@ -1,3 +1,5 @@
+import { color } from 'framer-motion';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -9,7 +11,7 @@ export default {
       colors:{
         'navyblue':"#152C52",
         "golden":'#AA9431',
-      }
+      },
     },
   },
   plugins: [],
