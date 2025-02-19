@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 import dotenv from "dotenv"
-import OTP from "../models/OTP";
+import OTP from "../models/OTP.js";
 
 dotenv.config()
 
