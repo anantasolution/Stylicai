@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 import dotenv from "dotenv"
+import OTP from "../models/OTP";
 
 dotenv.config()
 
@@ -149,3 +150,62 @@ export const sendMail = async (req, res, next) => {
     next(err);
   }
 };
+
+
+
+export const sendOtpMail = async (req, res, next) =>{
+  try{
+    const {email} = req.body
+
+    if(!email) return res.status(400).json({message:"Email is required."})
+
+    const otp = Math.floor(1000 + Math.random() * 9000)
+
+    await OTP.findOneAndUpdate({email}, { otp, createdAt: Date.now() },
+    { upsert: true, new: true })
+
+    const mailOption = {
+      from: process.env.USER_MAIL, // Must be a verified email in Amazon SES
+      to: req.body.email,
+      subject: "Connect With Stylic",
+      text: "This is a test email sent using Amazon SES with Nodemailer!",
+      html: `<div style="font-family: Arial, sans-serif; text-align: center;">
+      <h2>Your OTP Code</h2>
+      <p style="color: #666;">Use the OTP below to verify your email. It is valid for 3 minutes.</p>
+      <h1 style="color: #007bff; letter-spacing: 5px;">${otp}</h1>
+      <p>If you did not request this, please ignore this email.</p>
+      <p style="color: #999;">TechsBuild Team | Do not share your OTP with anyone.</p>
+      </div>`
+    }
+
+   await transporter.sendMail(mailOption)
+   res.status(200).json({message:"Otp sended successfully."})
+
+  }catch(err){
+    next(err)
+  }
+}
+
+
+export const verifyOtp = async (req, res, next)=>{
+  try{
+    const {email, otp} = req.body
+
+    if(!email && !otp) return res.status(400).json({message:"Email address or otp is not given."})
+
+    const storedOtp = await OTP.findOne({email})
+
+    if(!storedOtp) return res.status(400).json({message:"Otp expired or not found."})
+
+    if(otp!==storedOtp.otp){
+      return res.status(400).json({message:"Invalid Otp."})
+    }
+
+    await OTP.deleteOne({email})
+
+    res.status(200).json({message:"Otp verified successfully"})
+
+  }catch(err){
+    next(err)
+  }
+}
