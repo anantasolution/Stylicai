@@ -5,22 +5,25 @@ import logo from "../../assets/Stylic/stylic-logo-1.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [calendlyLoaded, setCalendlyLoaded] = useState(false);
 
-
-  // Load Calendly script dynamically
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://assets.calendly.com/assets/external/widget.js";
     script.async = true;
+    script.onload = () => setCalendlyLoaded(true);
     document.body.appendChild(script);
   }, []);
 
-  // Function to open Calendly popup
   const openCalendlyPopup = () => {
-    console.log("open")
-    window.Calendly.initPopupWidget({
-      url: "https://calendly.com/stylicai/product-demo?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=a99431",
-    });
+
+    if (calendlyLoaded && window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: "https://calendly.com/stylicai/product-demo?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=a99431",
+      });
+    } else {
+      console.error("Calendly script not loaded yet.");
+    }
   };
 
   const location = useLocation();
@@ -81,7 +84,7 @@ const Navbar = () => {
             <Link to={"/contactus"}>
               <span
                 className={`text-gray-800 rounded-full font-medium  px-2 py-1 transition duration-300 hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
-                  isActive("/about") &&
+                  isActive("/contactus") &&
                   "underline decoration-golden underline-offset-4 decoration-2"
                 }`}
               >
@@ -91,13 +94,14 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex gap-3">
-          
-            <button  onClick={openCalendlyPopup} className="bg-golden text-white px-6 py-2 rounded-full hover:bg-navyblue  transition duration-300">
-              Schedule a demo
-            </button>
-          
-          <a href="https://app.stylic.ai" className="hidden md:block">
-            <button className="bg-golden text-white px-6 py-2 rounded-full hover:bg-navyblue  transition duration-300">
+          <button
+            onClick={openCalendlyPopup}
+            className="bg-golden text-white px-6 py-2 rounded-full hover:bg-navyblue transition duration-300"
+          >
+            Schedule a demo
+          </button>
+          <a href="https://app.stylic.ai">
+            <button className="bg-golden text-white px-6 py-2 rounded-full hover:bg-navyblue transition duration-300">
               Login
             </button>
           </a>
@@ -178,21 +182,20 @@ const Navbar = () => {
             About
           </Link>
           <Link to={"/contactus"}>
-              <span
-                className={`text-gray-800 py-2 w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
-                  isActive("/contactus") &&
-                  "underline decoration-golden underline-offset-4 decoration-2"
-                }`}
-              >
-                Contact Us
-              </span>
+            <span
+              className={`text-gray-800 py-2 w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
+                isActive("/contactus") &&
+                "underline decoration-golden underline-offset-4 decoration-2"
+              }`}
+            >
+              Contact Us
+            </span>
           </Link>
           <a href="https://app.stylic.ai">
             <button className="bg-golden text-white px-6 py-2 rounded-full hover:bg-navyblue  transition duration-300">
               Login
             </button>
           </a>
-
         </div>
       </div>
     </div>
