@@ -293,7 +293,7 @@ export default function ManagerForm() {
         }
       );
 
-      toast.success("Manager created successfully.");
+      toast.success("User created successfully.");
       setFormData({
         company_name: "",
         first_name: "",
