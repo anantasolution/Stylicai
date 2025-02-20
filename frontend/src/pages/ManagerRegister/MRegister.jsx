@@ -42,7 +42,7 @@ export default function ManagerForm() {
     setResendTimer(30);
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/mail/send-otp`,
+        `${import.meta.env.VITE_API_BASE_URL}/mail/send-otp`,
         { email }
       );
       console.log(response);
@@ -114,7 +114,7 @@ export default function ManagerForm() {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/mail/verify-otp`,
+        `${import.meta.env.VITE_API_BASE_URL}/mail/verify-otp`,
         {
           email: formData.email,
           otp: finalOtp,
