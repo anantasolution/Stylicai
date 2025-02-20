@@ -6,6 +6,8 @@ import { toast } from "react-toastify";
 import otpIcon from "../../assets/otp.png";
 import { blocked_emails } from "../../components/variables/blockedEmails.js";
 import verified from "../../assets/tick.png";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 
 export default function ManagerForm() {
   const [formData, setFormData] = useState({
@@ -26,6 +28,7 @@ export default function ManagerForm() {
   const [otp, setOtp] = useState(["", "", "", ""]);
   const [resendTimer, setResendTimer] = useState(30);
   const [iseVerifiedMail, setIsVerifiedMail] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
     if (resendTimer > 0) {
@@ -52,6 +55,7 @@ export default function ManagerForm() {
       setResendTimer(30);
     } catch (error) {
       console.log(error);
+      toast.error("Failed to send otp");
       setResendTimer(30);
     }
   };
@@ -99,6 +103,7 @@ export default function ManagerForm() {
       setResendTimer(30);
     } catch (error) {
       setResendTimer(30);
+      toast.error("Failed to send otp !!");
       console.log(error);
       // setVerifyLoading(false);
     } finally {
@@ -127,6 +132,7 @@ export default function ManagerForm() {
       }
     } catch (error) {
       console.log(error);
+      toast.error(error.response?.data?.message || "Failed to verify otp !!");
     } finally {
       setLoading(false);
     }
@@ -556,7 +562,7 @@ export default function ManagerForm() {
                 </label>
                 <div className="relative">
                   <input
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     id="password"
                     name="password"
                     value={formData.password}
@@ -570,6 +576,12 @@ export default function ManagerForm() {
                     placeholder="••••••••"
                   />
                   <Lock className="w-5 h-5 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
+                  <div
+                    className="absolute right-2 top-[14%] flex justify-center item-center p-2 cursor-pointer"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                  </div>
                 </div>
                 {errors.password && touched.password && (
                   <p className="mt-2 text-red-500 text-sm flex items-center">
@@ -617,7 +629,9 @@ export default function ManagerForm() {
               <button
                 type="submit"
                 disabled={!iseVerifiedMail}
-                className="w-full cursor-pointer md:w-auto px-8 py-4 bg-golden text-white rounded-xl hover:bg-golden focus:ring-4 focus:ring-blue-100 transition-all flex items-center justify-center group"
+                className={`${
+                  !iseVerifiedMail ? "bg-golden/80 cursor-not-allowed" : ""
+                } w-full cursor-pointer md:w-auto px-8 py-4 bg-golden text-white rounded-xl hover:bg-golden focus:ring-4 focus:ring-blue-100 transition-all flex items-center justify-center group`}
               >
                 {loading ? (
                   <div className="flex items-center gap-2">
