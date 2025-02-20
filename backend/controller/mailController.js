@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 import dotenv from "dotenv"
-import OTP from "../models/OTP";
+import OTP from "../models/OTP.js";
 
 dotenv.config()
 
@@ -190,8 +190,9 @@ export const sendOtpMail = async (req, res, next) =>{
 export const verifyOtp = async (req, res, next)=>{
   try{
     const {email, otp} = req.body
+    console.log(email,otp);
 
-    if(!email && !otp) return res.status(400).json({message:"Email address or otp is not given."})
+    if(!email || !otp) return res.status(400).json({message:"Email address or otp is not given."})
 
     const storedOtp = await OTP.findOne({email})
 

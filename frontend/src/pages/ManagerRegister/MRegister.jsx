@@ -5,20 +5,27 @@ import { LoaderCircle } from "lucide-react";
 import { toast } from "react-toastify";
 import otpIcon from "../../assets/otp.png";
 import { blocked_emails } from "../../components/variables/blockedEmails.js";
+import verified from "../../assets/tick.png";
 
 export default function ManagerForm() {
   const [formData, setFormData] = useState({
-    name: "",
+    company_name: "",
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
     mobileno: "",
     credit_balance: 1,
-    assignto: "67add6ea08ccee832594ed97",
+    gold_balance: 1,
+    added_user_id: "679dae85dcf35e5e1dab90ad",
+    added_user_type: "superadmin",
   });
   const [loading, setLoading] = useState(false);
+  const [verifyLoading, setVerifyLoading] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [otp, setOtp] = useState(["", "", "", ""]);
   const [resendTimer, setResendTimer] = useState(30);
+  const [iseVerifiedMail, setIsVerifiedMail] = useState(false);
 
   useEffect(() => {
     if (resendTimer > 0) {
@@ -30,12 +37,27 @@ export default function ManagerForm() {
     }
   }, [resendTimer]);
 
-  const handleResendOtp = () => {
-    setResendTimer(30); // Reset timer
+  const handleResendOtp = async () => {
+    let email = formData.email;
+    setResendTimer(30);
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/mail/send-otp`,
+        { email }
+      );
+      console.log(response);
+      if (response) {
+        toast.success("Otp Sent !!");
+      }
+      setResendTimer(30);
+    } catch (error) {
+      console.log(error);
+      setResendTimer(30);
+    }
   };
 
   const handleOtpChange = (e, index) => {
-    e.stopPropagation()
+    e.stopPropagation();
     const value = e.target.value.replace(/\D/g, ""); // Allow only digits
     if (value.length > 1) return;
 
@@ -49,35 +71,91 @@ export default function ManagerForm() {
   };
 
   const handleKeyDown = (e, index) => {
-    e.stopPropagation()
+    e.stopPropagation();
     if (e.key === "Backspace" && !otp[index] && index > 0) {
       document.getElementById(`otp-${index - 1}`).focus();
     }
   };
 
-  const handleOtpSubmit = (e) => {
-    e.stopPropagation()
-    alert(`Entered OTP: ${otp.join("")}`);
-    setIsPopupOpen(false)
-    setOtp(['','','',''])
+  const handleSendOtp = async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setVerifyLoading(true);
+    try {
+      let email = formData.email;
+      const domain = email.split("@");
+      if (blocked_emails.includes(domain[1])) {
+        return toast.error("Invalid Email");
+      }
+      const response = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/mail/send-otp`,
+        { email }
+      );
+      console.log(response);
+      if (response) {
+        toast.success("Otp Sent !!");
+      }
+      setIsPopupOpen(true);
+      setResendTimer(30);
+    } catch (error) {
+      setResendTimer(30);
+      console.log(error);
+      // setVerifyLoading(false);
+    } finally {
+      setVerifyLoading(false);
+    }
+  };
+
+  const handleOtpSubmit = async (e) => {
+    e.stopPropagation();
+    setOtp(["", "", "", ""]);
+    let finalOtp = otp.join("");
+    setLoading(true);
+
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/mail/verify-otp`,
+        {
+          email: formData.email,
+          otp: finalOtp,
+        }
+      );
+      if (response) {
+        setIsVerifiedMail(true);
+        setIsPopupOpen(false);
+        setResendTimer(30);
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const [errors, setErrors] = useState({
-    name: "",
+    company_name: "",
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
     mobileno: "",
     credit_balance: 1,
-    assignto: "67add6ea08ccee832594ed97",
+    gold_balance: 1,
+    added_user_id: "679dae85dcf35e5e1dab90ad",
+    added_user_type: "superadmin",
   });
 
   const [touched, setTouched] = useState({
-    name: false,
+    company_name: false,
+    first_name: false,
+    last_name: false,
     email: false,
     password: false,
     mobileno: false,
     credit_balance: 1,
-    assignto: false,
+    gold_balance: 1,
+    added_user_id: "679dae85dcf35e5e1dab90ad",
+    added_user_type: "superadmin",
   });
 
   const validateField = (name, value) => {
@@ -87,13 +165,6 @@ export default function ManagerForm() {
 
     if (name === "email" && value.trim()) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      const domain = value.split('@')
-      if(blocked_emails.includes(domain[1
-
-
-      ])){
-        return "Invalid Email"
-      }
       if (!emailRegex.test(value)) {
         return "Please enter a valid email address";
       }
@@ -156,31 +227,46 @@ export default function ManagerForm() {
       {}
     );
     setErrors(newErrors);
+    if (!iseVerifiedMail) {
+      return toast.error("Please Verify Email First");
+    }
 
     if (!Object.values(newErrors).some((error) => error !== "")) {
       setFormData({
-        name: "",
+        company_name: "",
+        first_name: "",
+        last_name: "",
         email: "",
-        credit_balance: 1,
         password: "",
         mobileno: "",
-        assignto: "67add6ea08ccee832594ed97",
+        credit_balance: 1,
+        gold_balance: 1,
+        added_user_id: "679dae85dcf35e5e1dab90ad",
+        added_user_type: "superadmin",
       });
       setTouched({
-        name: false,
+        company_name: false,
+        first_name: false,
+        last_name: false,
         email: false,
-        credit_balance: 1,
         password: false,
         mobileno: false,
-        assignto: "67add6ea08ccee832594ed97",
+        credit_balance: 1,
+        gold_balance: 1,
+        added_user_id: "679dae85dcf35e5e1dab90ad",
+        added_user_type: "superadmin",
       });
       setErrors({
-        name: "",
+        company_name: "",
+        first_name: "",
+        last_name: "",
         email: "",
-        credit_balance: 1,
         password: "",
         mobileno: "",
-        assignto: "67add6ea08ccee832594ed97",
+        credit_balance: 1,
+        gold_balance: 1,
+        added_user_id: "679dae85dcf35e5e1dab90ad",
+        added_user_type: "superadmin",
       });
     }
 
@@ -188,7 +274,7 @@ export default function ManagerForm() {
       setLoading(true);
       //For Register new manager
       await axios.post(
-        `${import.meta.env.VITE_API_BASE_DASHBOARD_URL}/auth/cmanager-register`,
+        `${import.meta.env.VITE_API_BASE_DASHBOARD_URL}/auth/company-register`,
         formData
       );
       //For send invitation mail
@@ -196,12 +282,24 @@ export default function ManagerForm() {
         `${import.meta.env.VITE_API_BASE_DASHBOARD_URL}/mail/send-manager-mail`,
         {
           managerMail: formData.email,
-          managerName: formData.name,
+          managerName: formData.first_name + formData.last_name,
           password: formData.password,
         }
       );
 
       toast.success("Manager created successfully.");
+      setFormData({
+        company_name: "",
+        first_name: "",
+        last_name: "",
+        email: "",
+        password: "",
+        mobileno: "",
+        credit_balance: 1,
+        gold_balance: 1,
+        added_user_id: "679dae85dcf35e5e1dab90ad",
+        added_user_type: "superadmin",
+      });
     } catch (err) {
       console.log(err);
       toast.error(err?.response?.data?.message || "Something went wrong.");
@@ -237,8 +335,8 @@ export default function ManagerForm() {
             <div className="flex justify-between mt-6">
               <button
                 onClick={() => {
-                  setIsPopupOpen(false)
-                  setResendTimer(30)
+                  setIsPopupOpen(false);
+                  setResendTimer(30);
                 }}
                 className="px-4 py-2 text-golden border border-golden rounded-lg"
               >
@@ -248,7 +346,7 @@ export default function ManagerForm() {
                 onClick={handleOtpSubmit}
                 className="px-4 py-2 bg-golden text-white rounded-lg"
               >
-                Verify
+                {loading ? <LoaderCircle /> : "Verify"}
               </button>
             </div>
             <p className="text-golden/85 pt-4 text-center">
@@ -294,24 +392,87 @@ export default function ManagerForm() {
 
           <form onSubmit={handleSubmit} noValidate className="relative">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Name Field */}
               <div className="relative group">
                 <label
                   className="block text-gray-700 mb-2 font-medium"
-                  htmlFor="name"
+                  htmlFor="first_name"
                 >
-                  Full Name
+                  First Name
                 </label>
                 <div className="relative">
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
+                    id="first_name"
+                    name="first_name"
+                    value={formData.first_name}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className={`w-full p-4 border rounded-xl transition-all pl-12 ${
-                      errors.name && touched.name
+                      errors.first_name && touched.first_name
+                        ? "border-red-300 bg-red-50 focus:ring-red-200"
+                        : "border-gray-200 focus:border-blue-400 focus:ring-blue-100"
+                    } focus:ring-4 focus:outline-none`}
+                    placeholder="John"
+                  />
+                  <UserPlus className="w-5 h-5 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
+                </div>
+                {errors.first_name && touched.first_name && (
+                  <p className="mt-2 text-red-500 text-sm flex items-center">
+                    <ChevronRight className="w-4 h-4 mr-1" />
+                    {errors.first_name}
+                  </p>
+                )}
+              </div>
+              <div className="relative group">
+                <label
+                  className="block text-gray-700 mb-2 font-medium"
+                  htmlFor="last_name"
+                >
+                  Last Name
+                </label>
+                <div className="relative">
+                  <input
+                    type="text"
+                    id="last_name"
+                    name="last_name"
+                    value={formData.last_name}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={`w-full p-4 border rounded-xl transition-all pl-12 ${
+                      errors.last_name && touched.last_name
+                        ? "border-red-300 bg-red-50 focus:ring-red-200"
+                        : "border-gray-200 focus:border-blue-400 focus:ring-blue-100"
+                    } focus:ring-4 focus:outline-none`}
+                    placeholder="Doe"
+                  />
+                  <UserPlus className="w-5 h-5 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
+                </div>
+                {errors.last_name && touched.last_name && (
+                  <p className="mt-2 text-red-500 text-sm flex items-center">
+                    <ChevronRight className="w-4 h-4 mr-1" />
+                    {errors.last_name}
+                  </p>
+                )}
+              </div>
+
+              {/* Name Field */}
+              <div className="relative group">
+                <label
+                  className="block text-gray-700 mb-2 font-medium"
+                  htmlFor="company_name"
+                >
+                  Company Name
+                </label>
+                <div className="relative">
+                  <input
+                    type="text"
+                    id="company_name"
+                    name="company_name"
+                    value={formData.company_name}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={`w-full p-4 border rounded-xl transition-all pl-12 ${
+                      errors.company_name && touched.company_name
                         ? "border-red-300 bg-red-50 focus:ring-red-200"
                         : "border-gray-200 focus:border-blue-400 focus:ring-blue-100"
                     } focus:ring-4 focus:outline-none`}
@@ -319,10 +480,10 @@ export default function ManagerForm() {
                   />
                   <UserPlus className="w-5 h-5 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
                 </div>
-                {errors.name && touched.name && (
+                {errors.company_name && touched.company_name && (
                   <p className="mt-2 text-red-500 text-sm flex items-center">
                     <ChevronRight className="w-4 h-4 mr-1" />
-                    {errors.name}
+                    {errors.company_name}
                   </p>
                 )}
               </div>
@@ -351,17 +512,31 @@ export default function ManagerForm() {
                     placeholder="john@example.com"
                   />
                   <Mail className="w-5 h-5 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
-                  <button
-                    className="absolute right-2 top-[14%] flex justify-center item-center bg-golden p-2 rounded-md text-white"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      e.stopPropagation();
-                      setIsPopupOpen(true);
-                      setResendTimer(30)
-                    }}
-                  >
-                    Verify
-                  </button>
+
+                  {iseVerifiedMail ? (
+                    <img
+                      src={verified}
+                      className="absolute right-2 top-[14%] flex justify-center item-center h-10 w-10 p-2 rounded-md text-white"
+                    />
+                  ) : (
+                    <button
+                      className="absolute right-2 top-[14%] flex justify-center item-center bg-golden p-2 rounded-md text-white"
+                      onClick={(e) => {
+                        handleSendOtp(e);
+                      }}
+                    >
+                      {verifyLoading ? (
+                        <>
+                          <span className="animate-spin">
+                            <LoaderCircle></LoaderCircle>
+                          </span>
+                          <span>Loading...</span>
+                        </>
+                      ) : (
+                        "Verify"
+                      )}
+                    </button>
+                  )}
                 </div>
                 {errors.email && touched.email && (
                   <p className="mt-2 text-red-500 text-sm flex items-center">
@@ -441,7 +616,8 @@ export default function ManagerForm() {
             <div className="mt-8">
               <button
                 type="submit"
-                className="w-full md:w-auto px-8 py-4 bg-golden text-white rounded-xl hover:bg-golden focus:ring-4 focus:ring-blue-100 transition-all flex items-center justify-center group"
+                disabled={!iseVerifiedMail}
+                className="w-full cursor-pointer md:w-auto px-8 py-4 bg-golden text-white rounded-xl hover:bg-golden focus:ring-4 focus:ring-blue-100 transition-all flex items-center justify-center group"
               >
                 {loading ? (
                   <div className="flex items-center gap-2">
