@@ -5,29 +5,7 @@ import logo from "../../assets/Stylic/stylic-logo-1.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [calendlyLoaded, setCalendlyLoaded] = useState(false);
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    script.onload = () => setCalendlyLoaded(true);
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script); // Cleanup script on unmount
-    };
-  }, []);
-
-  const openCalendlyPopup = () => {
-    if (window.Calendly) {
-      window.Calendly.initPopupWidget({
-        url: "https://calendly.com/stylicai/product-demo?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=a99431",
-      });
-    } else {
-      console.error("Calendly script not loaded yet.");
-    }
-  };
 
   const location = useLocation();
 
@@ -39,7 +17,33 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const [openCalendlyPopup,setOpenCalendyPopUp] = useState(false)
+
+
+
   return (
+    <>
+    {
+      openCalendlyPopup && 
+      <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
+      <div className="bg-white p-5 h-screen iframe-no-scroll rounded-lg shadow-lg w-3/4 md:w-1/2 relative">
+        {/* Close Button */}
+        <button
+          onClick={() => setOpenCalendyPopUp(false)}
+          className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center"
+        >
+          ✕
+        </button>
+
+        <iframe
+          src="https://calendly.com/stylicai/product-demo?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=a99431&month=2025-02"
+          title="calendy"
+          className="w-full h-full snap-none iframe-no-scroll"
+        ></iframe>
+      
+      </div>
+    </div>
+    }
     <div className="fixed w-full bg-white shadow-md z-40">
       {/* Navigation */}
       <nav className="container mx-auto px-4 md:px-20 py-4 flex justify-between items-center">
@@ -97,11 +101,12 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex gap-3">
+          
           <button
-            onClick={openCalendlyPopup}
-            className="bg-golden text-white px-6 py-2 rounded-full hover:bg-navyblue transition duration-300"
+            onClick={()=>setOpenCalendyPopUp(true)}
+            className="bg-golden text-white px-4 md:px-6 md:py-2 rounded-full hover:bg-navyblue transition duration-300"
           >
-            Schedule a demo
+            Schedule demo
           </button>
           <a href="https://app.stylic.ai">
             <button className="bg-golden text-white px-6 py-2 rounded-full hover:bg-navyblue transition duration-300">
@@ -202,6 +207,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
