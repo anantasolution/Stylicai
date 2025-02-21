@@ -15,9 +15,9 @@ export default function About() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const stats = [
-    { id: 1, label: "Happy Customers", progress: 70 },
-    { id: 2, label: "Total Photoshoots", progress: 70 },
-    { id: 3, label: "Completed Photoshoots", progress: 70 },
+    { id: 1, label: "Happy Customers", progress: 70, count: 100 },
+    { id: 2, label: "Total Photoshoots", progress: 70, count: 1000 },
+    { id: 3, label: "Completed Photoshoots", progress: 70, count: 500 },
   ];
 
   useEffect(() => {
@@ -64,7 +64,7 @@ export default function About() {
       <BreadCrub></BreadCrub>
       <div className="w-full"></div>
       {/* Main Section */}
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 pt-44 pb-28 md:px-12">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 pt-20 md:pt-44 pb-28 md:px-12">
         {/* Left Section with Circular Image */}
         {/* <div className="relative flex-1 flex items-center justify-center">
           <div className="relative">
@@ -114,7 +114,7 @@ export default function About() {
           </div>
         </div> */}
 
-        <div className="relative h-[70vh] w-[70vh] rounded-full overflow-hidden">
+        <div className="relative w-[40vh] h-[40vh] md:h-[70vh] md:w-[70vh] rounded-full overflow-hidden">
           <motion.div
             className="w-full absolute h-full"
             animate={{ rotate: 360 }}
@@ -224,7 +224,7 @@ export default function About() {
       {/* Work Impression */}
       <div className="w-full flex justify-center pb-14">
         <div className="w-full md:w-[86%]">
-          <div className="w-full mx-auto text-4xl px-4 md:px-0 md:text-6xl py-10 font-medium">
+          <div className="w-full mx-auto text-5xl px-4 md:px-0 md:text-6xl py-10 font-medium">
             <p>Our Work Impressions</p>
           </div>
 
@@ -254,13 +254,13 @@ export default function About() {
                       backgroundColor: "#e0e0e0",
                       "& .MuiLinearProgress-bar": {
                         backgroundColor:
-                          hoveredIndex === index ? "blue" : "#e0e0e0",
+                          hoveredIndex === index ? "#AA9431" : "#e0e0e0",
                       },
                     }}
                   />
                 </Box>
                 <p className="text-8xl font-bold text-outline text-transparent font-sans">
-                  0+
+                  {stat.count}+
                 </p>
                 <p className="text-xl text-gray-500 font-semibold">
                   {stat.label}
