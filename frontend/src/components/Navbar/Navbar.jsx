@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import logo from "../../assets/Stylic/stylic-logo-1.png";
-import { InlineWidget } from 'react-calendly'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
