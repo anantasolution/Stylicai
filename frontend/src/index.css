@@ -12,14 +12,3 @@
     color: transparent;
   }
 }
-
-
-/* Hide iframe scrollbar */
-.iframe-no-scroll {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE & Edge */
-}
-
-.iframe-no-scroll::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
-}

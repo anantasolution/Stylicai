@@ -26,11 +26,11 @@ const Navbar = () => {
     {
       openCalendlyPopup && 
       <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white p-5 h-screen iframe-no-scroll rounded-lg shadow-lg w-3/4 md:w-1/2 relative">
+      <div className="bg-white p-8 h-screen iframe-no-scroll rounded-lg shadow-lg w-11/12 md:w-1/2 relative">
         {/* Close Button */}
         <button
           onClick={() => setOpenCalendyPopUp(false)}
-          className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center"
+          className="absolute top-1 right-1 bg-golden text-white rounded-full w-6 h-6 md:w-8 md:h-8 flex items-center justify-center"
         >
           ✕
         </button>
@@ -38,7 +38,7 @@ const Navbar = () => {
         <iframe
           src="https://calendly.com/stylicai/product-demo?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=a99431&month=2025-02"
           title="calendy"
-          className="w-full h-full snap-none iframe-no-scroll"
+          className="w-full h-full"
         ></iframe>
       
       </div>
