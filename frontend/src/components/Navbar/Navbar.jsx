@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import logo from "../../assets/Stylic/stylic-logo-1.png";
+import { InlineWidget } from 'react-calendly'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,11 +14,14 @@ const Navbar = () => {
     script.async = true;
     script.onload = () => setCalendlyLoaded(true);
     document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script); // Cleanup script on unmount
+    };
   }, []);
 
   const openCalendlyPopup = () => {
-
-    if (calendlyLoaded && window.Calendly) {
+    if (window.Calendly) {
       window.Calendly.initPopupWidget({
         url: "https://calendly.com/stylicai/product-demo?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=a99431",
       });
