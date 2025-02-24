@@ -144,7 +144,7 @@ export const sendMail = async (req, res, next) => {
         return console.error("Error:", error);
       }
     });
-    
+
     res.status(200).json("mail sended.")
   } catch (err) {
     next(err);
@@ -153,60 +153,113 @@ export const sendMail = async (req, res, next) => {
 
 
 
-export const sendOtpMail = async (req, res, next) =>{
-  try{
-    const {email} = req.body
+export const sendOtpMail = async (req, res, next) => {
+  try {
+    const { email } = req.body
 
-    if(!email) return res.status(400).json({message:"Email is required."})
+    if (!email) return res.status(400).json({ message: "Email is required." })
 
     const otp = Math.floor(1000 + Math.random() * 9000)
 
-    await OTP.findOneAndUpdate({email}, { otp, createdAt: Date.now() },
-    { upsert: true, new: true })
+    await OTP.findOneAndUpdate({ email }, { otp, createdAt: Date.now() },
+      { upsert: true, new: true })
 
     const mailOption = {
       from: process.env.USER_MAIL, // Must be a verified email in Amazon SES
       to: req.body.email,
       subject: "Connect With Stylic",
       text: "This is a test email sent using Amazon SES with Nodemailer!",
-      html: `<div style="font-family: Arial, sans-serif; text-align: center;">
-      <h2>Your OTP Code</h2>
-      <p style="color: #666;">Use the OTP below to verify your email. It is valid for 3 minutes.</p>
-      <h1 style="color: #007bff; letter-spacing: 5px;">${otp}</h1>
-      <p>If you did not request this, please ignore this email.</p>
-      <p style="color: #999;">TechsBuild Team | Do not share your OTP with anyone.</p>
-      </div>`
+      html: `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Verification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #f2f2f2;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #333;
+    }
+    .header {
+      text-align: center;
+      padding-bottom: 20px;
+      padding-top: 30px;
+    }
+    .header h1 {
+      font-size: 24px;
+      color: #1B345C;
+    }
+    .footer {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="https://stylic.ai/assets/stylic-logo-1-BQOP5sjr.png" style="width: 30%;">
+      <h1>OTP Verification</h1>
+    </div>
+    <p>Your One-Time Password (OTP) for verification is: <strong>${otp}</strong></p>
+    <p>Please enter this OTP within the next 3 minutes to verify your identity.</p>
+    <div class="footer">
+      <p>Best regards, <br> The Stylic Team</p>
+    </div>
+  </div>
+</body>
+</html>
+`
     }
 
-   await transporter.sendMail(mailOption)
-   res.status(200).json({message:"Otp sended successfully."})
+    await transporter.sendMail(mailOption)
+    res.status(200).json({ message: "Otp sended successfully." })
 
-  }catch(err){
+  } catch (err) {
     next(err)
   }
 }
 
 
-export const verifyOtp = async (req, res, next)=>{
-  try{
-    const {email, otp} = req.body
-    console.log(email,otp);
+export const verifyOtp = async (req, res, next) => {
+  try {
+    const { email, otp } = req.body
+    console.log(email, otp);
 
-    if(!email || !otp) return res.status(400).json({message:"Email address or otp is not given."})
+    if (!email || !otp) return res.status(400).json({ message: "Email address or otp is not given." })
 
-    const storedOtp = await OTP.findOne({email})
+    const storedOtp = await OTP.findOne({ email })
 
-    if(!storedOtp) return res.status(400).json({message:"Otp expired or not found."})
+    if (!storedOtp) return res.status(400).json({ message: "Otp expired or not found." })
 
-    if(otp!==storedOtp.otp){
-      return res.status(400).json({message:"Invalid Otp."})
+    if (otp !== storedOtp.otp) {
+      return res.status(400).json({ message: "Invalid Otp." })
     }
 
-    await OTP.deleteOne({email})
+    await OTP.deleteOne({ email })
 
-    res.status(200).json({message:"Otp verified successfully"})
+    res.status(200).json({ message: "Otp verified successfully" })
 
-  }catch(err){
+  } catch (err) {
     next(err)
   }
 }
+
+
