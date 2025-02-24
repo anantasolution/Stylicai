@@ -8,8 +8,10 @@ import { blocked_emails } from "../../components/variables/blockedEmails.js";
 import verified from "../../assets/tick.png";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import { useNavigate } from "react-router-dom";
 
 export default function ManagerForm() {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     company_name: "",
     first_name: "",
@@ -294,6 +296,7 @@ export default function ManagerForm() {
       );
 
       toast.success("User created successfully.");
+      window.location.href = "https://app.stylic.ai/"; 
       setFormData({
         company_name: "",
         first_name: "",
@@ -308,6 +311,7 @@ export default function ManagerForm() {
       });
     } catch (err) {
       console.log(err);
+      setIsVerifiedMail(false);
       toast.error(err?.response?.data?.message || "Something went wrong.");
       console.log(err);
     } finally {
