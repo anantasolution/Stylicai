@@ -115,7 +115,7 @@ function ShowCase() {
         thumbnails: jacketThumbnails,
         images: jacketImages,
       },
-      "means inner":{
+      "mens inner":{
         thumbnails : minnerThumbnails,
         images : minnerImages
       }
