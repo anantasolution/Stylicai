@@ -79,7 +79,7 @@ const Gallery = () => {
       thumbnails: dressThumbnails,
       images: dressImages,
     },
-    "boys jean": {
+    "boys jeans": {
       thumbnails: boysJeansThumbnails,
       images: boysJeansImages,
     },

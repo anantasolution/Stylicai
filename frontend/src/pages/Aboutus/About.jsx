@@ -16,8 +16,8 @@ export default function About() {
 
   const stats = [
     { id: 1, label: "Happy Customers", progress: 70, count: 100 },
-    { id: 2, label: "Total Photoshoots", progress: 70, count: 1000 },
-    { id: 3, label: "Completed Photoshoots", progress: 70, count: 500 },
+    { id: 2, label: "Total Photos", progress: 70, count: 1000 },
+    { id: 3, label: "Total Photoshoots", progress: 70, count: 500 },
   ];
 
   useEffect(() => {
