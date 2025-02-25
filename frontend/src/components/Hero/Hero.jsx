@@ -23,7 +23,7 @@ export default function Hero() {
             <p className="text-gray-600 text-lg md:text-xl mb-4 max-w-2xl lg:max-w-none mx-auto lg:mx-0">
             Upgrade your fashion brand with Stylic's state-of-the-art AI solutions and get life like visual representations of garments for your online store.
             </p>
-            <Link to={'/contact'}>
+            <Link to={'/contactus'}>
              <button className="bg-golden text-white px-6 py-2 rounded-full hover:bg-navyblue  transition duration-300">
               Contact Us
              </button>
