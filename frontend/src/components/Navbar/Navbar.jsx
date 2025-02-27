@@ -104,11 +104,11 @@ const Navbar = () => {
           
           <button
             onClick={()=>setOpenCalendyPopUp(true)}
-            className="bg-golden text-white px-4 md:px-6 md:py-2 rounded-full hover:bg-navyblue transition duration-300"
+            className="bg-golden text-white px-4 py-2 md:px-6 md:py-2 rounded-full hover:bg-navyblue transition duration-300"
           >
             Schedule demo
           </button>
-          <a href="https://app.stylic.ai">
+          <a href="https://app.stylic.ai" className="hidden md:block">
             <button className="bg-golden text-white px-6 py-2 rounded-full hover:bg-navyblue transition duration-300">
               Login
             </button>
