@@ -10,7 +10,7 @@ import { LoaderCircle } from "lucide-react";
 import { toast } from "react-toastify";
 
 //Importing images
-import CONTACT from "../../assets/contactus.jpg";
+import CONTACT from "../../assets/contactform.jpg";
 
 const Contactus = () => {
   const [formData, setFormData] = useState({
@@ -31,8 +31,10 @@ const Contactus = () => {
     const emailRegax = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     let newErrors = {};
     if (!formData.name) newErrors.name = "Name is required.";
-    if (!formData.contactno) newErrors.contactno = "Contact number is required.";
-    if (formData.contactno.length !== 10) newErrors.contactno = "Contact number is not valid.";
+    if (!formData.contactno)
+      newErrors.contactno = "Contact number is required.";
+    if (formData.contactno.length !== 10)
+      newErrors.contactno = "Contact number is not valid.";
     if (!emailRegax.test(formData.email))
       newErrors.email = "Email address is not valid.";
     if (!formData.email) newErrors.email = "Email addres is required.";
@@ -108,7 +110,7 @@ const Contactus = () => {
 
                 {/* Email */}
                 <p className="text-gray-900 font-medium text-lg">
-                  info@anantasolution.com
+                  info.stylicai@gmail.com
                 </p>
               </div>
             </div>
@@ -131,16 +133,18 @@ const Contactus = () => {
                   Your Name <span className="text-red-500">*</span>
                 </label>
                 <div className="flex flex-col gap-1">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your name here"
-                  required
-                  className="p-3 border border-gray-200 rounded-md text-black focus:outline-none focus:border-blue-500"
-                  onChange={handleChange}
-                  value={formData.name}
-                />
-                {errors.name && <span className="text-sm text-red-500">{errors.name}</span>}
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your name here"
+                    required
+                    className="p-3 border border-gray-200 rounded-md text-black focus:outline-none focus:border-blue-500"
+                    onChange={handleChange}
+                    value={formData.name}
+                  />
+                  {errors.name && (
+                    <span className="text-sm text-red-500">{errors.name}</span>
+                  )}
                 </div>
               </div>
 
@@ -150,16 +154,18 @@ const Contactus = () => {
                   Your Email <span className="text-red-500">*</span>
                 </label>
                 <div className="flex flex-col gap-1">
-                 <input
-                  type="email"
-                  name="email"
-                  placeholder="Your email here"
-                  required
-                  className="p-3 border border-gray-200 rounded-md text-black focus:outline-none focus:border-blue-500"
-                  onChange={handleChange}
-                  value={formData.email}
-                />
-                {errors.email && <span className="text-sm text-red-500">{errors.email}</span>}
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your email here"
+                    required
+                    className="p-3 border border-gray-200 rounded-md text-black focus:outline-none focus:border-blue-500"
+                    onChange={handleChange}
+                    value={formData.email}
+                  />
+                  {errors.email && (
+                    <span className="text-sm text-red-500">{errors.email}</span>
+                  )}
                 </div>
               </div>
 
@@ -169,15 +175,19 @@ const Contactus = () => {
                   Contact Number <span className="text-red-500">*</span>
                 </label>
                 <div className="flex flex-col gap-1">
-                 <input
-                  type="tel"
-                  name="contactno"
-                  placeholder="Your phone here"
-                  className="p-3 border border-gray-200 rounded-md text-black focus:outline-none focus:border-blue-500"
-                  onChange={handleChange}
-                  value={formData.contactno}
-                 />
-                 {errors.contactno && <span className="text-sm text-red-500">{errors.contactno}</span>}
+                  <input
+                    type="tel"
+                    name="contactno"
+                    placeholder="Your phone here"
+                    className="p-3 border border-gray-200 rounded-md text-black focus:outline-none focus:border-blue-500"
+                    onChange={handleChange}
+                    value={formData.contactno}
+                  />
+                  {errors.contactno && (
+                    <span className="text-sm text-red-500">
+                      {errors.contactno}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
@@ -188,16 +198,18 @@ const Contactus = () => {
                 Message <span className="text-red-500">*</span>
               </label>
               <div className="flex flex-col gap-1">
-               <textarea
-                name="message"
-                placeholder="Tell us a few words"
-                required
-                rows={6}
-                className="w-full p-3 border border-gray-200 rounded-md text-black focus:outline-none focus:border-blue-500"
-                onChange={handleChange}
-                value={formData.message}
-               />
-               {errors.message && <span className="text-sm text-red-500">{errors.message}</span>}
+                <textarea
+                  name="message"
+                  placeholder="Tell us a few words"
+                  required
+                  rows={6}
+                  className="w-full p-3 border border-gray-200 rounded-md text-black focus:outline-none focus:border-blue-500"
+                  onChange={handleChange}
+                  value={formData.message}
+                />
+                {errors.message && (
+                  <span className="text-sm text-red-500">{errors.message}</span>
+                )}
               </div>
             </div>
 
@@ -207,14 +219,16 @@ const Contactus = () => {
               type="submit"
               className="bg-golden hover:bg-golden text-white font-medium px-8 py-3 rounded-md transition-colors duration-300 uppercase text-sm tracking-wider"
             >
-              {
-               loading? 
-               <div className="flex items-center gap-2">
-                  <span><LoaderCircle className="animate-spin"></LoaderCircle></span>
+              {loading ? (
+                <div className="flex items-center gap-2">
+                  <span>
+                    <LoaderCircle className="animate-spin"></LoaderCircle>
+                  </span>
                   <span>Loading</span>
-               </div>
-               :<span>Submit</span>
-              }
+                </div>
+              ) : (
+                <span>Submit</span>
+              )}
             </button>
           </form>
         </div>
