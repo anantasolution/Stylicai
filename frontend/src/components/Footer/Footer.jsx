@@ -8,37 +8,45 @@ import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import axios from "axios";
 import { toast } from "react-toastify";
-
+import { LoaderCircle } from "lucide-react";
 
 const Footer = () => {
-  const [email,setEmail] = useState('')
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSaveEmail = async () =>{
-    if(validateEmail()){
-      try{
-        await axios.post(`${import.meta.env.VITE_API_BASE_URL}/email`,{email})
-        await axios.post(`${import.meta.env.VITE_API_BASE_URL}/mail`,{email})
-        setEmail('')
-        toast.success("Request submitted successfully.")
-      }catch(err){
-       toast.error(err.message)
+  const handleSaveEmail = async () => {
+    if (validateEmail()) {
+      try {
+        setLoading(true);
+        await axios.post(`${import.meta.env.VITE_API_BASE_URL}/email`, {
+          email,
+        });
+        await axios.post(`${import.meta.env.VITE_API_BASE_URL}/mail`, {
+          email,
+        });
+        setEmail("");
+        toast.success("Request submitted successfully.");
+      } catch (err) {
+        toast.error(err.message);
+      } finally {
+        setLoading(false);
       }
     }
-  }
+  };
 
-  const validateEmail = () =>{
-    let newErrors = {}
+  const validateEmail = () => {
+    let newErrors = {};
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if(!email){
-      newErrors.email = "Email address is required."
-      toast.error("Email address is required.")
+    if (!email) {
+      newErrors.email = "Email address is required.";
+      toast.error("Email address is required.");
     }
-    if(!emailRegex.test(email)){
-      newErrors.email = "Invalid email address."
-      toast.error("Invalid email address.")
+    if (!emailRegex.test(email)) {
+      newErrors.email = "Invalid email address.";
+      toast.error("Invalid email address.");
     }
-    return Object.keys(newErrors).length===0
-  }
+    return Object.keys(newErrors).length === 0;
+  };
 
   return (
     <div className="py-16 px-4 bg-navyblue text-white  border">
@@ -50,19 +58,37 @@ const Footer = () => {
               <img src={logo} alt="StylicAI Logo" className="object-contain" />
             </div>
             <p className="text-sm md:text-base px-4 md:px-10">
-              STYLIC brings innovation to fashion photography with the help of artificial intelligence technology. Make impressive, photorealistic designs with minimal effort, and enhance your commerce enterprise.
+              STYLIC brings innovation to fashion photography with the help of
+              artificial intelligence technology. Make impressive,
+              photorealistic designs with minimal effort, and enhance your
+              commerce enterprise.
             </p>
             <div className="flex gap-4 justify-center">
-              <a href="https://www.facebook.com/stylicai" target="_blank" aria-label="Facebook" className="hover:text-gray-400">
+              <a
+                href="https://www.facebook.com/stylicai"
+                target="_blank"
+                aria-label="Facebook"
+                className="hover:text-gray-400"
+              >
                 <FacebookIcon />
               </a>
-              <a href="https://www.instagram.com/stylicai/" target="_blank" aria-label="Instagram" className="hover:text-gray-400">
+              <a
+                href="https://www.instagram.com/stylicai/"
+                target="_blank"
+                aria-label="Instagram"
+                className="hover:text-gray-400"
+              >
                 <InstagramIcon />
               </a>
               {/* <a href="#" aria-label="Twitter" target="_blank" className="hover:text-gray-400">
                 <TwitterIcon />
               </a> */}
-              <a href="https://www.linkedin.com/company/stylicai/" aria-label="LinkedIn" target="_blank" className="hover:text-gray-400">
+              <a
+                href="https://www.linkedin.com/company/stylicai/"
+                aria-label="LinkedIn"
+                target="_blank"
+                className="hover:text-gray-400"
+              >
                 <LinkedInIcon />
               </a>
             </div>
@@ -76,14 +102,24 @@ const Footer = () => {
             </p>
             <div className="flex justify-center flex-row items-center mt-6 w-full">
               <input
-                onChange={(e)=>setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 type="email"
                 placeholder="Enter your email"
                 className="px-2 py-2 rounded-l-md  md:rounded-r-none border-[#1b345c] bg-white text-[#1b345c] placeholder-[#1b345c] focus:outline-none focus:ring-2 focus:ring-[#1b345c] w-[60%] md:w-auto"
               />
-              <button onClick={handleSaveEmail} className="bg-golden text-white W-[30%] px-6 py-2 rounded-r-md cursor-pointer transition duration-300">
-                Subscribe
+              <button
+                onClick={handleSaveEmail}
+                className="bg-golden text-white W-[30%] px-6 py-2 rounded-r-md cursor-pointer transition duration-300"
+              >
+                {loading ? (
+                  <span>
+                    {" "}
+                    <LoaderCircle /> loading{" "}
+                  </span>
+                ) : (
+                  "Subscribe"
+                )}
               </button>
             </div>
           </div>
@@ -102,7 +138,7 @@ const Footer = () => {
               <p className="font-semibold">Mail us</p>
               <p className="text-sm flex gap-2 items-center">
                 <EmailIcon />
-                info@stylic.ai
+                info.stylicai@gmail.com
               </p>
             </div>
           </div>
