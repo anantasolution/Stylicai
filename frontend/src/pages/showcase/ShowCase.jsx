@@ -71,7 +71,7 @@ function ShowCase() {
         thumbnails: girlShirtThumbnails,
         images: girlShirtImages,
       },
-      "boys shirts": {
+      "boy's shirts": {
         thumbnails: boysShirtThumbnails,
         images: boysShirtImages,
       },
@@ -91,15 +91,15 @@ function ShowCase() {
         thumbnails: camisoleThumbnails,
         images: camisoleImages,
       },
-      jeans: {
-        thumbnails: jeansThumbnails,
-        images: jeansImages,
-      },
+      // jeans: {
+      //   thumbnails: jeansThumbnails,
+      //   images: jeansImages,
+      // },
       dresses: {
         thumbnails: dressThumbnails,
         images: dressImages,
       },
-      "boys jeans": {
+      "boy's jeans": {
         thumbnails: boysJeansThumbnails,
         images: boysJeansImages,
       },
@@ -115,7 +115,7 @@ function ShowCase() {
         thumbnails: jacketThumbnails,
         images: jacketImages,
       },
-      "mens inner":{
+      "men's inner":{
         thumbnails : minnerThumbnails,
         images : minnerImages
       }

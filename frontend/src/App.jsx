@@ -11,6 +11,7 @@ import Contactus from "./pages/Contact-us/Contactus";
 import ShowCase from "./pages/showcase/ShowCase";
 import { ToastContainer } from "react-toastify";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import Policy from "./pages/TermsAndCondition/Policy";
 
 const App = () => {
   return (
@@ -54,6 +55,16 @@ const App = () => {
             <>
               <Navbar />
               <MRegister />
+              <Footer />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/privacy-policy"
+          element={
+            <>
+              <Navbar />
+              <Policy />
               <Footer />
             </>
           }

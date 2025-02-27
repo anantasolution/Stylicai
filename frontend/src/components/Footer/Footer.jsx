@@ -9,6 +9,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { LoaderCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -149,6 +150,14 @@ const Footer = () => {
           &copy; {new Date().getFullYear()}{" "}
           <span className="text-golden font-bold">STYLIC</span>. All Rights
           Reserved.
+        </p>
+        <p className="mt-2">
+          <Link
+            to={"/privacy-policy"}
+            className="text-white text-md hover:text-golden  hover:border-b"
+          >
+            Privacy Policy
+          </Link>
         </p>
       </div>
     </div>
