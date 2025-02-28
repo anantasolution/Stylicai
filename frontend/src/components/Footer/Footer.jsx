@@ -151,15 +151,16 @@ const Footer = () => {
           <span className="text-golden font-bold">STYLIC</span>. All Rights
           Reserved.
         </p>
-        <p className="mt-2 flex flex-col gap-1">
+        <p className="mt-2 flex justify-center items-center gap-1">
           <Link
-            to={"/privacy-policy"}
+            to={"/privacy policy"}
             className="text-white"
           >
             <span className="text-md hover:text-golden hover:border-b">Privacy Policy</span>
           </Link>
+          <span>  | </span>
           <Link
-            to={"/terms-and-condition"}
+            to={"/terms and condition"}
             className="text-white "
           >
             <span className="text-md hover:text-golden hover:border-b">Terms And Conditions</span>
