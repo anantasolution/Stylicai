@@ -145,26 +145,24 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="pt-6 text-center text-sm">
+      <div className="pt-6 text-center text-sm flex flex-col gap-2">
+        <p className="mt-2 flex justify-center items-center gap-1">
+          <Link to={"/privacy policy"} className="text-white">
+            <span className="text-md hover:text-golden hover:border-b">
+              Privacy Policy
+            </span>
+          </Link>
+          <span> | </span>
+          <Link to={"/terms and condition"} className="text-white ">
+            <span className="text-md hover:text-golden hover:border-b">
+              Terms And Conditions
+            </span>
+          </Link>
+        </p>
         <p>
           &copy; {new Date().getFullYear()}{" "}
           <span className="text-golden font-bold">STYLIC</span>. All Rights
           Reserved.
-        </p>
-        <p className="mt-2 flex justify-center items-center gap-1">
-          <Link
-            to={"/privacy policy"}
-            className="text-white"
-          >
-            <span className="text-md hover:text-golden hover:border-b">Privacy Policy</span>
-          </Link>
-          <span>  | </span>
-          <Link
-            to={"/terms and condition"}
-            className="text-white "
-          >
-            <span className="text-md hover:text-golden hover:border-b">Terms And Conditions</span>
-          </Link>
         </p>
       </div>
     </div>
