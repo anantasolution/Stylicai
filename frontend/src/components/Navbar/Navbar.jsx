@@ -78,20 +78,20 @@ const Navbar = () => {
                 Showcase
               </span>
             </Link>
-            <Link to={"/about us"}>
+            <Link to={"/about-us"}>
               <span
                 className={`text-gray-800 rounded-full font-medium  px-2 py-1 transition duration-300 hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
-                  isActive("/about us") &&
+                  isActive("/about-us") &&
                   "underline decoration-golden underline-offset-4 decoration-2"
                 }`}
               >
                 About Us
               </span>
             </Link>
-            <Link to={"/contact us"}>
+            <Link to={"/contact-us"}>
               <span
                 className={`text-gray-800 rounded-full font-medium  px-2 py-1 transition duration-300 hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
-                  isActive("/contact us") &&
+                  isActive("/contact-us") &&
                   "underline decoration-golden underline-offset-4 decoration-2"
                 }`}
               >
@@ -181,18 +181,18 @@ const Navbar = () => {
             Showcase
           </Link>
           <Link
-            to={"/about us"}
+            to={"/about-us"}
             className={`text-gray-800 py-2 w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
-              isActive("/about us") &&
+              isActive("/about-us") &&
               "underline decoration-golden underline-offset-4 decoration-2"
             }`}
           >
             About Us
           </Link>
-          <Link to={"/contact us"}>
+          <Link to={"/contact-us"}>
             <span
               className={`text-gray-800 py-2 w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
-                isActive("/contact us") &&
+                isActive("/contact-us") &&
                 "underline decoration-golden underline-offset-4 decoration-2"
               }`}
             >

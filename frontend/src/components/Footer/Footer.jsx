@@ -50,7 +50,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="py-16 px-4 bg-navyblue text-white  border">
+    <div className="pt-16 pb-10 px-4 bg-navyblue text-white  border">
       <div className="h-full flex flex-col items-center md:justify-center">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full text-center">
           {/* Logo and About Section */}
@@ -69,7 +69,7 @@ const Footer = () => {
                 href="https://www.facebook.com/stylicai"
                 target="_blank"
                 aria-label="Facebook"
-                className="hover:text-gray-400"
+                className="text-golden"
               >
                 <FacebookIcon />
               </a>
@@ -77,7 +77,7 @@ const Footer = () => {
                 href="https://www.instagram.com/stylicai/"
                 target="_blank"
                 aria-label="Instagram"
-                className="hover:text-gray-400"
+                className="text-golden"
               >
                 <InstagramIcon />
               </a>
@@ -88,7 +88,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/company/stylicai/"
                 aria-label="LinkedIn"
                 target="_blank"
-                className="hover:text-gray-400"
+                className="text-golden"
               >
                 <LinkedInIcon />
               </a>
@@ -131,39 +131,43 @@ const Footer = () => {
             <div className="flex flex-col gap-3">
               <p className="font-semibold">Contact</p>
               <p className="text-base flex gap-2 items-center">
-                <CallIcon />
-                +91 63566 65365
+                <a href="tel:+916356665365">
+                  <CallIcon />
+                  +91 63566 65365
+                </a>
               </p>
             </div>
             <div className="flex flex-col gap-3">
               <p className="font-semibold">Mail us</p>
               <p className="text-sm flex gap-2 items-center">
+                <a href="mailto:info@stylic.ai">
                 <EmailIcon />
-                info.stylicai@gmail.com
+                info@stylic.ai
+                </a>
+               
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="pt-6 text-center text-sm flex flex-col gap-2">
-        <p className="mt-2 flex justify-center items-center gap-1">
-          <Link to={"/privacy policy"} className="text-white">
-            <span className="text-md hover:text-golden hover:border-b">
-              Privacy Policy
-            </span>
-          </Link>
-          <span> | </span>
-          <Link to={"/terms and condition"} className="text-white ">
-            <span className="text-md hover:text-golden hover:border-b">
-              Terms And Conditions
-            </span>
-          </Link>
-        </p>
+      <div className="pt-6 text-center text-sm flex flex-col md:flex-row gap-4 items-center justify-center md:gap-60">
+        <Link to={"/privacy-policy"} className="text-white ">
+          <span className="text-md text-golden hover:border-b md:ml-14">
+            Privacy Policy
+          </span>
+        </Link>
+
         <p>
           &copy; {new Date().getFullYear()}{" "}
           <span className="text-golden font-bold">STYLIC</span>. All Rights
           Reserved.
         </p>
+
+        <Link to={"/terms-and-condition"} className="text-white ">
+          <span className="text-md text-golden hover:border-b">
+            Terms And Conditions
+          </span>
+        </Link>
       </div>
     </div>
   );
