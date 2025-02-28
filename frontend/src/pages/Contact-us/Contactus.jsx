@@ -82,7 +82,7 @@ const Contactus = () => {
               <img
                 src={CONTACT}
                 alt="Woman in yellow sweater working"
-                className="w-full rounded-lg h-[460px]"
+                className="w-full rounded-lg"
               />
             </div>
 
@@ -110,7 +110,7 @@ const Contactus = () => {
 
                 {/* Email */}
                 <p className="text-gray-900 font-medium text-lg">
-                  info.stylicai@gmail.com
+                  info@stylic.ai
                 </p>
               </div>
             </div>

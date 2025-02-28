@@ -7,10 +7,27 @@ function BreadCrub() {
 
     const getPathName = () => {
         const pathname = location.pathname.slice(1); // Remove leading slash
-        return decodeURIComponent(pathname) // Decode %20 to space
-            .split('/') // Split path by '/'
-            .map(word => word.charAt(0).toUpperCase() +  word.slice(1)) // Capitalize each word
-            .join(' '); // Join words with space
+        switch (pathname){
+            case "/":
+                return "Home"
+                break
+            case "about-us":
+                return "About Us"
+            case "contact-us":
+                return "Contact Us"
+            case "showcase":
+                return "Showcase"
+            case "terms-and-condition":
+                return "Terms And Conditions"
+            case "privacy-policy":
+                return "Privacy Policy"
+            default :
+                return null
+        } 
+        // return decodeURIComponent(pathname) // Decode %20 to space
+        //     .split('/') // Split path by '/'
+        //     .map(word => word.charAt(0).toUpperCase() +  word.slice(1)) // Capitalize each word
+        //     .join(' '); // Join words with space
     };
 
     return (
