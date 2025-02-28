@@ -31,7 +31,7 @@ const App = () => {
           }
         ></Route>
         <Route
-          path="/about"
+          path="/about us"
           element={
             <>
               <Navbar />
@@ -41,7 +41,7 @@ const App = () => {
           }
         />
         <Route
-          path="/contactus"
+          path="/contact us"
           element={
             <>
               <Navbar />
@@ -61,7 +61,7 @@ const App = () => {
           }
         ></Route>
         <Route
-          path="/privacy-policy"
+          path="/privacy policy"
           element={
             <>
               <Navbar />
@@ -71,7 +71,7 @@ const App = () => {
           }
         ></Route>
         <Route
-          path="/terms-and-condition"
+          path="/terms and condition"
           element={
             <>
               <Navbar />
