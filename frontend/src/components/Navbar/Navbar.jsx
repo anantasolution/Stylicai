@@ -161,10 +161,10 @@ const Navbar = () => {
           isMenuOpen ? "right-0" : "-right-full"
         } border w-1/2 absolute  h-screen bg-white z-45 pt-20 transition-all duration-300`}
       >
-        <div className="flex flex-col gap-3 items-center py-4 transition-all duration-300">
+        <div className="flex flex-col gap-6 items-center py-4 transition-all duration-300">
           <Link
             to={"/"}
-            className={`text-gray-800 py-2  w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
+            className={`text-gray-800  w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
               isActive("/") &&
               "underline decoration-golden underline-offset-4 decoration-2"
             }`}
@@ -173,7 +173,7 @@ const Navbar = () => {
           </Link>
           <Link
             to={"/showcase"}
-            className={`text-gray-800 py-2 w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
+            className={`text-gray-800  w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
               isActive("/showcase") &&
               "underline decoration-golden underline-offset-4 decoration-2"
             }`}
@@ -182,7 +182,7 @@ const Navbar = () => {
           </Link>
           <Link
             to={"/about-us"}
-            className={`text-gray-800 py-2 w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
+            className={`text-gray-800  w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
               isActive("/about-us") &&
               "underline decoration-golden underline-offset-4 decoration-2"
             }`}
@@ -191,7 +191,7 @@ const Navbar = () => {
           </Link>
           <Link to={"/contact-us"}>
             <span
-              className={`text-gray-800 py-2 w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
+              className={`text-gray-800  w-full text-center hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
                 isActive("/contact-us") &&
                 "underline decoration-golden underline-offset-4 decoration-2"
               }`}
