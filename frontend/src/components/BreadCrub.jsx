@@ -33,7 +33,7 @@ function BreadCrub() {
     return (
         <div className='flex justify-center bg-navyblue md:pt-40 md:py-28 pt-28 py-20 items-center'>
             <div className='flex flex-col items-center gap-2'>
-                <h1 className='text-white text-5xl font-semibold'>{getPathName()}</h1>
+                <h1 className='text-white text-4xl md:text-5xl font-semibold'>{getPathName()}</h1>
                 <div className='flex items-center gap-2'>
                     <span className='text-white font-semibold'>Home</span>
                     <span className='text-golden'><ChevronRight /></span>
