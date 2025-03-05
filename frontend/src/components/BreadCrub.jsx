@@ -15,6 +15,8 @@ function BreadCrub() {
                 return "About Us"
             case "contact-us":
                 return "Contact Us"
+            case "blog":
+                return "Blog"
             case "showcase":
                 return "Showcase"
             case "terms-and-condition":
