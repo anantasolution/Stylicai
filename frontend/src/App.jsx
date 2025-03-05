@@ -13,6 +13,8 @@ import { ToastContainer } from "react-toastify";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Policy from "./pages/PrivacyPolicy/Policy";
 import Terms from "./pages/TermsAndCondition/Terms";
+import Blog from "./components/Blogs/Blog";
+import Blogpage from "./components/Blogs/Blogpage";
 
 const App = () => {
   return (
@@ -46,6 +48,26 @@ const App = () => {
             <>
               <Navbar />
               <Contactus />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/blog"
+          element={
+            <>
+              <Navbar />
+              <Blog />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/Blog/:id"
+          element={
+            <>
+              <Navbar />
+              <Blogpage />
               <Footer />
             </>
           }
