@@ -1,38 +1,40 @@
-import CONTACT from "../models/CONTACT.js"
+import CONTACT from "../models/CONTACT.js";
 
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 
 export const createContact = async (req, res, next) => {
-    console.log("Request received");
-    try {
-        const { name, email, contactno, message } = req.body;
-        if (!name || !email || !contactno || !message) {
-            return res.status(400).json({ message: "All input fields are required." });
-        }
+  console.log("Request received");
+  try {
+    const { name, email, contactno, message } = req.body;
+    if (!name || !email || !contactno || !message) {
+      return res
+        .status(400)
+        .json({ message: "All input fields are required." });
+    }
 
-        const newContact = new CONTACT({ name, email, contactno, message });
-        await newContact.save();
+    const newContact = new CONTACT({ name, email, contactno, message });
+    await newContact.save();
 
-        // Configure the email transporter
-       const transporter = nodemailer.createTransport({
-         host: "email-smtp.us-east-1.amazonaws.com", // Replace with your SES SMTP endpoint
-         port: 587, // For secure connection
-         secure: false, // Use TLS
-         auth: {
-           user: process.env.USER_USERNAME, // SES SMTP username
-           pass: process.env.USER_APP_PASS, // SES SMTP password
-         },
-         tls: {
-           rejectUnauthorized: true,
-         },
-       });
+    // Configure the email transporter
+    const transporter = nodemailer.createTransport({
+      host: "email-smtp.us-east-1.amazonaws.com", // Replace with your SES SMTP endpoint
+      port: 587, // For secure connection
+      secure: false, // Use TLS
+      auth: {
+        user: process.env.USER_USERNAME, // SES SMTP username
+        pass: process.env.USER_APP_PASS, // SES SMTP password
+      },
+      tls: {
+        rejectUnauthorized: true,
+      },
+    });
 
-        // Email content
-        const mailOptions = {
-            from: process.env.USER_MAIL,
-            to: email,
-            subject: 'Welcome To Stylic',
-            html: `<!DOCTYPE html>
+    // Email content
+    const mailOptions = {
+      from: process.env.USER_MAIL,
+      to: email,
+      subject: "Welcome To Stylic",
+      html: `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -113,14 +115,43 @@ export const createContact = async (req, res, next) => {
 </body>
 </html>
 
-`
-        };
+`,
+    };
 
-        // Send email
-        await transporter.sendMail(mailOptions);
+    // Send email
+    await transporter.sendMail(mailOptions);
 
-        res.status(200).json({ message: "Successfully created contact and sent confirmation email." });
-    } catch (err) {
-        next(err);
+    res.status(200).json({
+      message: "Successfully created contact and sent confirmation email.",
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const getContact = async (req, res, next) => {
+  try {
+    let searchQuery = req.query.searchQuery || "";
+
+    let query = {};
+
+    if (searchQuery.length > 0) {
+      const searchRegx = new RegExp(searchQuery, "i");
+      query["$or"] = [
+        { name: searchRegx },
+        { email: searchRegx },
+        { contactno: searchRegx },
+        { message: searchRegx },
+      ];
     }
+
+    const contacts = await CONTACT.find(query);
+    res.status(200).json({
+      success : false,
+      message : "All Contacts Fetched Successfully",
+      contacts
+    });
+  } catch (err) {
+    next(err);
+  }
 };
