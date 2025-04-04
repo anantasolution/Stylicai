@@ -1,8 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import { motion } from 'framer-motion';
 
-export default function Faq (){
-  const [openIndex, setOpenIndex] = useState(0);
+export default function Faq() {
+  const [openIndex, setOpenIndex] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.3 }
+    );
+    
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => observer.disconnect();
+  }, []);
 
   const faqData = [
     {
@@ -24,8 +39,13 @@ export default function Faq (){
   ];
 
   return (
-    <div className="py-20 bg-gray-50 p-8">
-      <div className="max-w-3xl mx-auto">
+    <div ref={ref} className="py-20 bg-gray-50 p-8">
+      <motion.div 
+        className="max-w-3xl mx-auto"
+        initial={{ opacity: 0, y: 50 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+      >
         <div className="text-center mb-12">
           <p className="text-golden font-medium mb-4">FAQ'S</p>
           <h1 className="text-2xl text-navyblue lg:text-4xl font-bold">
@@ -35,9 +55,12 @@ export default function Faq (){
 
         <div className="space-y-4">
           {faqData.map((faq, index) => (
-            <div 
+            <motion.div 
               key={index}
               className="border rounded-lg overflow-hidden bg-white"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
@@ -56,17 +79,18 @@ export default function Faq (){
               </button>
               
               {openIndex === index && (
-                <div className="px-6 pb-6">
+                <div 
+                  className="px-6 pb-6"
+                >
                   <p className="text-gray-600">
                     {faq.answer}
                   </p>
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
-};
-
+}
