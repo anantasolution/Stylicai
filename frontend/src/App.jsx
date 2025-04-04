@@ -15,6 +15,8 @@ import Policy from "./pages/PrivacyPolicy/Policy";
 import Terms from "./pages/TermsAndCondition/Terms";
 import AnimatedCursor from "react-animated-cursor";
 import { Check, Camera } from "lucide-react";
+import Blog from "./components/Blogs/Blog";
+import Blogpage from "./components/Blogs/Blogpage";
 
 const App = () => {
   const cursorRef = useRef(null);
@@ -81,6 +83,26 @@ const App = () => {
             <>
               <Navbar />
               <Contactus />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/blog"
+          element={
+            <>
+              <Navbar />
+              <Blog />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/Blog/:id"
+          element={
+            <>
+              <Navbar />
+              <Blogpage />
               <Footer />
             </>
           }

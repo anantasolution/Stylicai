@@ -98,6 +98,16 @@ const Navbar = () => {
                 Contact Us
               </span>
             </Link>
+            <Link to={"/blog"}>
+              <span
+                className={`text-gray-800 rounded-full font-medium  px-2 py-1 transition duration-300 hover:underline hover:decoration-golden hover:underline-offset-4 hover:decoration-2 ${
+                  isActive("/blog") &&
+                  "underline decoration-golden underline-offset-4 decoration-2"
+                }`}
+              >
+                Blog
+              </span>
+            </Link>
           </div>
         </div>
         <div className="flex gap-3">
